@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paid Ads Report — Hellriegel Zahnmedizin | April 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    --primary: #1a1a2e;
+    --accent: #4361ee;
+    --accent-light: #eef1ff;
+    --success: #10b981;
+    --success-bg: #ecfdf5;
+    --warning: #f59e0b;
+    --warning-bg: #fffbeb;
+    --danger: #ef4444;
+    --danger-bg: #fef2f2;
+    --neutral: #64748b;
+    --neutral-bg: #f8fafc;
+    --border: #e2e8f0;
+    --bg: #ffffff;
+    --text: #1e293b;
+    --text-light: #64748b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: #f1f5f9;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 48px 56px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(67,97,238,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .header-badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .subtitle {
+    font-size: 15px;
+    opacity: 0.7;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    font-size: 13px;
+    opacity: 0.65;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* CONTENT */
+  .content { padding: 0 56px 56px; }
+
+  /* KPI GRID */
+  .kpi-section {
+    margin: -24px 56px 40px;
+    position: relative;
+    z-index: 2;
+  }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .kpi-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+  }
+  .kpi-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+  }
+  .kpi-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.1;
+  }
+  .kpi-note {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 6px;
+  }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 40px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-icon.blue { background: var(--accent-light); }
+  .section-icon.green { background: var(--success-bg); }
+  .section-icon.orange { background: var(--warning-bg); }
+  .section-icon.red { background: var(--danger-bg); }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* STATUS BADGE */
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .status.good { background: var(--success-bg); color: #059669; }
+  .status.ok { background: var(--warning-bg); color: #d97706; }
+  .status.bad { background: var(--danger-bg); color: #dc2626; }
+  .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  /* METRIC ROWS */
+  .metric-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .metric-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+    padding: 10px 16px;
+    background: var(--neutral-bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .metric-table th:first-child { border-radius: 8px 0 0 0; }
+  .metric-table th:last-child { border-radius: 0 8px 0 0; }
+  .metric-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .metric-table tr:last-child td { border-bottom: none; }
+  .metric-table .metric-value {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .metric-table .metric-note {
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* INSIGHT BOXES */
+  .insight-box {
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    border-left: 4px solid;
+  }
+  .insight-box.positive {
+    background: var(--success-bg);
+    border-color: var(--success);
+  }
+  .insight-box.warning {
+    background: var(--warning-bg);
+    border-color: var(--warning);
+  }
+  .insight-box.critical {
+    background: var(--danger-bg);
+    border-color: var(--danger);
+  }
+  .insight-box.info {
+    background: var(--accent-light);
+    border-color: var(--accent);
+  }
+  .insight-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .insight-text {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  /* COMPARISON */
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .comparison-card {
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+  }
+  .comparison-card.lp {
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+    border-color: #bbf7d0;
+  }
+  .comparison-card.ws {
+    background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+    border-color: #fecaca;
+  }
+  .comparison-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .comparison-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .comparison-card li {
+    font-size: 13px;
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .comparison-card.lp li::before { content: '✓'; position: absolute; left: 0; color: #059669; font-weight: 700; }
+  .comparison-card.ws li::before { content: '✗'; position: absolute; left: 0; color: #dc2626; font-weight: 700; }
+
+  /* ROADMAP */
+  .roadmap-step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .roadmap-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 44px;
+    bottom: -24px;
+    width: 2px;
+    background: var(--border);
+  }
+  .step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .step-number.quick { background: var(--success); }
+  .step-number.medium { background: var(--warning); }
+  .step-number.long { background: var(--accent); }
+  .step-content {
+    flex: 1;
+    padding-top: 2px;
+  }
+  .step-content h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .step-content p {
+    font-size: 13.5px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .step-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-top: 6px;
+  }
+  .step-tag.quick { background: var(--success-bg); color: #059669; }
+  .step-tag.medium { background: var(--warning-bg); color: #d97706; }
+  .step-tag.long { background: var(--accent-light); color: var(--accent); }
+
+  /* FUNNEL */
+  .funnel {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 24px 0;
+  }
+  .funnel-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .funnel-bar {
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    min-width: 60px;
+  }
+  .funnel-label {
+    font-size: 13px;
+    color: var(--text-light);
+    white-space: nowrap;
+  }
+  .funnel-arrow {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 18px;
+    padding: 2px 0;
+  }
+
+  /* COMPETITOR CARDS */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .comp-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    background: white;
+  }
+  .comp-card h5 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .comp-card .comp-sub {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+  .comp-card .comp-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .comp-stat {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--neutral-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .comp-stat.strong {
+    background: var(--danger-bg);
+    border-color: #fecaca;
+    color: #b91c1c;
+  }
+
+  /* POSITIONING MAP */
+  .pos-map {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 20px 0;
+    background: white;
+    overflow: hidden;
+  }
+  .pos-axis-x, .pos-axis-y {
+    position: absolute;
+    background: var(--border);
+  }
+  .pos-axis-x { width: 100%; height: 1px; top: 50%; }
+  .pos-axis-y { height: 100%; width: 1px; left: 50%; }
+  .pos-label {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .pos-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .pos-dot-label {
+    position: absolute;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    transform: translate(-50%, 0);
+  }
+
+  @media (max-width: 700px) {
+    .comp-grid { grid-template-columns: 1fr; }
+    .pos-map { height: 280px; }
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 32px 56px;
+    background: var(--neutral-bg);
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p { margin-bottom: 12px; font-size: 14.5px; }
+  strong { font-weight: 600; }
+
+  @media (max-width: 700px) {
+    .header { padding: 32px 24px; }
+    .kpi-section { margin: -20px 24px 32px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .content { padding: 0 24px 40px; }
+    .comparison { grid-template-columns: 1fr; }
+    .footer { padding: 24px; flex-direction: column; gap: 8px; }
+    .header-meta { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="header-badge">Performance Report</div>
+      </div>
+      <div style="text-align:right; font-size:13px; opacity:0.6;">
+        Schmidtke GmbH<br>Paid Media
+      </div>
+    </div>
+    <h1>Paid Ads Analyse — Zahnimplantate</h1>
+    <div class="subtitle">Hellriegel Zahnmedizin · Essen</div>
+    <div class="header-meta">
+      <span>Zeitraum: 06.03.2026 – 17.04.2026</span>
+      <span>Ziel: Patientengewinnung Zahnimplantate</span>
+      <span>Kanäle: Meta Ads + Google Ads</span>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-section">
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Gesamtausgaben</div>
+        <div class="kpi-value">1.802 €</div>
+        <div class="kpi-note">Meta 868 € + Google 934 €</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Klicks gesamt</div>
+        <div class="kpi-value">1.616</div>
+        <div class="kpi-note">Meta 961 + Google 655</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Leads gesamt</div>
+        <div class="kpi-value">13</div>
+        <div class="kpi-note">CPL ~139 € (alle Kanäle)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Reichweite (Meta)</div>
+        <div class="kpi-value">39.536</div>
+        <div class="kpi-note">+ 9.605 Google-Impressionen</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- PERFORMANCE OVERVIEW -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon blue">📊</div>
+        <div class="section-title">Meta Ads — Performance-Übersicht</div>
+      </div>
+
+      <table class="metric-table">
+        <thead>
+          <tr>
+            <th>Metrik</th>
+            <th>Wert</th>
+            <th>Bewertung</th>
+            <th>Benchmark Dental</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CPM</strong><br><span class="metric-note">Kosten pro 1.000 Impressionen</span></td>
+            <td class="metric-value">7,89 €</td>
+            <td><span class="status good"><span class="status-dot"></span> Sehr gut</span></td>
+            <td class="metric-note">8–15 € typisch in DE</td>
+          </tr>
+          <tr>
+            <td><strong>CPC (Link-Klick)</strong><br><span class="metric-note">Kosten pro Klick zur Website</span></td>
+            <td class="metric-value">0,90 €</td>
+            <td><span class="status good"><span class="status-dot"></span> Gut</span></td>
+            <td class="metric-note">1–3 € für Dental üblich</td>
+          </tr>
+          <tr>
+            <td><strong>CTR (Link-Klicks)</strong><br><span class="metric-note">Klickrate auf Link</span></td>
+            <td class="metric-value">0,87 %</td>
+            <td><span class="status ok"><span class="status-dot"></span> Ausbaufähig</span></td>
+            <td class="metric-note">1,0–1,5 % ist das Ziel</td>
+          </tr>
+          <tr>
+            <td><strong>CTR (alle Klicks)</strong><br><span class="metric-note">Gesamte Interaktionsrate</span></td>
+            <td class="metric-value">2,48 %</td>
+            <td><span class="status good"><span class="status-dot"></span> Gut</span></td>
+            <td class="metric-note">Zeigt Interesse an der Anzeige</td>
+          </tr>
+          <tr>
+            <td><strong>Frequenz</strong><br><span class="metric-note">Wie oft eine Person die Anzeige sieht</span></td>
+            <td class="metric-value">2,78</td>
+            <td><span class="status ok"><span class="status-dot"></span> Grenzwertig</span></td>
+            <td class="metric-note">Bis 3,0 OK · darüber = Ad Fatigue</td>
+          </tr>
+          <tr>
+            <td><strong>Conversion-Rate</strong><br><span class="metric-note">Leads / Link-Klicks (geschätzt)</span></td>
+            <td class="metric-value">~1,4 %</td>
+            <td><span class="status ok"><span class="status-dot"></span> Ausbaufähig</span></td>
+            <td class="metric-note">2–5 % für gute LP üblich</td>
+          </tr>
+          <tr>
+            <td><strong>Leads (Meta-Anteil)</strong><br><span class="metric-note">Anteil an 13 Gesamt-Leads</span></td>
+            <td class="metric-value">~9 geschätzt</td>
+            <td><span class="status good"><span class="status-dot"></span> Solide Basis</span></td>
+            <td class="metric-note">Meta liefert 60 % des Traffics</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- GOOGLE ADS OVERVIEW -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon blue">🔎</div>
+        <div class="section-title">Google Ads — Suchkampagnen</div>
+      </div>
+
+      <p>
+        Neben Meta haben wir zwei Google-Suchkampagnen laufen — eine auf Implantologie allgemein, eine auf biologische Zahnmedizin. Google fängt die Leute ab, die aktiv nach einer Lösung suchen. Hier die Zahlen über den gesamten Zeitraum:
+      </p>
+
+      <table class="metric-table">
+        <thead>
+          <tr>
+            <th>Kampagne</th>
+            <th>Budget/Tag</th>
+            <th>Klicks</th>
+            <th>CPC</th>
+            <th>CTR</th>
+            <th>Conversions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Implantologie</strong><br><span class="metric-note">Suchkampagne</span></td>
+            <td class="metric-value">13,33 €</td>
+            <td class="metric-value">464</td>
+            <td class="metric-value">1,59 €</td>
+            <td><span class="status good"><span class="status-dot"></span> 5,95 %</span></td>
+            <td class="metric-value">~3</td>
+          </tr>
+          <tr>
+            <td><strong>Bio (Biologische Zahnmedizin)</strong><br><span class="metric-note">Suchkampagne</span></td>
+            <td class="metric-value">3,33 €</td>
+            <td class="metric-value">191</td>
+            <td class="metric-value">1,02 €</td>
+            <td><span class="status good"><span class="status-dot"></span> 10,55 %</span></td>
+            <td class="metric-value">~1</td>
+          </tr>
+          <tr style="background: var(--neutral-bg);">
+            <td><strong>Gesamt Google</strong></td>
+            <td class="metric-value">16,66 €</td>
+            <td class="metric-value">655</td>
+            <td class="metric-value">1,43 €</td>
+            <td><span class="status good"><span class="status-dot"></span> 6,82 %</span></td>
+            <td class="metric-value">~4</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="insight-box positive" style="margin-top: 20px;">
+        <div class="insight-title">Klickraten deutlich über Branchenniveau</div>
+        <div class="insight-text">
+          5,95 % CTR bei Implantologie, 10,55 % bei Bio — im Dentalbereich liegt der Durchschnitt bei 3–5 %. Die Anzeigentexte sitzen also. Spannend ist aber der Vergleich bei den Conversions: Die Implantologie-Kampagne konvertiert mit 0,72 % <strong>doppelt so gut</strong> wie die Bio-Kampagne (0,35 %). Das deckt sich mit unserer Erfahrung — der breite Markt „Zahnimplantate" bringt die besseren Leads.
+        </div>
+      </div>
+
+      <div class="insight-box warning">
+        <div class="insight-title">Wir verpassen aktuell über 80 % der Suchanfragen</div>
+        <div class="insight-text">
+          Der Impression Share bei der Implantologie-Kampagne liegt unter 10 % — heißt konkret: Von zehn Leuten, die in Essen nach Zahnimplantaten googeln, sehen acht unsere Anzeige gar nicht. Das ist budgetbedingt. Wenn wir das Tagesbudget von 13 € auf 25–30 € erhöhen, sind das sofort mehr qualifizierte Klicks von Patienten, die gerade aktiv eine Lösung suchen. Aus unserer Sicht einer der schnellsten Hebel.
+        </div>
+      </div>
+    </div>
+
+    <!-- KANALVERGLEICH -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon blue">⚖️</div>
+        <div class="section-title">Kanalvergleich — Meta vs. Google</div>
+      </div>
+
+      <table class="metric-table">
+        <thead>
+          <tr>
+            <th>Metrik</th>
+            <th>Meta Ads</th>
+            <th>Google Ads</th>
+            <th>Einordnung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rolle im Funnel</strong></td>
+            <td>Aufmerksamkeit erzeugen</td>
+            <td>Nachfrage abfangen</td>
+            <td class="metric-note">Beide Kanäle ergänzen sich ideal</td>
+          </tr>
+          <tr>
+            <td><strong>Ausgaben</strong></td>
+            <td class="metric-value">868 €</td>
+            <td class="metric-value">934 €</td>
+            <td class="metric-note">Annähernd gleiche Verteilung</td>
+          </tr>
+          <tr>
+            <td><strong>Klicks</strong></td>
+            <td class="metric-value">961</td>
+            <td class="metric-value">655</td>
+            <td class="metric-note">Meta liefert mehr Traffic pro €</td>
+          </tr>
+          <tr>
+            <td><strong>CPC</strong></td>
+            <td class="metric-value" style="color:var(--success);">0,90 €</td>
+            <td class="metric-value">1,43 €</td>
+            <td class="metric-note">Meta günstiger, Google dafür höhere Suchintention</td>
+          </tr>
+          <tr>
+            <td><strong>CPM</strong></td>
+            <td class="metric-value" style="color:var(--success);">7,89 €</td>
+            <td class="metric-value">97,36 €</td>
+            <td class="metric-note">Reichweite klar Meta-Stärke</td>
+          </tr>
+          <tr>
+            <td><strong>Patientenintention</strong></td>
+            <td>Niedrig bis mittel</td>
+            <td style="color:var(--success); font-weight:600;">Hoch (aktive Suche)</td>
+            <td class="metric-note">Google-Klicks sind „heißer"</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="insight-box info" style="margin-top: 20px;">
+        <div class="insight-title">Kurz gesagt: Die Kanäle ergänzen sich gut</div>
+        <div class="insight-text">
+          Meta sorgt dafür, dass Leute die Praxis überhaupt auf dem Schirm haben. Google holt dann die ab, die aktiv suchen — teilweise genau wegen der Meta-Anzeige. <strong>1.616 Klicks bei 1.802 € Gesamtbudget</strong> (CPC im Schnitt 1,12 €) — das ist effizient. Die größte Baustelle sehen wir nicht bei den Ads, sondern auf der Hauptwebsite. Da verlieren wir aktuell Patienten, die nach dem Klick die Praxis nochmal googeln.
+        </div>
+      </div>
+    </div>
+
+    <!-- FUNNEL VISUALIZATION -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon blue">🔍</div>
+        <div class="section-title">Der aktuelle Funnel — Wo gehen Patienten verloren?</div>
+      </div>
+
+      <div class="funnel">
+        <div class="funnel-step">
+          <div class="funnel-bar" style="width:100%; background: var(--accent);">119.570 Impressionen (Meta + Google)</div>
+        </div>
+        <div class="funnel-arrow">↓ <span style="font-size:12px;">1,35 % klicken</span></div>
+        <div class="funnel-step">
+          <div class="funnel-bar" style="width:45%; background: #6366f1;">1.616 Klicks zur Seite</div>
+          <div class="funnel-label">1.802 € Gesamtbudget</div>
+        </div>
+        <div class="funnel-arrow">↓ <span style="font-size:12px; color: var(--warning);">~99,2 % konvertieren nicht</span></div>
+        <div class="funnel-step">
+          <div class="funnel-bar" style="width:12%; background: var(--warning);">13 Leads</div>
+          <div class="funnel-label" style="color: var(--text-light);">CPL ~139 € · Lead-to-Patient ~12 %</div>
+        </div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-step">
+          <div class="funnel-bar" style="width:6%; background: var(--success);">~1–2 neue Patienten</div>
+          <div class="funnel-label" style="color: var(--success); font-weight:600;">Behandlungswert: 3.000–15.000 €</div>
+        </div>
+      </div>
+
+      <div class="insight-box info">
+        <div class="insight-title">Einordnung</div>
+        <div class="insight-text">
+          Ein CPL von ~139 € klingt erstmal nach viel — aber bei Behandlungswerten von 3.000–15.000 € rechnet sich das schnell. Schon ein gewonnener Patient deckt das Werbebudget mehrerer Monate. Was wir als nächstes angehen wollen: die Leads in der LeadTable sauber nach Kanal trennen, damit wir pro Kanal gezielter optimieren können. Aktuell vermischen sich Meta- und Google-Leads.
+        </div>
+      </div>
+    </div>
+
+    <!-- LEADTABLE ANALYSE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon blue">📋</div>
+        <div class="section-title">LeadTable-Analyse — Seit Kampagnenstart (06.03.2026)</div>
+      </div>
+
+      <p>
+        Seit dem Kampagnenstart am 06.03. sind <strong>13 Leads</strong> reingekommen (Duplikat Spoden rausgerechnet). Die stammen aus Meta und Google zusammen — eine saubere Trennung nach Kanal können wir aktuell noch nicht machen. Hier der aktuelle Stand:
+      </p>
+
+      <table class="metric-table">
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Anzahl</th>
+            <th>Einschätzung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Unbearbeitet</strong><br><span class="metric-note">Noch kein Kontaktversuch</span></td>
+            <td class="metric-value" style="color:var(--danger);">4</td>
+            <td><span class="status bad"><span class="status-dot"></span> Sofort nachfassen!</span></td>
+          </tr>
+          <tr>
+            <td><strong>In Kontakt</strong><br><span class="metric-note">Gespräch läuft</span></td>
+            <td class="metric-value" style="color:var(--success);">3</td>
+            <td><span class="status good"><span class="status-dot"></span> Gutes Signal</span></td>
+          </tr>
+          <tr>
+            <td><strong>Nicht erreicht</strong><br><span class="metric-note">Kontaktversuch ohne Erfolg</span></td>
+            <td class="metric-value" style="color:var(--warning);">5</td>
+            <td><span class="status ok"><span class="status-dot"></span> Follow-up-Strategie nötig</span></td>
+          </tr>
+          <tr>
+            <td><strong>Absage</strong><br><span class="metric-note">Kein Interesse</span></td>
+            <td class="metric-value">1</td>
+            <td><span class="status bad"><span class="status-dot"></span> Normal</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="insight-box warning" style="margin-top:20px;">
+        <div class="insight-title">Nachfassen — da liegt gerade am meisten Potenzial</div>
+        <div class="insight-text">
+          Auf unserer Seite liefern die Ads und die Landing Page. <strong>Aber 4 Leads stehen noch auf „Unbearbeitet"</strong> — da hat noch niemand angerufen. Dazu kommen 5 mit „Nicht erreicht". Bei Social-Media-Leads zählt Geschwindigkeit: Nach 24 Stunden sinkt die Abschlusswahrscheinlichkeit um rund 60 %. Wir würden empfehlen, mindestens 3 Kontaktversuche zu den angegebenen Wunschzeiten zu machen, am besten ergänzt durch eine SMS oder WhatsApp. Das ist der schnellste Weg zu mehr Patienten — ohne einen Euro mehr Budget.
+        </div>
+      </div>
+
+      <div class="insight-box info">
+        <div class="insight-title">Zwei Leads wollen sich erstmal nur informieren</div>
+        <div class="insight-text">
+          Zutz und Müller haben angegeben, dass sie sich aktuell nur informieren möchten. Die sind nicht verloren — aber hier macht ein Verkaufsgespräch keinen Sinn. Besser: Eine kurze E-Mail mit ein paar Behandlungsbeispielen, Vorher-Nachher-Fotos und dem Angebot eines unverbindlichen Erstgesprächs.
+        </div>
+      </div>
+
+      <div style="background: var(--neutral-bg); border-radius: 12px; padding: 20px 24px; margin-top: 16px;">
+        <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 8px;">Zur Einordnung: Lead-Pipeline seit Sommer 2025</h4>
+        <p style="font-size: 13.5px; color: var(--text-light); margin-bottom:0;">
+          Insgesamt stehen <strong>über 170 Leads seit Sommer 2025</strong> in der LeadTable, davon sind rund <strong>20 tatsächlich Patienten geworden</strong> — das entspricht einer Quote von ca. <strong>12 %</strong>. Hochgerechnet auf die 13 neuen Leads heißt das: 1–2 neue Implantats-Patienten sind realistisch, mit einem Behandlungswert von <strong>3.000–30.000 €</strong> pro Patient.
+        </p>
+      </div>
+    </div>
+
+    <!-- THESE BESTÄTIGUNG -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon orange">💡</div>
+        <div class="section-title">Patienten googeln und vergleichen — die Website muss mithalten</div>
+      </div>
+
+      <p>
+        Was wir in der Praxis immer wieder sehen: Jemand sieht die Anzeige auf Instagram, klickt auf die Landing Page, findet das Angebot spannend — und <strong>googelt dann „Hellriegel Zahnmedizin Essen"</strong>, um sich abzusichern. Dass sich die Leads aus beiden Kanälen vermischen, passt genau dazu. Das Problem: Was Patienten auf der Hauptwebsite finden, baut das Vertrauen nicht weiter auf — im Gegenteil.
+      </p>
+
+      <div class="comparison">
+        <div class="comparison-card lp">
+          <h4 style="color:#059669;">✅ Landing Page (zahnimplantate-hellriegel.de)</h4>
+          <ul>
+            <li>Starker Hero mit 4,7-Sterne-Rating</li>
+            <li>6+ echte Patientenbewertungen mit Namen</li>
+            <li>Implantat-Zertifikat sichtbar</li>
+            <li>Keramik vs. Titan Vergleich (Differenzierung)</li>
+            <li>Arzt-Portraitfotos in OP-Kleidung</li>
+            <li>Mehrere CTAs „15min Erstgespräch"</li>
+            <li>FAQ adressiert Patientenängste</li>
+            <li>Vorher-Nachher Lächeln-Fotos</li>
+            <li>Video-Content zur Aufklärung</li>
+            <li>Problem-Lösungs-Narrativ eingebaut</li>
+          </ul>
+        </div>
+        <div class="comparison-card ws">
+          <h4 style="color:#dc2626;">❌ Hauptwebsite (hellriegel-zahnmedizin.de)</h4>
+          <ul>
+            <li>Keine Bewertungen oder Sterne sichtbar</li>
+            <li>Keine Testimonials oder Patientenstimmen</li>
+            <li>Kein Arztprofil mit Qualifikationen</li>
+            <li>Implantate in langer Behandlungsliste „versteckt"</li>
+            <li>Kein Teamfoto oder Praxisrundgang</li>
+            <li>Keine Zertifizierungen oder Auszeichnungen</li>
+            <li>Fokus auf „Biologische Zahnheilkunde" — versteht der Normalpatient nicht</li>
+            <li>Kein dedizierter Implantate-CTA</li>
+            <li>Minimale Trust-Signale für 3.000–15.000 € Behandlung</li>
+            <li>Meta-Description erwähnt keine Implantate</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="insight-box warning">
+        <div class="insight-title">Hier verlieren wir Patienten</div>
+        <div class="insight-text">
+          Wer über die Landing Page reinkommt und begeistert ist, dann aber die Hauptwebsite sieht, erlebt einen Bruch. Bei einer Behandlung für mehrere Tausend Euro brauchen Patienten an jedem Touchpoint das Gefühl: „Hier bin ich richtig." Die Hauptseite muss mindestens auf dem Niveau der Landing Page sein — davon ist sie aktuell ein gutes Stück entfernt.
+        </div>
+      </div>
+    </div>
+
+    <!-- WAS GUT LÄUFT -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon green">✅</div>
+        <div class="section-title">Was bereits gut läuft</div>
+      </div>
+
+      <div class="insight-box positive">
+        <div class="insight-title">Die Anzeigen performen über Branchenniveau</div>
+        <div class="insight-text">
+          CPM von 7,89 € und CPC von 0,90 € — das liegt klar unter dem, was man im Dentalbereich in Deutschland normalerweise zahlt. Das Targeting auf Essen +20km und 35+ passt. Die Kampagne liefert Klicks zu einem guten Preis, das Fundament steht.
+        </div>
+      </div>
+
+      <div class="insight-box positive">
+        <div class="insight-title">Die Landing Page ist besser als 80 % der Zahnarzt-Seiten</div>
+        <div class="insight-text">
+          Echte Bewertungen mit 4,7 Sternen, Arzt-Fotos in OP-Kleidung, Video-Content, Keramik-Differenzierung und ein klarer CTA zum 15-Minuten-Erstgespräch. Die emotionale Ansprache („Wieder unbeschwert lachen, sprechen und essen") sitzt. Da haben wir eine solide Basis, auf der wir aufbauen können.
+        </div>
+      </div>
+
+      <div class="insight-box positive">
+        <div class="insight-title">Die Kampagne rechnet sich — auch bei konservativer Rechnung</div>
+        <div class="insight-text">
+          13 Leads bei 1.802 € Gesamtbudget, CPL ~139 €. Bei Behandlungswerten von 3.000–15.000 € und einer historischen Abschlussquote von 12 % amortisiert schon ein einziger gewonnener Patient das Budget mehrerer Monate. Den größten Hebel sehen wir jetzt nicht bei mehr Budget — sondern beim schnelleren Nachfassen der Leads in der Praxis.
+        </div>
+      </div>
+    </div>
+
+    <!-- WETTBEWERBSANALYSE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon red">⚔️</div>
+        <div class="section-title">Wettbewerbsanalyse — Zahnimplantate in Essen</div>
+      </div>
+
+      <p>
+        Wir haben uns den Markt in Essen genau angeschaut. Es gibt mehrere starke Player mit großen Teams, eigenen Laboren und deutlich mehr Online-Bewertungen. Trotzdem sehen wir eine klare Chance — allerdings nicht über die Bio-Nische, sondern über den breiten Markt: <strong>„Ihr Zahnarzt für Zahnimplantate in Essen"</strong>, mit Keramik als Premium-Differenzierung im Beratungsgespräch.
+      </p>
+
+      <div class="comp-grid">
+        <div class="comp-card">
+          <h5>Klinik im Rü-Karree</h5>
+          <div class="comp-sub">Rüttenscheid · Großklinik · Mehrere Ärzte</div>
+          <div class="comp-stats">
+            <span class="comp-stat strong">~126 Google-Bewertungen</span>
+            <span class="comp-stat">Keramik + Titan</span>
+            <span class="comp-stat">Biologische Zahnmedizin</span>
+            <span class="comp-stat">Eigenes Labor</span>
+          </div>
+        </div>
+        <div class="comp-card">
+          <h5>Zahnzentrum Kupferdreh (Dr. Santel)</h5>
+          <div class="comp-sub">Kupferdreh · Direkter Nischen-Wettbewerber</div>
+          <div class="comp-stats">
+            <span class="comp-stat">~49 Bewertungen (ProvenExpert)</span>
+            <span class="comp-stat strong">SDS Ambassador Keramik</span>
+            <span class="comp-stat">Biologische Zahnmedizin</span>
+            <span class="comp-stat">Ganzheitlich</span>
+          </div>
+        </div>
+        <div class="comp-card">
+          <h5>Dentalzentrum Essen</h5>
+          <div class="comp-sub">Huttrop · Großpraxis · Volume Player</div>
+          <div class="comp-stats">
+            <span class="comp-stat strong">2.000+ Implantate/Jahr</span>
+            <span class="comp-stat">Keramik-vs-Titan Content</span>
+            <span class="comp-stat">5.0 auf GoLocal</span>
+            <span class="comp-stat">Preisvergleich prominent</span>
+          </div>
+        </div>
+        <div class="comp-card">
+          <h5>AllDent Zahnzentrum Essen</h5>
+          <div class="comp-sub">Kette · 13 Standorte · Preisaggressiv</div>
+          <div class="comp-stats">
+            <span class="comp-stat strong">3.000+ Implantate/Jahr (gesamt)</span>
+            <span class="comp-stat">Mo–Fr 7–21 Uhr, Sa 8–20</span>
+            <span class="comp-stat">Eigenes Labor</span>
+            <span class="comp-stat">Preistransparenz</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- POSITIONIERUNGSMAP -->
+      <h4 style="font-size: 15px; font-weight: 700; margin: 24px 0 8px;">Positionierung im Markt</h4>
+      <div class="pos-map">
+        <div class="pos-axis-x"></div>
+        <div class="pos-axis-y"></div>
+        <div class="pos-label" style="top: 8px; left: 50%; transform: translateX(-50%);">Biologisch / Ganzheitlich</div>
+        <div class="pos-label" style="bottom: 8px; left: 50%; transform: translateX(-50%);">Konventionell / Titan-fokussiert</div>
+        <div class="pos-label" style="left: 8px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center;">Kleine Praxis</div>
+        <div class="pos-label" style="right: 8px; top: 50%; transform: translateY(-50%) rotate(90deg); transform-origin: right center;">Großklinik / Kette</div>
+
+        <!-- Hellriegel AKTUELL -->
+        <div class="pos-dot" style="left: 30%; top: 20%; background: var(--neutral); width: 10px; height: 10px; opacity: 0.4;"></div>
+        <div class="pos-dot-label" style="left: 30%; top: 10%; color: var(--neutral); font-size: 10px; opacity: 0.6;">Hellriegel (aktuell)</div>
+
+        <!-- Hellriegel ZIEL -->
+        <div class="pos-dot" style="left: 35%; top: 38%; background: var(--accent); width: 14px; height: 14px; box-shadow: 0 0 0 4px rgba(67,97,238,0.25);"></div>
+        <div class="pos-dot-label" style="left: 35%; top: 29%; color: var(--accent); font-weight: 800;">★ Hellriegel (Ziel)</div>
+
+        <!-- Arrow -->
+        <div style="position:absolute; left: 31%; top: 23%; color: var(--accent); font-size: 16px; transform: rotate(20deg);">↓</div>
+
+        <!-- Kupferdreh -->
+        <div class="pos-dot" style="left: 55%; top: 22%; background: var(--danger);"></div>
+        <div class="pos-dot-label" style="left: 55%; top: 28%; color: var(--danger);">Kupferdreh</div>
+
+        <!-- Rü-Karree -->
+        <div class="pos-dot" style="left: 65%; top: 35%; background: var(--danger);"></div>
+        <div class="pos-dot-label" style="left: 65%; top: 41%; color: var(--danger);">Rü-Karree</div>
+
+        <!-- Dentalzentrum -->
+        <div class="pos-dot" style="left: 72%; top: 62%; background: var(--warning);"></div>
+        <div class="pos-dot-label" style="left: 72%; top: 68%; color: var(--warning);">Dentalzentrum</div>
+
+        <!-- AllDent -->
+        <div class="pos-dot" style="left: 82%; top: 72%; background: var(--warning);"></div>
+        <div class="pos-dot-label" style="left: 82%; top: 78%; color: var(--warning);">AllDent</div>
+
+        <!-- Braunsteiner -->
+        <div class="pos-dot" style="left: 45%; top: 58%; background: var(--neutral);"></div>
+        <div class="pos-dot-label" style="left: 45%; top: 64%; color: var(--neutral);">Dr. Braunsteiner</div>
+
+        <!-- Opportunity Zone -->
+        <div style="position:absolute; left: 18%; top: 28%; width: 32%; height: 26%; border: 2px dashed var(--success); border-radius: 12px; opacity: 0.5;"></div>
+        <div class="pos-label" style="left: 20%; top: 56%; color: var(--success); font-size: 9px;">Zielposition: Persönlich + Premium</div>
+      </div>
+
+      <!-- BEWERTUNGS-VERGLEICH -->
+      <div class="insight-box critical">
+        <div class="insight-title">Bewertungen — hier müssen wir ran</div>
+        <div class="insight-text">
+          Die Qualität stimmt: 4,7 Sterne bei Google, 5,0 auf Jameda. Aber <strong>~12 Google-Bewertungen sind zu wenig</strong> — das Rü-Karree hat 126, Kupferdreh 49. Wenn jemand eine 5.000–15.000 € Behandlung sucht und zwischen zwei Praxen vergleicht, gewinnt die mit mehr Social Proof. Da hilft auch eine perfekte 5,0 nicht, wenn nur 12 Leute bewertet haben. <strong>Unser Ziel: 50+ Google-Bewertungen in den nächsten 6 Monaten.</strong> Jeden zufriedenen Patienten aktiv ansprechen.
+        </div>
+      </div>
+
+      <!-- POSITIONIERUNGS-STRATEGIE -->
+      <div class="insight-box info" style="margin-top: 20px;">
+        <div class="insight-title">Unsere Empfehlung zur Positionierung</div>
+        <div class="insight-text">
+          Die Google-Daten sprechen eine klare Sprache: Die <strong>Implantologie-Kampagne</strong> konvertiert doppelt so gut (0,72 %) wie die Bio-Kampagne (0,35 %). Unsere Erfahrung: Wer gezielt nach „biologischer Zahnmedizin" sucht, ist zwar interessiert, aber oft schwieriger als Lead. Der normale Patient googelt „Zahnimplantate Essen", weiß gar nicht, dass Keramik eine Option ist — und ist gerade deshalb offen für die Beratung. <strong>Die Bio-Suchenden kommen sowieso</strong>, dafür braucht's kein extra Marketing. Das Potenzial liegt im breiten Markt.
+        </div>
+      </div>
+
+      <!-- EHRLICHE EINSCHÄTZUNG -->
+      <div style="background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 100%); border: 1px solid #c7d2fe; border-radius: 12px; padding: 24px; margin-top: 20px;">
+        <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 12px; color: var(--primary);">Unsere ehrliche Einschätzung</h4>
+        <p style="font-size: 13.5px; line-height: 1.7; margin-bottom: 12px;">
+          Der Markt in Essen ist hart. Rü-Karree, Dentalzentrum, AllDent — die haben mehr Budget, mehr Personal, mehr Bewertungen und teils eigene Labore. Da werden wir nicht über Nacht die Nummer 1. Müssen wir aber auch nicht.
+        </p>
+        <p style="font-size: 13.5px; line-height: 1.7; margin-bottom: 12px;">
+          Was die Praxis hat, was die Großkliniken nicht bieten können: <strong>Persönliche Beratung auf Augenhöhe und eine moderne, metallfreie Behandlungsoption.</strong> Das ist kein Nischen-Argument, das ist ein Qualitäts-Argument. Nur: „Biologischer Zahnarzt" versteht draußen kaum jemand. Unsere Empfehlung für die Positionierung: <strong>„Ihr Zahnarzt für Zahnimplantate in Essen — auf Wunsch auch metallfrei."</strong> Keramik als Premium-Feature, nicht als Einschränkung.
+        </p>
+        <p style="font-size: 13.5px; line-height: 1.7; margin-bottom: 12px;">
+          Was wir für realistisch halten: Mit den jetzigen Ads, der Landing Page und den Optimierungen, die wir weiter unten vorschlagen, sehen wir <strong>5–8 qualifizierte Implantats-Anfragen pro Monat in 3–6 Monaten</strong>. Das wäre eine Verdopplung gegenüber jetzt. Mehr ist drin — aber dafür muss die Website besser werden und die Bewertungszahl deutlich steigen.
+        </p>
+        <p style="font-size: 13.5px; line-height: 1.7; margin-bottom: 0;">
+          Unser Ansatz: Den breiten Markt „Zahnimplantate Essen" bespielen. Nicht im Volumen gegen die Großkliniken, sondern über Vertrauen, persönliche Betreuung und ein hochwertiges Angebot. Wer nach „biologische Zahnmedizin" oder „Keramikimplantate" sucht, findet die Praxis ohnehin. Aber wer einfach nur „Zahnimplantate Essen" googelt — den müssen wir auch abholen. Das vergrößert den erreichbaren Markt um ein Vielfaches.
+        </p>
+      </div>
+    </div>
+
+    <!-- NÄCHSTE SCHRITTE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon blue">🚀</div>
+        <div class="section-title">Unsere nächsten Schritte</div>
+      </div>
+
+      <div class="roadmap-step">
+        <div class="step-number quick">1</div>
+        <div class="step-content">
+          <h4>Website umbauen + Bewertungen aufbauen</h4>
+          <p>
+            Der wichtigste Hebel, deshalb Punkt 1. Die Startseite braucht Trust-Elemente: Google-Bewertungen einbinden, Arztprofil mit Qualifikationen, Praxisfotos, Zertifizierungen. Implantate müssen raus aus der Behandlungsliste und rein als Hauptthema. Und die Positionierung muss breiter werden — nicht „biologische Zahnheilkunde", sondern <strong>„Ihr Zahnarzt für Zahnimplantate in Essen"</strong>. Keramik als Premium-Option im Gespräch, nicht als Einstieg. Parallel starten wir den systematischen Aufbau von Google-Bewertungen: ~12 aktuell vs. 50–126 bei der Konkurrenz. Ziel: 50+ in 6 Monaten.
+          </p>
+          <span class="step-tag quick">Priorität 1 · Sofort starten</span>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div class="step-number quick">2</div>
+        <div class="step-content">
+          <h4>Neue Anzeigen-Creatives testen</h4>
+          <p>
+            0,87 % Link-CTR ist okay, aber da geht mehr. Was wir testen wollen: Video-Ads mit dem Arzt persönlich, Patientenstimmen als Carousel, ein „3 Gründe für Keramikimplantate"-Format. Außerdem verschiedene Hooks: Schmerz-vermeidend („Nie wieder Zahnprobleme") vs. Gewinn-orientiert („Wieder unbeschwert lachen"). Ziel: 1,2 %+ CTR.
+          </p>
+          <span class="step-tag quick">Priorität 1 · Nächste 2 Wochen</span>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div class="step-number medium">3</div>
+        <div class="step-content">
+          <h4>Landing Page weiter optimieren</h4>
+          <p>
+            Die LP ist schon gut, aber ein paar Sachen können wir noch verbessern: Telefonnummer oder WhatsApp-Button ergänzen (die Zielgruppe 35+ in Essen greift gerne zum Hörer), eine Preisorientierung einbauen („ab X €" oder „Finanzierung möglich"), echte Behandlungsfälle zeigen statt nur Lächeln-Fotos, und die FAQ-Texte vervollständigen — einige brechen aktuell mittendrin ab.
+          </p>
+          <span class="step-tag medium">Priorität 2 · Parallel</span>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div class="step-number medium">4</div>
+        <div class="step-content">
+          <h4>Retargeting-Kampagne aufsetzen</h4>
+          <p>
+            Von 961 Meta-Klickern sind über 950 wieder weg ohne Lead. Die kennen die Praxis jetzt — wir müssen sie nur nochmal abholen. Eine Retargeting-Kampagne (7–30 Tage nach Besuch) mit Testimonials, Praxisvideo und einem klaren CTA bringt erfahrungsgemäß Leads, die 3–5x günstiger sind als Kaltakquise.
+          </p>
+          <span class="step-tag medium">Priorität 2 · Parallel</span>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div class="step-number long">5</div>
+        <div class="step-content">
+          <h4>Budget und Zielgruppen schrittweise hochfahren</h4>
+          <p>
+            Wenn die Website steht und die Conversion-Rate besser wird: Budget in 20-%-Schritten erhöhen. Bei Google Ads Implantologie liegt am meisten brach — 80 %+ der Suchanfragen bedienen wir aktuell nicht. Von 13 € auf 25–30 € Tagesbudget bringt sofort mehr qualifizierte Klicks. Bei Meta testen wir neue Audiences (Lookalike, Zahngesundheits-Interessen) — die Frequenz von 2,78 zeigt, dass die aktuelle Zielgruppe langsam durchgesehen ist.
+          </p>
+          <span class="step-tag long">Priorität 3 · Ab Monat 2</span>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div class="step-number long">6</div>
+        <div class="step-content">
+          <h4>KI-Sichtbarkeit prüfen und aufbauen</h4>
+          <p>
+            Immer mehr Patienten fragen ChatGPT, Perplexity oder nutzen Google AI Overviews, bevor sie einen Zahnarzt anrufen. Die Frage ist: <strong>Taucht die Praxis Hellriegel auf, wenn jemand fragt „Wer ist der beste Zahnarzt für Keramikimplantate in Essen?"</strong> Wir würden hier eine gezielte Analyse machen: Bei welchen Fragen kommt die Praxis vor, wo nicht, wer taucht stattdessen auf? Das ist der nächste große Kanal — und wer früh drin ist, hat einen echten Vorteil gegenüber der Konkurrenz.
+          </p>
+          <span class="step-tag long">Priorität 3 · Empfehlung</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZUSAMMENFASSUNG -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon blue">📋</div>
+        <div class="section-title">Fazit</div>
+      </div>
+
+      <div class="insight-box info">
+        <div class="insight-title">Das Fundament steht — jetzt geht's an die drei größten Hebel</div>
+        <div class="insight-text">
+          Meta und Google spielen gut zusammen. CPL von ~139 € bei Behandlungswerten von 3.000–15.000 € — das ist profitabel. Wo wir jetzt ansetzen: <strong>1)</strong> Website umbauen, damit Patienten, die nach dem Klick googeln, nicht abspringen. <strong>2)</strong> Leads in der Praxis schneller nachfassen — 4 unbearbeitete und 5 nicht erreichte Leads sind Potenzial, das da liegt. <strong>3)</strong> KI-Sichtbarkeit angehen — wer bei ChatGPT und Perplexity empfohlen wird, gewinnt Patienten, bevor die überhaupt bei Google landen.
+        </div>
+      </div>
+
+      <div style="background: var(--neutral-bg); border-radius: 12px; padding: 24px; margin-top: 20px;">
+        <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 12px;">Wo wir in 8 Wochen stehen wollen</h4>
+        <table class="metric-table" style="margin-bottom:0;">
+          <thead>
+            <tr>
+              <th>Metrik</th>
+              <th>Aktuell</th>
+              <th>Ziel (in 8 Wochen)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Conversion-Rate (LP)</td>
+              <td class="metric-value" style="color:var(--warning);">~1,4 %</td>
+              <td class="metric-value" style="color:var(--success);">3–5 %</td>
+            </tr>
+            <tr>
+              <td>Cost per Lead (alle Kanäle)</td>
+              <td class="metric-value" style="color:var(--warning);">~139 €</td>
+              <td class="metric-value" style="color:var(--success);">80–120 €</td>
+            </tr>
+            <tr>
+              <td>Leads pro Monat (Meta + Google)</td>
+              <td class="metric-value" style="color:var(--warning);">~8–9</td>
+              <td class="metric-value" style="color:var(--success);">15–20</td>
+            </tr>
+            <tr>
+              <td>Lead-to-Patient-Rate</td>
+              <td class="metric-value" style="color:var(--warning);">~12 %</td>
+              <td class="metric-value" style="color:var(--success);">20–25 %</td>
+            </tr>
+            <tr>
+              <td>Link-CTR</td>
+              <td class="metric-value">0,87 %</td>
+              <td class="metric-value" style="color:var(--success);">1,2–1,5 %</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>Erstellt am 17. April 2026 · Schmidtke GmbH · Paid Media</span>
+    <span>Vertraulich — Nur für internen Gebrauch</span>
+  </div>
+
+</div>
+</body>
+</html>
