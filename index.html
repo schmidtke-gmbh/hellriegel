@@ -47,7 +47,7 @@
   "priceRange": "€€€",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Heckstraße 31D",
+    "streetAddress": "Heckstraße 31",
     "addressLocality": "Essen",
     "addressRegion": "NRW",
     "postalCode": "45239",
@@ -93,9 +93,11 @@
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
+    {"@type":"Question","name":"Sind Keramikimplantate eine Kassenleistung?","acceptedAnswer":{"@type":"Answer","text":"Nein. Gesetzliche Krankenkassen bezahlen ausschließlich Standardversorgungen mit Titan. Keramikimplantate, metallfreier Zahnersatz und biokompatible Materialien sind Privatleistungen. Wir bieten transparente Heil- und Kostenpläne sowie faire Ratenzahlung über BFS (optional zinsfrei)."}},
     {"@type":"Question","name":"Was kosten Keramikimplantate in Essen?","acceptedAnswer":{"@type":"Answer","text":"Ein Keramikimplantat inklusive Krone beginnt ab ca. 2.900 €. Im persönlichen Beratungstermin erstellen wir Ihnen einen individuellen Heil- und Kostenplan."}},
     {"@type":"Question","name":"Wie schnell bekomme ich einen Termin?","acceptedAnswer":{"@type":"Answer","text":"Neue Patienten erhalten in der Regel innerhalb von 7–14 Tagen einen Termin."}},
-    {"@type":"Question","name":"Wo befindet sich die Praxis?","acceptedAnswer":{"@type":"Answer","text":"In Essen-Werden: Heckstraße 31D, 45239 Essen. Idyllische Lage im Süden Essens, gut mit Auto, Bus und S-Bahn (S6) erreichbar."}}
+    {"@type":"Question","name":"Wo befindet sich die Praxis?","acceptedAnswer":{"@type":"Answer","text":"In Essen-Werden: Heckstraße 31, 45239 Essen. Idyllische Lage im Süden Essens, gut mit Auto, Bus und S-Bahn (S6) erreichbar."}},
+    {"@type":"Question","name":"Was unterscheidet eine biologische Zahnarztpraxis?","acceptedAnswer":{"@type":"Answer","text":"Wir betrachten den Mundraum im Kontext des Gesamtorganismus: individuell geprüfte biokompatible Materialien, körpereigene Wachstumsfaktoren (A-PRF), Laser- und Ozon-unterstützte Therapien, Mikronährstoff-Begleitung. Zeit für jeden Patienten statt Akkord-Termine."}}
   ]
 }
 </script>
@@ -603,36 +605,94 @@
   .schwerp-card.featured .icon-bubble-light::after{border-color:rgba(228,202,124,.5);}
   .schwerp-card.featured .brand-icon .ico-stroke{stroke:#fff;}
 
-  /* SCHWERPUNKTE */
+  /* SCHWERPUNKTE · Bento-Style — kompakt mit innerem Visual */
   .schwerpunkte{padding:110px 0 120px;background:var(--c-weiss);position:relative;}
-  .schwerpunkte::before{content:"";position:absolute;left:-100px;top:200px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--c-gold-l),var(--c-gold-d));opacity:.08;}
-  .schwerp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative;z-index:1;}
-  .schwerp-card{position:relative;background:var(--c-hellgrau);border-radius:24px;overflow:hidden;transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column;}
-  .schwerp-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(27,31,42,.1);}
-  .schwerp-card.featured{background:var(--c-anthrazit);color:#fff;}
-  .schwerp-card.featured .num{color:rgba(255,255,255,.25);}
-  .schwerp-card.featured h3,.schwerp-card.featured h3 a{color:#fff;}
-  .schwerp-card.featured h3 .accent{color:var(--c-gold-l);}
-  .schwerp-card.featured p{color:rgba(255,255,255,.75);}
-  .schwerp-card.featured .feat li{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.1);}
-  .schwerp-card.featured .more{color:var(--c-gold-l);}
-  .schwerp-image{position:relative;aspect-ratio:5/4;background:var(--c-stein);overflow:hidden;display:flex;align-items:center;justify-content:center;}
-  .schwerp-card.featured .schwerp-image{background:#0f1218;}
-  .schwerp-image img{width:88%;height:auto;transform:scale(1.05);}
-  .schwerp-image .badge{position:absolute;top:18px;left:18px;background:rgba(255,255,255,.92);color:var(--c-anthrazit);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;border-radius:999px;}
-  .schwerp-image .badge .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--c-gold);margin-right:8px;vertical-align:middle;}
-  .schwerp-content{padding:36px 34px;flex:1;display:flex;flex-direction:column;}
-  .schwerp-content .num{font-size:12px;font-weight:700;color:#c4c6cb;letter-spacing:1.5px;margin-bottom:14px;}
-  .schwerp-content h3{font-size:26px;font-weight:600;letter-spacing:-.4px;line-height:1.18;color:var(--c-anthrazit);margin-bottom:14px;}
+  .schwerpunkte::before{content:"";position:absolute;left:-100px;top:200px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--c-gold-l),var(--c-gold-d));opacity:.06;pointer-events:none;}
+  .schwerp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;position:relative;z-index:1;}
+  .schwerp-card{
+    position:relative;
+    background:var(--c-hellgrau);
+    border:1px solid var(--c-border);
+    border-radius:22px;
+    padding:22px;
+    display:flex;flex-direction:column;
+    transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;
+  }
+  .schwerp-card:hover{border-color:rgba(197,166,74,.45);transform:translateY(-4px);box-shadow:0 24px 50px rgba(27,31,42,.08);}
+  /* Hide alte Komponenten die wir nicht mehr brauchen */
+  .schwerp-card .icon-bubble-light{display:none;}
+  .schwerp-card p{display:none;}
+  /* Inner-Visual Box · kompakt mit Bild oder Symbol */
+  .schwerp-image{
+    position:relative;
+    height:220px;
+    background:#fff;
+    border:1px solid var(--c-border);
+    border-radius:16px;
+    overflow:hidden;
+    margin-bottom:24px;
+  }
+  .schwerp-card.featured .schwerp-image{background:#0f1218;border-color:rgba(255,255,255,.08);}
+  .schwerp-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transition:transform .6s ease;
+  }
+  .schwerp-card:hover .schwerp-image img{transform:scale(1.03);}
+  .schwerp-image .badge{
+    position:absolute;top:14px;left:14px;
+    background:rgba(255,255,255,.95);
+    color:var(--c-anthrazit);
+    font-size:9.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;
+    box-shadow:0 4px 12px rgba(27,31,42,.08);
+  }
+  .schwerp-image .badge .dot{
+    display:inline-block;width:5px;height:5px;border-radius:50%;
+    background:var(--c-gold);margin-right:7px;vertical-align:middle;
+  }
+  /* Content · kompakt strukturiert wie pott-seo */
+  .schwerp-content{padding:0;flex:1;display:flex;flex-direction:column;}
+  .schwerp-content .num{
+    font-family:'Montserrat',monospace,monospace;
+    font-size:10.5px;font-weight:700;color:var(--c-gold-d);
+    letter-spacing:2.5px;margin-bottom:14px;
+  }
+  .schwerp-content h3{
+    font-size:21px;font-weight:700;letter-spacing:-.3px;line-height:1.18;
+    color:var(--c-anthrazit);margin-bottom:18px;
+  }
+  .schwerp-content h3 a{color:inherit;}
   .schwerp-content h3 .accent{color:var(--c-gold-d);}
-  .schwerp-content p{font-size:15px;line-height:1.65;color:var(--c-text);margin-bottom:24px;}
-  .schwerp-content .feat{list-style:none;margin:0 0 26px;}
-  .schwerp-content .feat li{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--c-text);padding:10px 0;border-top:1px solid rgba(27,31,42,.08);}
-  .schwerp-content .feat li:last-child{border-bottom:1px solid rgba(27,31,42,.08);}
-  .schwerp-content .feat li svg{width:14px;height:14px;color:var(--c-gold);flex-shrink:0;}
-  .schwerp-content .more{margin-top:auto;display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--c-anthrazit);transition:gap .2s,color .2s;}
-  .schwerp-content .more:hover{gap:16px;color:var(--c-gold-d);}
-  .schwerp-content .more .arrow{display:inline-flex;align-items:center;justify-content:center;width:18px;height:12px;color:var(--c-gold);}
+  .schwerp-content .feat{list-style:none;margin:0 0 22px;}
+  .schwerp-content .feat li{
+    display:flex;align-items:flex-start;gap:12px;
+    font-size:13.5px;line-height:1.5;color:var(--c-text);
+    padding:8px 0;
+  }
+  .schwerp-content .feat li svg{
+    width:16px;height:16px;color:var(--c-gold);flex-shrink:0;
+    margin-top:2px;
+    padding:3px;border:1.5px solid rgba(197,166,74,.4);border-radius:50%;
+    box-sizing:content-box;
+  }
+  .schwerp-content .feat li strong{color:var(--c-anthrazit);font-weight:600;}
+  .schwerp-content .more{
+    margin-top:auto;padding-top:18px;
+    border-top:1px solid var(--c-border);
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
+    color:var(--c-anthrazit);
+    transition:color .2s ease,gap .2s ease;
+  }
+  .schwerp-content .more::before{content:"";display:inline-block;width:18px;height:18px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cg%20stroke%3D%22%23C5A64A%22%20stroke-width%3D%2210%22%20fill%3D%22none%22%20stroke-linecap%3D%22square%22%3E%3Cline%20x1%3D%2230%22%20y1%3D%2214%22%20x2%3D%2230%22%20y2%3D%2288%22/%3E%3Cline%20x1%3D%2250%22%20y1%3D%2214%22%20x2%3D%2250%22%20y2%3D%2288%22/%3E%3Cline%20x1%3D%2274%22%20y1%3D%2230%22%20x2%3D%2274%22%20y2%3D%2288%22/%3E%3Cline%20x1%3D%2230%22%20y1%3D%2222%22%20x2%3D%2274%22%20y2%3D%2230%22/%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2274%22%20y2%3D%2254%22/%3E%3C/g%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat;background-position:center;flex-shrink:0;}
+  .schwerp-content .more:hover{color:var(--c-gold-d);gap:14px;}
+  .schwerp-content .more .arrow{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:18px;height:12px;color:var(--c-gold);margin-left:auto;
+  }
   .schwerp-content .more .arrow svg{width:18px;height:10px;stroke:currentColor;stroke-width:1.4;fill:none;stroke-linecap:square;stroke-linejoin:miter;}
 
   /* IMPLANT PIN (Sticky-Scroll im SDS-Stil) */
@@ -1233,9 +1293,9 @@
   /* Werden-Bezirk-Highlight · am westlichen Ende des Baldeneysees */
   .map-highlight{
     position:absolute;
-    left:41%;top:82%;
+    left:38%;top:88%;
     transform:translate(-50%,-50%);
-    width:110px;height:120px;
+    width:90px;height:100px;
     border-radius:50%;
     background:radial-gradient(ellipse,rgba(197,166,74,.5) 0%,rgba(197,166,74,.22) 45%,transparent 75%);
     pointer-events:none;
@@ -1255,7 +1315,7 @@
     transform:translate(-50%,-100%);
     display:flex;flex-direction:column;align-items:center;
   }
-  .map-pin-essen{left:41%;top:78%;}
+  .map-pin-essen{left:38%;top:84%;}
   /* "Unsere Praxis" Label über dem Pin */
   .map-pin .pin-label{
     margin-bottom:8px;
@@ -1319,15 +1379,15 @@
     100%{transform:translate(-50%,-50%) scale(4.2);opacity:0;}
   }
 
-  /* Floating Adress-Card · liegt frei vor der gefadeten Karte */
+  /* Floating Adress-Card · oben links damit der Pin unten sichtbar bleibt */
   .map-card{
     position:absolute;
-    left:8px;bottom:24px;right:auto;
-    max-width:280px;
+    left:8px;top:24px;right:auto;bottom:auto;
+    max-width:260px;
     background:var(--c-anthrazit);
     color:#fff;
     border-radius:14px;
-    padding:18px 22px;
+    padding:16px 20px;
     z-index:7;
     box-shadow:0 22px 50px rgba(27,31,42,.22),0 0 0 1px rgba(197,166,74,.18);
   }
@@ -1356,7 +1416,56 @@
   }
   /* (alte Decorative-Eck-Markierungen entfernt — Frame existiert nicht mehr) */
 
+  /* THERAPIEN TEASER · 2-Spalten mit Statue */
+  .therapien-teaser{
+    padding:120px 0;
+    background:
+      radial-gradient(circle at 8% 12%, rgba(168,184,138,.18) 0, transparent 28%),
+      radial-gradient(circle at 95% 95%, rgba(197,166,74,.10) 0, transparent 32%),
+      var(--c-hellgrau);
+    position:relative;
+    /* KEIN overflow:hidden — sonst greift position:sticky nicht beim Statue-Bild! */
+  }
+  .ther-grid{display:grid;grid-template-columns:1.05fr .85fr;gap:80px;align-items:start;position:relative;z-index:1;}
+  .ther-text .kicker{font-size:11px;font-weight:700;color:var(--c-gold-d);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:block;}
+  .ther-text h2{font-size:clamp(28px,3.2vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.5px;text-transform:uppercase;margin-bottom:20px;}
+  .ther-text h2 .accent{color:var(--c-gold-d);}
+  .ther-text .lead{font-size:15.5px;line-height:1.7;color:var(--c-text);margin-bottom:36px;max-width:540px;}
+  .ther-list{display:flex;flex-direction:column;gap:2px;margin-bottom:40px;border-top:1px solid var(--c-border);}
+  .ther-list a{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:18px;padding:18px 8px;border-bottom:1px solid var(--c-border);transition:background .2s ease,padding-left .2s ease;}
+  .ther-list a:hover{background:rgba(197,166,74,.05);padding-left:16px;}
+  .ther-list .ico{width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--c-border);display:flex;align-items:center;justify-content:center;color:var(--c-gold-d);flex-shrink:0;transition:background .2s ease,border-color .2s ease;}
+  .ther-list a:hover .ico{background:var(--c-gold);border-color:var(--c-gold);color:#fff;}
+  .ther-list .ico svg{width:18px;height:18px;}
+  .ther-list .label{font-size:15px;font-weight:600;color:var(--c-anthrazit);letter-spacing:.1px;}
+  .ther-list .sub{font-size:12.5px;color:var(--c-muted);font-weight:500;margin-top:2px;display:block;}
+  .ther-list .arr{color:var(--c-muted);transition:transform .2s ease,color .2s ease;}
+  .ther-list a:hover .arr{color:var(--c-gold-d);transform:translateX(4px);}
+  .ther-list .arr svg{width:18px;height:12px;stroke:currentColor;stroke-width:1.4;fill:none;}
+  .ther-cta{display:inline-flex;align-items:center;gap:18px;padding:18px 32px;background:var(--c-anthrazit);color:#fff;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;transition:background .2s ease,transform .2s ease,box-shadow .2s ease;}
+  .ther-cta:hover{background:var(--c-gold-d);transform:translateY(-2px);box-shadow:0 14px 30px rgba(154,126,48,.35);}
+  .ther-cta svg{width:18px;height:12px;stroke:currentColor;stroke-width:1.2;fill:none;}
+  .ther-visual{position:sticky;top:130px;display:flex;align-items:center;justify-content:center;min-height:540px;align-self:start;}
+  .ther-visual::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(228,202,124,.4),rgba(154,126,48,.18) 50%,transparent 75%);z-index:0;animation:floatGold 8s ease-in-out infinite;}
+  .ther-visual .statue{position:relative;z-index:1;width:100%;max-width:480px;height:auto;filter:drop-shadow(0 30px 60px rgba(27,31,42,.18));transform-origin:50% 55%;will-change:transform;transition:transform .12s linear;}
+  .ther-visual .ther-tag{
+    position:absolute;left:10px;bottom:30px;z-index:2;
+    background:rgba(255,255,255,.96);backdrop-filter:blur(8px);
+    color:var(--c-anthrazit);padding:10px 18px;border-radius:999px;
+    font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:10px;
+    box-shadow:0 10px 24px rgba(27,31,42,.12);
+    border:1px solid rgba(197,166,74,.3);
+  }
+  .ther-visual .ther-tag::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--c-gold);}
+  @media (max-width:980px){
+    .ther-grid{grid-template-columns:1fr;gap:48px;}
+    .ther-visual{order:-1;min-height:auto;position:relative;top:auto;}
+    .ther-visual .statue{max-width:340px;}
+  }
+
   /* CTA BANNER */
+  
   .cta-banner{padding:90px 0;background:linear-gradient(135deg,var(--c-anthrazit) 0%,#252a37 100%);position:relative;overflow:hidden;}
   .cta-banner::before{content:"";position:absolute;left:-100px;top:-100px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--c-gold-l),var(--c-gold-d));opacity:.18;}
   .cta-inner{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;position:relative;z-index:1;}
@@ -1592,7 +1701,7 @@
 <div class="topbar">
   <div class="container topbar-inner">
     <div class="left">
-      <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Heckstraße 31D · 45239 Essen</span>
+      <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Heckstraße 31 · 45239 Essen</span>
       <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Mo–Do 08:00–18:00 · Fr 08:00–14:00</span>
     </div>
     <div class="right">
@@ -1645,6 +1754,7 @@
             <div class="mega-col-list">
               <span class="col-label">Weitere Leistungen</span>
               <ul class="mega-list">
+                <li><a href="aesthetik.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span>Ästhetik (biologisch)<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="/zahnerhaltung"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8a2 2 0 00-2-2h-3l-3-3-3 3H6a2 2 0 00-2 2v9a2 2 0 002 2h7"/><path d="M16 18l2 2 4-4"/></svg></span>Zahnerhaltung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="/parodontitis"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Parodontitis-Therapie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="/funktionsdiagnostik"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="9"/></svg></span>Funktionsdiagnostik &amp; CMD<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
@@ -1652,7 +1762,7 @@
             </div>
           </div>
           <div class="mega-footer">
-            <span><strong>Leistungsübersicht</strong> · 7 Schwerpunkte in Essen-Werden</span>
+            <span><strong>Leistungsübersicht</strong> · 8 Schwerpunkte in Essen-Werden</span>
             <a href="/leistungen">Alle Leistungen ansehen <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></a>
           </div>
         </div>
@@ -1704,7 +1814,7 @@
             </div>
           </div>
           <div class="mega-footer">
-            <span><strong>Heckstraße 31D</strong> · 45239 Essen</span>
+            <span><strong>Heckstraße 31</strong> · 45239 Essen</span>
             <a href="/kontakt">Termin vereinbaren <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></a>
           </div>
         </div>
@@ -1751,6 +1861,7 @@
                 <li><a href="sinuslift.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3 6 12H2"/></svg></span>Sinuslift<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="kosten-finanzierung.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>Kosten &amp; Finanzierung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="zirkonoxid-sds.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></span>Zirkonoxid · SDS<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="therapien.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg></span>Therapien &amp; Besonderheiten<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="faq-implantate.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 015.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17.01"/></svg></span>FAQ Implantate<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
               </ul>
             </div>
@@ -1921,7 +2032,7 @@
       <article class="schwerp-card featured">
         <div class="schwerp-image">
           <span class="badge"><span class="dot"></span> Schwerpunkt 01</span>
-          <img src="images/Hellriegel_Visuals_60x60_2.png" alt="Keramikimplantate Essen · Implantologie">
+          <img src="images/sp-keramik-hell.jpg" alt="Keramikimplantate Essen · biokompatibel">
         </div>
         <div class="schwerp-content">
           <div class="icon-bubble-light">
@@ -1946,7 +2057,7 @@
       <article class="schwerp-card">
         <div class="schwerp-image">
           <span class="badge"><span class="dot"></span> Schwerpunkt 02</span>
-          <img src="images/Hellriegel_Visuals_60x60_1.png" alt="Metallfreier Zahnersatz Essen · Vollkeramik-Kronen, Inlays, Brücken">
+          <img src="images/sp-metallfrei-hell.jpg" alt="Metallfreier Zahnersatz Essen · Vollkeramik-Kronen, Inlays, Brücken">
         </div>
         <div class="schwerp-content">
           <div class="icon-bubble-light">
@@ -1959,7 +2070,7 @@
               <circle class="ico-fill" cx="50" cy="40" r="2"/>
             </svg>
           </div>
-          <div class="num">02 · ÄSTHETISCHE ZAHNMEDIZIN</div>
+          <div class="num">02 · METALLFREIER ZAHNERSATZ</div>
           <h3><a href="metallfreier-zahnersatz.html"><span class="accent">Metallfreier</span> Zahnersatz.</a></h3>
           <p>Vollkeramik-Kronen, Inlays und Brücken: Zahnersatz aus 100 % biokompatiblen Materialien — ohne jegliches Metall im Mund.</p>
           <ul class="feat">
@@ -1973,7 +2084,7 @@
       <article class="schwerp-card">
         <div class="schwerp-image">
           <span class="badge"><span class="dot"></span> Schwerpunkt 03</span>
-          <img src="images/Hellriegel_Visuals_60x60_4.png" alt="Ganzheitliche Zahnmedizin Essen · Hauke Hellriegel">
+          <img src="images/sp-ganzheitlich-hell.jpg" alt="Ganzheitliche Zahnmedizin Essen · Hauke Hellriegel">
         </div>
         <div class="schwerp-content">
           <div class="icon-bubble-light">
@@ -1992,6 +2103,32 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CMD & Materialtest</li>
           </ul>
           <a href="ganzheitliche-zahnmedizin.html" class="more">Mehr erfahren<span class="arrow"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"><line x1="0" y1="7" x2="29" y2="7"/><polyline points="22 1 29 7 22 13"/></svg></span></a>
+        </div>
+      </article>
+      <article class="schwerp-card">
+        <div class="schwerp-image">
+          <span class="badge"><span class="dot"></span> Schwerpunkt 04</span>
+          <img src="images/sp-aesthetik-hell.jpg" alt="Ästhetische Zahnmedizin Essen · schön und gesund">
+        </div>
+        <div class="schwerp-content">
+          <div class="icon-bubble-light">
+            <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
+              <path class="ico-stroke" d="M20 28 Q32 18 44 28 Q32 38 20 28 Z"/>
+              <path class="ico-accent" d="M28 28 Q32 32 36 28"/>
+              <circle class="ico-fill" cx="48" cy="22" r="2"/>
+              <circle class="ico-fill" cx="18" cy="22" r="1.5"/>
+              <path class="ico-accent" d="M30 44 L34 44 M28 48 L36 48"/>
+            </svg>
+          </div>
+          <div class="num">04 · ÄSTHETIK · BIOLOGISCH</div>
+          <h3><a href="aesthetik.html"><span class="accent">Schön</span> und gesund.</a></h3>
+          <p>Ein ästhetisches Lächeln ist großartig — aber nur, wenn die Materialien dahinter biokompatibel sind. Wir denken Ästhetik immer gesund mit.</p>
+          <ul class="feat">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>Geprüft verträgliche Materialien</strong></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Schöne Frontzähne ohne Kompromiss</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Substanzschonend statt überschleifen</li>
+          </ul>
+          <a href="aesthetik.html" class="more">Mehr erfahren<span class="arrow"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"><line x1="0" y1="7" x2="29" y2="7"/><polyline points="22 1 29 7 22 13"/></svg></span></a>
         </div>
       </article>
     </div>
@@ -2098,6 +2235,64 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- THERAPIEN TEASER · neues 2-Spalten-Layout -->
+<section class="therapien-teaser" aria-labelledby="ther-h2">
+  <div class="container">
+    <div class="ther-grid">
+      <div class="ther-text">
+        <span class="kicker">Was uns besonders macht</span>
+        <h2 id="ther-h2">Therapien, die <span class="accent">tiefer gehen</span>.</h2>
+        <p class="lead">Wir nutzen Verfahren, die in normalen Praxen kaum vorkommen — biologisch konsequent, von der Diagnostik bis zur Nachsorge. Was bei uns Standard ist, ist anderswo Premium-Sonderleistung.</p>
+        <div class="ther-list">
+          <a href="therapien.html#laser">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="12" x2="22" y2="12"/><circle cx="6" cy="12" r="2"/></svg></span>
+            <span><span class="label">Laser-Therapie</span><span class="sub">Verschiedene Wellenlängen · antibakteriell · regenerativ</span></span>
+            <span class="arr"><svg viewBox="0 0 30 14"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span>
+          </a>
+          <a href="therapien.html#ozon">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></span>
+            <span><span class="label">Ozon-Therapie</span><span class="sub">Desinfektion ohne Antibiotika · Herpes · Aften</span></span>
+            <span class="arr"><svg viewBox="0 0 30 14"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span>
+          </a>
+          <a href="therapien.html#infusionen">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2h6v4l-3 3-3-3V2z"/><path d="M12 9v13"/></svg></span>
+            <span><span class="label">Longevity-Infusionen</span><span class="sub">Vitamin-C-Hochdosis · Mito · Procain-Basen</span></span>
+            <span class="arr"><svg viewBox="0 0 30 14"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span>
+          </a>
+          <a href="therapien.html#ahnf">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 8c4 0 7 8 14 0M5 16c4 0 7-8 14 0"/></svg></span>
+            <span><span class="label">AHNF &amp; Neuraltherapie</span><span class="sub">Faszien · Triggerpunkte · Störfeldbehandlung</span></span>
+            <span class="arr"><svg viewBox="0 0 30 14"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span>
+          </a>
+          <a href="therapien.html#eigenblut">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 8 5 12 5 16a7 7 0 0014 0c0-4-3-8-7-14z"/></svg></span>
+            <span><span class="label">Eigenblut (A-PRF / I-PRF)</span><span class="sub">Wachstumsfaktoren statt Fremdmaterial</span></span>
+            <span class="arr"><svg viewBox="0 0 30 14"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span>
+          </a>
+          <a href="therapien.html#paro">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <span><span class="label">Parodontitis-Therapie</span><span class="sub">Konsequent biologisch · Laser · A-PRF</span></span>
+            <span class="arr"><svg viewBox="0 0 30 14"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span>
+          </a>
+          <a href="therapien.html#kurkuma">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span>
+            <span><span class="label">Kurkuma + Laser</span><span class="sub">Naturstoff trifft moderne Wellenlängen-Technik</span></span>
+            <span class="arr"><svg viewBox="0 0 30 14"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span>
+          </a>
+        </div>
+        <a href="therapien.html" class="ther-cta">
+          Alle Therapien im Detail
+          <svg viewBox="0 0 30 14"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg>
+        </a>
+      </div>
+      <div class="ther-visual">
+        <img src="images/Hellriegel_Visuals_60x60_3.png" alt="Biologische Zahnmedizin · Hauke Hellriegel" class="statue">
+        <span class="ther-tag">Biologisch · Konsequent</span>
+      </div>
     </div>
   </div>
 </section>
@@ -2334,12 +2529,12 @@
     </div>
     <div class="faq-wrap">
       <details class="faq-item" open>
-        <summary>Sind Sie als Zahnarzt in Essen auch für Kassenpatienten geöffnet?<span class="plus">+</span></summary>
-        <div class="a">Ja. Wir behandeln Privat- und Kassenpatienten. Grunduntersuchungen und Prophylaxe rechnen wir über die Krankenkasse ab. Ästhetische Leistungen, Keramikimplantate und biokompatible Materialien sind Privatleistungen, die wir Ihnen transparent vorab kalkulieren.</div>
+        <summary>Sind Keramikimplantate eine Kassenleistung?<span class="plus">+</span></summary>
+        <div class="a">Nein — und das hat einen guten Grund. Gesetzliche Krankenkassen bezahlen ausschließlich Standardversorgungen (Titan, klassische Materialien). Keramikimplantate, metallfreier Zahnersatz und biokompatible Materialien gelten als Privatleistung. Wer Wert auf <strong>biologisch verträgliche Versorgung</strong> legt, investiert bewusst in Qualität — wir helfen mit transparenten Heil- und Kostenplänen sowie fairer Ratenzahlung (BFS, optional zinsfrei).</div>
       </details>
       <details class="faq-item">
         <summary>Was kosten Keramikimplantate in Essen?<span class="plus">+</span></summary>
-        <div class="a">Ein Keramikimplantat inklusive Krone beginnt bei ca. 2.900 €. Der finale Preis hängt von Knochensituation, Anzahl der Implantate und gewünschtem Zahnersatz ab. Im persönlichen Beratungstermin erstellen wir Ihnen einen detaillierten, schriftlichen Heil- und Kostenplan. Eine 0%-Finanzierung über bis zu 60 Monate ist möglich.</div>
+        <div class="a">Ein Keramikimplantat inklusive Vollkeramikkrone beginnt bei ca. 2.900 €. Der finale Preis hängt von Knochensituation, Anzahl der Implantate und gewünschtem Zahnersatz ab. Im persönlichen Beratungstermin erstellen wir einen detaillierten, schriftlichen Heil- und Kostenplan — auf Wunsch mit fairer Ratenzahlung über die BFS.</div>
       </details>
       <details class="faq-item">
         <summary>Wie schnell bekomme ich einen Termin bei Hauke Hellriegel?<span class="plus">+</span></summary>
@@ -2347,15 +2542,15 @@
       </details>
       <details class="faq-item">
         <summary>Wo befindet sich die Praxis?<span class="plus">+</span></summary>
-        <div class="a">In Essen-Werden: Heckstraße 31D, 45239 Essen. Idyllisch gelegen im Süden Essens, direkt an der Ruhr. Patientenparkplätze vor der Tür, gut erreichbar mit Auto, Bus (Linien 169, 180, 190) und S-Bahn (S6 Haltestelle Werden).</div>
-      </details>
-      <details class="faq-item">
-        <summary>Was kostet ein Keramikimplantat?<span class="plus">+</span></summary>
-        <div class="a">Ein Keramikimplantat inklusive Vollkeramikkrone beginnt ab ca. 2.900 €. Im persönlichen Beratungstermin erstellen wir einen individuellen Heil- und Kostenplan — transparent, ohne Überraschungen.</div>
+        <div class="a">In Essen-Werden: Heckstraße 31, 45239 Essen. Idyllisch gelegen im Süden Essens, direkt an der Ruhr. Patientenparkplätze vor der Tür, gut erreichbar mit Auto, Bus (Linien 169, 180, 190) und S-Bahn (S6 Haltestelle Werden).</div>
       </details>
       <details class="faq-item">
         <summary>Warum setzen Sie auf Keramikimplantate?<span class="plus">+</span></summary>
-        <div class="a">Keramikimplantate aus hochreinem Zirkonoxid sind biokompatibel, ästhetisch hochwertig und besonders gewebefreundlich. Sie schimmern nicht durch das Zahnfleisch, sind farblich wie ein natürlicher Zahn und es entstehen keine elektrochemischen Reaktionen im Mund. Für anspruchsvolle Patienten die modernste und ästhetischste Lösung.</div>
+        <div class="a">Keramikimplantate aus hochreinem Zirkonoxid sind biokompatibel, gewebefreundlich und 100 % metallfrei. Sie schimmern nicht durch das Zahnfleisch, sind farblich wie ein natürlicher Zahn und es entstehen keine elektrochemischen Reaktionen im Mund. Für anspruchsvolle Patienten die modernste Lösung.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Was unterscheidet eine biologische Zahnarztpraxis von einer „normalen"?<span class="plus">+</span></summary>
+        <div class="a">Wir betrachten den Mundraum im Kontext des Gesamtorganismus. Konkret heißt das: ausführliche Anamnese, individuell geprüfte Materialien (auf Wunsch LTT/MELISA), körpereigene Wachstumsfaktoren (A-PRF) statt Fremdmaterial wo möglich, Laser- &amp; Ozon-unterstützte Therapien, Mikronährstoff-Begleitung. Keine Akkord-Termine — sondern Zeit für jeden Patienten.</div>
       </details>
     </div>
   </div>
@@ -2377,7 +2572,7 @@
             </div>
             <address>
               <strong>Hauke Hellriegel</strong>
-              Heckstraße 31D<br>
+              Heckstraße 31<br>
               45239 Essen<br>
               Deutschland
             </address>
@@ -2408,7 +2603,7 @@
         <!-- Praxis-Adresse als Mini-Label oben links -->
         <div class="map-meta-tl">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Heckstraße 31D</span>
+          <span>Heckstraße 31</span>
         </div>
         <!-- Echte Essen-Bezirkskarte (Wikimedia · CC-BY-SA) -->
         <div class="map-svg-wrap">
@@ -2429,8 +2624,8 @@
         <div class="map-card">
           <div class="map-card-inner">
             <strong>Hauke Hellriegel</strong>
-            <span>Heckstraße 31D · 45239 Essen</span>
-            <a href="https://maps.google.com/?q=Heckstra%C3%9Fe+31D+45239+Essen" target="_blank" rel="noopener" class="link">
+            <span>Heckstraße 31 · 45239 Essen</span>
+            <a href="https://maps.google.com/?q=Heckstra%C3%9Fe+31+45239+Essen" target="_blank" rel="noopener" class="link">
               <span class="link-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
               In Google Maps öffnen
             </a>
@@ -2585,6 +2780,7 @@
         <ul>
           <li><a href="keramikimplantate.html">Keramikimplantate</a></li>
           <li><a href="metallfreier-zahnersatz.html">Metallfreier Zahnersatz</a></li>
+          <li><a href="aesthetik.html">Ästhetik (biologisch)</a></li>
           <li><a href="ganzheitliche-zahnmedizin.html">Ganzheitlich</a></li>
           <li><a href="/zahnerhaltung">Zahnerhaltung</a></li>
           <li><a href="/parodontitis">Parodontitis-Therapie</a></li>
@@ -2606,7 +2802,7 @@
         <h4>Kontakt</h4>
         <address class="nap">
           <strong>Hauke Hellriegel</strong>
-          Heckstraße 31D<br>
+          Heckstraße 31<br>
           45239 Essen<br>
           Deutschland
         </address>
@@ -2736,6 +2932,33 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     updateImplantTransform();
+  })();
+
+
+  // ===== Therapien-Teaser Statue · Scroll-Rotation =====
+  (function(){
+    const section = document.querySelector('.therapien-teaser');
+    const statue = document.querySelector('.ther-visual .statue');
+    if (!section || !statue) return;
+    let ticking = false;
+    function update(){
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // 0 wenn Section gerade in den Viewport eintritt, 1 wenn sie ihn verlässt
+      const total = rect.height + vh;
+      const passed = vh - rect.top;
+      let p = Math.max(0, Math.min(1, passed / total));
+      const rotate = -8 + p * 16; // -8° → +8°
+      const scale = 0.97 + Math.sin(p * Math.PI) * 0.04;
+      statue.style.transform = `rotate(${rotate.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+      ticking = false;
+    }
+    function onScroll(){
+      if (!ticking){ requestAnimationFrame(update); ticking = true; }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll, {passive:true});
+    update();
   })();
 
   // ===== MEGA-MENÜ: Click + Hover · Klick-Außerhalb + ESC schließen =====

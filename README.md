@@ -91,7 +91,7 @@ Domain in den SEO-Tags ist als `https://hellriegel-zahnmedizin.de/` voreingestel
 ## Externe Dienste
 
 - **Google Fonts** — Montserrat
-- **Google Maps Link** in der Standort-Sektion (Heckstraße 31D, 45239 Essen)
+- **Google Maps Link** in der Standort-Sektion (Heckstraße 31, 45239 Essen)
 - **YouTube-Embeds** zu `@biologischerzahnarzt`
 - **BFS health finance** als optionaler Finanzierungspartner (auf `kosten-finanzierung.html` erwähnt)
 
