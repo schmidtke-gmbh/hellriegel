@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Das Meridian-System · Zahnmedizin Hauke Hellriegel</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --c-gold:#C5A64A;--c-gold-d:#9a7e30;--c-gold-l:#e4ca7c;
+    --c-anthrazit:#1B1F2A;--c-hellgrau:#F2F4F6;--c-weiss:#FFFFFF;
+    --c-salbei:#A8B88A;--c-blaugrau:#72848F;--c-stein:#E5E7EB;--c-taupe:#D6D0C4;
+    --c-text:#3a3a3d;--c-muted:#6b6b6e;--c-border:rgba(27,31,42,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--c-weiss);color:var(--c-anthrazit);font-family:'Montserrat',sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1240px;margin:0 auto;padding:80px 40px;}
+
+  .meridian{display:grid;grid-template-columns:1fr 1.05fr;gap:70px;align-items:start;}
+
+  /* --- linke Spalte / Intro + Infopanel --- */
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--c-gold-d);margin-bottom:22px;}
+  .m-head h1{font-size:clamp(30px,3.4vw,46px);font-weight:700;line-height:1.08;letter-spacing:-.8px;text-transform:uppercase;color:var(--c-anthrazit);margin-bottom:22px;}
+  .m-head p{color:var(--c-text);font-size:15.5px;max-width:520px;}
+
+  .panel{margin-top:38px;border:1px solid var(--c-border);background:var(--c-hellgrau);border-radius:20px;padding:34px 34px 30px;min-height:360px;}
+  .panel-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;color:var(--c-muted);min-height:300px;}
+  .panel-empty svg{width:34px;height:34px;color:var(--c-salbei);}
+  .panel-empty p{font-size:14px;letter-spacing:.3px;}
+
+  .p-toothline{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--c-blaugrau);padding-bottom:16px;border-bottom:1px solid var(--c-border);margin-bottom:22px;}
+  .p-label{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--c-muted);margin-bottom:8px;}
+  .p-organ{font-size:24px;font-weight:700;line-height:1.2;letter-spacing:-.3px;color:var(--c-anthrazit);margin-bottom:14px;}
+  .p-partner{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--c-text);margin-bottom:26px;}
+  .p-partner .tag{background:var(--c-salbei);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
+
+  .p-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 30px;}
+  .p-grid .cell .p-label{margin-bottom:6px;}
+  .p-grid .cell .val{font-size:14.5px;font-weight:600;color:var(--c-anthrazit);line-height:1.45;}
+
+  .p-foot{margin-top:26px;padding-top:20px;border-top:1px solid var(--c-border);font-size:11px;line-height:1.65;color:var(--c-muted);}
+  .p-foot b{color:var(--c-text);font-weight:700;}
+
+  /* --- rechte Spalte / Zahndiagramm --- */
+  .chart-box{background:var(--c-hellgrau);border:1px solid var(--c-border);border-radius:20px;padding:26px;position:sticky;top:30px;}
+  svg.arch{width:100%;height:auto;display:block;}
+  .tooth{cursor:pointer;}
+  .tooth .hl-back{fill:var(--c-salbei);opacity:0;transition:opacity .18s ease;}
+  .tooth .hl-top{fill:var(--c-salbei);opacity:0;mix-blend-mode:multiply;pointer-events:none;transition:opacity .18s ease;}
+  .tooth image{pointer-events:none;}
+  .tooth .num{fill:var(--c-anthrazit);font-size:19px;font-weight:700;font-family:'Montserrat',sans-serif;}
+  .tooth:hover .hl-back{opacity:.28;}
+  .tooth.active .hl-back{opacity:.9;stroke:var(--c-gold-d);stroke-width:1.5;vector-effect:non-scaling-stroke;}
+  .tooth.active .hl-top{opacity:.38;}
+  .midline{stroke:var(--c-border);stroke-width:1.5;stroke-dasharray:5 6;}
+
+  @media(max-width:920px){
+    .wrap{padding:54px 22px;}
+    .meridian{grid-template-columns:1fr;gap:36px;}
+    .chart-box{position:static;order:-1;}
+    .p-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:480px){
+    .p-grid{grid-template-columns:1fr;}
+    .panel{padding:26px 22px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meridian">
+
+    <!-- linke Spalte -->
+    <div>
+      <div class="m-head">
+        <div class="eyebrow">Das Meridian-System</div>
+        <h1>Jeder Zahn steht in Verbindung mit dem Körper</h1>
+        <p>In der biologischen Zahnmedizin geht man davon aus, dass jeder Zahn über Energieleitbahnen (Meridiane) mit bestimmten Organen, Wirbeln, Gelenken, Drüsen und Sinnesorganen in Beziehung steht. Wählen Sie einen Zahn – und sehen Sie alle Korrespondenzen, die wir in Anamnese, Diagnostik und Therapieplanung mitdenken.</p>
+      </div>
+
+      <div class="panel" id="panel">
+        <div class="panel-empty" id="panelEmpty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 5 7l1 12 2 1 1-6h4l1 6 2-1 1-12-4-4c-1.5-1-4.5-1-6 0Z"/></svg>
+          <p>Tippen oder klicken Sie einen Zahn im Diagramm an</p>
+        </div>
+        <div id="panelContent" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- rechte Spalte / Diagramm -->
+    <div class="chart-box">
+      <svg class="arch" id="arch" viewBox="0 0 620 720" xmlns="http://www.w3.org/2000/svg" aria-label="Zahndiagramm">
+        <line class="midline" x1="310" y1="34" x2="310" y2="686"/>
+        <line class="midline" x1="70" y1="360" x2="550" y2="360"/>
+        <g id="teeth"></g>
+      </svg>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ---------- Zahn-Organ-Datensatz (FDI 11–48) ---------- */
+/* Korrespondenzen nach Voll–Kramer, Bahr–Schmid und der TCM. */
+const G = {
+  herz:{sinn:"Ohr, Netzhaut", gel:"Schulter, Ellbogen, Hand (ulnar), Fuß plantar, Zehen", wir:"HWK 7 · BWK 1, 5–6 · Kreuzbein S1–S2", seg:"C8, Th1, Th5–Th7, S1–S3", dr:"periphere Nerven", uhr:"Herz 11–13 h · Dünndarm 13–15 h", so:"Energiehaushalt"},
+  lunge:{sinn:"Nase / Riechen", gel:"Schulter (dorsal), Ellbogen (radial), Hand & Handgelenk, Daumen, Fuß", wir:"HWK 5–7 · BWK 2–4", seg:"C5–C7, Th2–Th4", dr:"Thymus", uhr:"Lunge 3–5 h · Dickdarm 5–7 h", so:"Bronchien, Kieferhöhle"},
+  magen:{sinn:"Kieferhöhle, Zunge / Geschmack", gel:"Knie (vorn), Kiefergelenk, Fuß (medial)", wir:"BWK 11–12 · LWK 1", seg:"Th11, Th12, L1", dr:"Keimdrüse", uhr:"Magen 7–9 h · Milz/Pankreas 9–11 h", so:""},
+  leber:{sinn:"Auge / Sehen", gel:"Hüfte, Knie (außen), Fuß", wir:"BWK 8–10", seg:"Th8–Th10", dr:"Sexualdrüsen", uhr:"Galle 23–1 h · Leber 1–3 h", so:"peripheres Nervensystem"},
+  niere:{sinn:"Ohr / Hören, Urogenital", gel:"Fuß (dorsal), Knie (hinten), Steißbein, Kreuzbein", wir:"LWK 3 · Kreuzbein · Steißbein", seg:"L3, S1–S5, Co", dr:"Nebenniere · Epiphyse", uhr:"Blase 15–17 h · Niere 17–19 h", so:"Urogenitalsystem, Lymphe"}
+};
+
+// pro Zahn: region, organ, partner, group, + optional feld-overrides (so = Sonstiges)
+const TEETH = {
+  // Oberkiefer rechts
+  18:{r:"Oberkiefer rechts", o:"Herz rechts / Kreislauf · Allergien", p:"Dünndarm rechts", g:"herz"},
+  17:{r:"Oberkiefer rechts", o:"Milz / Pankreas · Magen rechts", p:"Magen rechts", g:"magen", so:"Mammadrüse rechts"},
+  16:{r:"Oberkiefer rechts", o:"Magen rechts (große Kurvatur)", p:"Milz / Pankreas", g:"magen", so:"Mammadrüse rechts"},
+  15:{r:"Oberkiefer rechts", o:"Dickdarm rechts", p:"Lunge rechts", g:"lunge"},
+  14:{r:"Oberkiefer rechts", o:"Lunge rechts", p:"Dickdarm rechts", g:"lunge"},
+  13:{r:"Oberkiefer rechts", o:"Leber rechts / Galle", p:"Galle rechts", g:"leber"},
+  12:{r:"Oberkiefer rechts", o:"Niere rechts / Blase", p:"Blase rechts", g:"niere"},
+  11:{r:"Oberkiefer rechts", o:"Blase rechts / Niere", p:"Niere rechts", g:"niere"},
+  // Oberkiefer links
+  21:{r:"Oberkiefer links", o:"Blase links / Niere", p:"Niere links", g:"niere"},
+  22:{r:"Oberkiefer links", o:"Niere links / Blase", p:"Blase links", g:"niere"},
+  23:{r:"Oberkiefer links", o:"Leber links / Galle", p:"Galle links", g:"leber"},
+  24:{r:"Oberkiefer links", o:"Lunge links", p:"Dickdarm links", g:"lunge"},
+  25:{r:"Oberkiefer links", o:"Dickdarm links", p:"Lunge links", g:"lunge"},
+  26:{r:"Oberkiefer links", o:"Magen links (große Kurvatur)", p:"Milz / Pankreas", g:"magen", so:"Mammadrüse links"},
+  27:{r:"Oberkiefer links", o:"Milz / Pankreas · Magen links", p:"Magen links", g:"magen", so:"Mammadrüse links"},
+  28:{r:"Oberkiefer links", o:"Herz links / Kreislauf · Allergien", p:"Dünndarm links", g:"herz"},
+  // Unterkiefer links
+  38:{r:"Unterkiefer links", o:"Dünndarm links (Jejunum, Ileum) · Allergien", p:"Herz links / Kreislauf", g:"herz"},
+  37:{r:"Unterkiefer links", o:"Lunge links", p:"Dickdarm links", g:"lunge"},
+  36:{r:"Unterkiefer links", o:"Dickdarm links", p:"Lunge links", g:"lunge"},
+  35:{r:"Unterkiefer links", o:"Magen links (Kardia)", p:"Milz / Pankreas", g:"magen", so:"Mammadrüse links"},
+  34:{r:"Unterkiefer links", o:"Magen links (Pylorus)", p:"Milz / Pankreas", g:"magen", so:"Mammadrüse links"},
+  33:{r:"Unterkiefer links", o:"Galle links / Leber", p:"Leber links", g:"leber"},
+  32:{r:"Unterkiefer links", o:"Blase links / Niere", p:"Niere links", g:"niere"},
+  31:{r:"Unterkiefer links", o:"Niere links / Blase", p:"Blase links", g:"niere"},
+  // Unterkiefer rechts
+  41:{r:"Unterkiefer rechts", o:"Niere rechts / Blase", p:"Blase rechts", g:"niere"},
+  42:{r:"Unterkiefer rechts", o:"Blase rechts / Niere", p:"Niere rechts", g:"niere"},
+  43:{r:"Unterkiefer rechts", o:"Galle rechts / Leber", p:"Leber rechts", g:"leber"},
+  44:{r:"Unterkiefer rechts", o:"Magen rechts (Pylorus)", p:"Milz / Pankreas", g:"magen", so:"Mammadrüse rechts"},
+  45:{r:"Unterkiefer rechts", o:"Magen rechts (Kardia)", p:"Milz / Pankreas", g:"magen", so:"Mammadrüse rechts"},
+  46:{r:"Unterkiefer rechts", o:"Dickdarm rechts", p:"Lunge rechts", g:"lunge"},
+  47:{r:"Unterkiefer rechts", o:"Lunge rechts", p:"Dickdarm rechts", g:"lunge"},
+  48:{r:"Unterkiefer rechts", o:"Dünndarm rechts (Jejunum, Ileum) · Allergien", p:"Herz rechts / Kreislauf", g:"herz"}
+};
+
+/* ---------- Diagramm-Layout: Zähne entlang zweier Bögen ---------- */
+// Reihenfolge von links (Betrachter) nach rechts über den Bogen
+const UPPER=[18,17,16,15,14,13,12,11,21,22,23,24,25,26,27,28];
+const LOWER=[48,47,46,45,44,43,42,41,31,32,33,34,35,36,37,38];
+const CX=310, RX=232, RY=245, CYU=316, CYL=404;
+
+/* Zahn-Icons (KI-generierte Okklusalansichten, images/meridian/):
+   außen (bukkal/labial) = oben, innen (lingual) = unten. */
+const IMGDIR="images/meridian/";
+const IMG={ // natürliche Pixelmaße der zugeschnittenen PNGs
+  "zahn-inzisiv":[234,240], "zahn-eckzahn":[176,240], "zahn-praemolar":[240,237],
+  "zahn-molar-ok":[240,238], "zahn-molar-uk":[240,236]
+};
+const BOX={ // Zielbox je Zahntyp (unskaliert) + Radius für Nummern-Offset
+  i:{w:36,h:38,r:19,file:"zahn-inzisiv"},
+  c:{w:32,h:40,r:19,file:"zahn-eckzahn"},
+  p:{w:34,h:34,r:17,file:"zahn-praemolar"},
+  m:{w:41,h:38,r:19,file:null} // Molar: OK/UK-Variante, s. buildTeethMarkup
+};
+
+function meta(t){
+  const n=t%10, up=t<30;
+  const type = n<=2 ? "i" : n===3 ? "c" : n<=5 ? "p" : "m";
+  const S_UP={1:1.12,2:.95,3:1.0,4:.92,5:.94,6:1.15,7:1.08,8:1.0};
+  const S_LO={1:.68,2:.74,3:.88,4:.92,5:.96,6:1.18,7:1.1,8:1.02};
+  return {type, scale: up? S_UP[n] : S_LO[n]};
+}
+
+function positions(order, up){
+  // Verteilung nach Bogenlänge, gewichtet mit der Zahnbreite -> gleichmäßige Abstände
+  const cy = up? CYU : CYL;
+  const W={i:36,c:32,p:34,m:41}; // Zahnbreite entlang des Bogens (unskaliert)
+  const pt=a=>({x:CX-RX*Math.cos(a), y: up? cy-RY*Math.sin(a) : cy+RY*Math.sin(a)});
+  const N=2000, len=[0], pts=[pt(0)];
+  for(let k=1;k<=N;k++){
+    const p=pt(Math.PI*k/N); pts.push(p);
+    len.push(len[k-1]+Math.hypot(p.x-pts[k-1].x,p.y-pts[k-1].y));
+  }
+  const L=len[N];
+  const widths=order.map(t=>{const m=meta(t); return W[m.type]*m.scale;});
+  const occupied=widths.reduce((a,b)=>a+b,0);
+  const endM=10, gap=(L-occupied-2*endM)/(order.length-1);
+  let s=endM+widths[0]/2;
+  return order.map((t,i)=>{
+    if(i>0) s+=widths[i-1]/2+gap+widths[i]/2;
+    let lo=0,hi=N;
+    while(lo<hi){const mid=(lo+hi)>>1; if(len[mid]<s) lo=mid+1; else hi=mid;}
+    const a=Math.PI*lo/N, {x,y}=pt(a);
+    let nx=-Math.cos(a)/RX, ny=(up?-1:1)*Math.sin(a)/RY; // Ellipsen-Normale nach außen
+    const l=Math.hypot(nx,ny); nx/=l; ny/=l;
+    return {t,x,y,nx,ny};
+  });
+}
+
+function buildTeethMarkup(){
+  let out="";
+  [[UPPER,true],[LOWER,false]].forEach(([ord,up])=>{
+    positions(ord,up).forEach(({t,x,y,nx,ny})=>{
+      const {type,scale}=meta(t);
+      const box=BOX[type];
+      const file = type==="m" ? (up? "zahn-molar-ok" : "zahn-molar-uk") : box.file;
+      const [iw,ih]=IMG[file];
+      const k=Math.min(box.w/iw, box.h/ih);      // contain-fit in Zielbox
+      const w=iw*k, h=ih*k;
+      const mirror=(t>=21&&t<=28)||(t>=31&&t<=38); // Betrachter-rechts anatomisch spiegeln
+      const rot=Math.atan2(nx,-ny)*180/Math.PI;   // lokale Außen-Achse -> Normale
+      const off=box.r*scale+16;
+      const hx=(w/2+5).toFixed(1), hy=(h/2+5).toFixed(1), hw=(w+10).toFixed(1), hh=(h+10).toFixed(1);
+      out+=`<g class="tooth" data-tooth="${t}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)})">`
+        +`<circle r="26" fill="transparent"/>`
+        +`<g transform="rotate(${rot.toFixed(1)}) scale(${(mirror?-scale:scale).toFixed(3)} ${scale.toFixed(3)})">`
+        +`<rect class="hl-back" x="-${hx}" y="-${hy}" width="${hw}" height="${hh}" rx="9"/>`
+        +`<image href="${IMGDIR}${file}.png" x="${(-w/2).toFixed(1)}" y="${(-h/2).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}"/>`
+        +`<rect class="hl-top" x="-${hx}" y="-${hy}" width="${hw}" height="${hh}" rx="9"/>`
+        +`</g>`
+        +`<text class="num" x="${(nx*off).toFixed(1)}" y="${(ny*off).toFixed(1)}" dy=".35em" text-anchor="middle">${t}</text>`
+        +`</g>`;
+    });
+  });
+  return out;
+}
+
+if (typeof document!=="undefined"){
+  const gT=document.getElementById("teeth");
+  gT.innerHTML=buildTeethMarkup();
+  gT.querySelectorAll(".tooth").forEach(g=>g.addEventListener("click",()=>select(+g.dataset.tooth,g)));
+}
+
+/* ---------- Auswahl & Panel ---------- */
+function row(label,val){ return val? `<div class="cell"><div class="p-label">${label}</div><div class="val">${val}</div></div>` : ""; }
+
+function select(t,g){
+  const empty=document.getElementById("panelEmpty");
+  const content=document.getElementById("panelContent");
+  document.querySelectorAll(".tooth.active").forEach(e=>e.classList.remove("active"));
+  g.classList.add("active");
+  const d=TEETH[t], f=G[d.g];
+  const sonst = d.so!==undefined ? d.so : f.so;
+  content.innerHTML=`
+    <div class="p-toothline">Zahn ${t} — ${d.r}</div>
+    <div class="p-label">Organ / Funktionskreis</div>
+    <div class="p-organ">${d.o}</div>
+    <div class="p-partner"><span class="tag">Funktionspartner</span> ${d.p}</div>
+    <div class="p-grid">
+      ${row("Sinnesorgan",f.sinn)}
+      ${row("Gelenke",f.gel)}
+      ${row("Wirbel",f.wir)}
+      ${row("Rückenmarksegmente",f.seg)}
+      ${row("Endokrine Drüse",f.dr)}
+      ${row("Organuhr (TCM)",f.uhr)}
+      ${sonst?row("Sonstiges",sonst):""}
+    </div>
+    <div class="p-foot"><b>HWK</b> Halswirbel · <b>BWK</b> Brustwirbel · <b>LWK</b> Lendenwirbel · <b>S</b> Kreuzbein · <b>Co</b> Steißbein. Zahn-Organ-Korrespondenzen nach Voll-Kramer, Bahr-Schmid und der Traditionellen Chinesischen Medizin (TCM). Sie ergänzen die schulmedizinische Diagnostik und ersetzen sie nicht.</div>
+  `;
+  empty.style.display="none";
+  content.style.display="block";
+}
+</script>
+</body>
+</html>
