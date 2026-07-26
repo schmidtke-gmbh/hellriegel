@@ -10,19 +10,19 @@
 <meta name="keywords" content="Hauke Hellriegel Essen, biologischer Zahnarzt Essen, Über uns Zahnarzt Essen, ganzheitlicher Zahnarzt Essen-Werden, Zahnarztpraxis Hauke Hellriegel Lebenslauf">
 <meta name="author" content="Hauke Hellriegel">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://hellriegel-zahnmedizin.de/ueber-uns/">
+<link rel="canonical" href="https://hellriegel-zahnmedizin.de/all-in-one.html">
 
 <!-- ===== Open Graph / Social ===== -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Hauke Hellriegel · Zahnarzt Essen">
-<meta property="og:title" content="Über Hauke Hellriegel · Biologische Zahnmedizin Essen">
-<meta property="og:description" content="Lernen Sie Ihren Zahnarzt persönlich kennen. Werdegang, Schwerpunkte und Haltung von Hauke Hellriegel und seinem Team.">
-<meta property="og:url" content="https://hellriegel-zahnmedizin.de/ueber-uns/">
-<meta property="og:image" content="https://hellriegel-zahnmedizin.de/hauke-portrait.jpg">
+<meta property="og:title" content="All-in-One Konzept Essen · Feste Zähne in einer Sitzung · Hauke Hellriegel">
+<meta property="og:description" content="Das All-in-One Konzept: Zahnentfernung, Keramikimplantat und festsitzende Sofortversorgung in einem Termin. Biologisch begleitet in Essen-Werden.">
+<meta property="og:url" content="https://hellriegel-zahnmedizin.de/all-in-one.html">
+<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/hauke-portrait.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Über Hauke Hellriegel · Zahnarzt Essen">
-<meta name="twitter:description" content="Wer wir sind, was uns antreibt und warum biologische Zahnmedizin in Essen-Werden.">
+<meta name="twitter:title" content="All-in-One Konzept Essen · Feste Zähne in einer Sitzung · Hauke Hellriegel">
+<meta name="twitter:description" content="Das All-in-One Konzept: Zahnentfernung, Keramikimplantat und festsitzende Sofortversorgung in einem Termin. Biologisch begleitet in Essen-Werden.">
 
 <!-- ===== Geo Tags ===== -->
 <meta name="geo.region" content="DE-NW">
@@ -40,9 +40,9 @@
   "alternateName": "Praxis Hellriegel",
   "description": "Zahnarztpraxis in Essen-Werden. Schwerpunkte: Keramikimplantate, ästhetische Zahnmedizin, ganzheitliche Behandlung.",
   "url": "https://hellriegel-zahnmedizin.de/",
-  "logo": "https://hellriegel-zahnmedizin.de/logo-hellriegel.png",
-  "image": "https://hellriegel-zahnmedizin.de/Hellriegel_Visuals_60x60_3.png",
-  "telephone": "+49-201-1234567",
+  "logo": "https://hellriegel-zahnmedizin.de/images/logoquer.png",
+  "image": "https://hellriegel-zahnmedizin.de/images/Hellriegel_Visuals_60x60_3.png",
+  "telephone": "+49-201-493126",
   "email": "info@hellriegel-zahnmedizin.de",
   "priceRange": "€€€",
   "address": {
@@ -50,7 +50,7 @@
     "streetAddress": "Heckstraße 31",
     "addressLocality": "Essen",
     "addressRegion": "NRW",
-    "postalCode": "45131",
+    "postalCode": "45239",
     "addressCountry": "DE"
   },
   "geo": {
@@ -68,12 +68,6 @@
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"08:00","closes":"18:00"},
     {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"14:00"}
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "127",
-    "bestRating": "5"
-  },
   "medicalSpecialty": ["Dentistry","CosmeticDentistry","Implantology"],
   "availableService": [
     {"@type":"MedicalProcedure","name":"Keramikimplantate"},
@@ -1225,7 +1219,7 @@
   /* Werden-Bezirk-Highlight als Glow-Region */
   .map-highlight{
     position:absolute;
-    left:51.5%;top:58%;
+    left:47%;top:72.1%;
     transform:translate(-50%,-50%);
     width:88px;height:112px;
     border-radius:50%;
@@ -1247,7 +1241,7 @@
     transform:translate(-50%,-100%);
     display:flex;flex-direction:column;align-items:center;
   }
-  .map-pin-essen{left:51.5%;top:55%;}
+  .map-pin-essen{left:47%;top:69.1%;}
   /* "Unsere Praxis" Label über dem Pin */
   .map-pin .pin-label{
     margin-bottom:8px;
@@ -1970,6 +1964,12 @@
   .sp-step .sp-content h3{font-size:18px;font-weight:700;color:var(--c-anthrazit);letter-spacing:-.2px;margin-bottom:8px;}
   .sp-step .sp-content p{font-size:14.5px;color:var(--c-text);line-height:1.65;}
 
+  /* CTA-Hintergrundbild */
+  .k-section-dark.has-cta-bg{position:relative;overflow:hidden;}
+  .k-section-dark.has-cta-bg .cta-bgimg{position:absolute;inset:0;z-index:0;}
+  .k-section-dark.has-cta-bg .cta-bgimg img{width:100%;height:100%;object-fit:cover;}
+  .k-section-dark.has-cta-bg .cta-bgimg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,31,42,.92) 0%,rgba(27,31,42,.78) 50%,rgba(27,31,42,.92) 100%);}
+  .k-section-dark.has-cta-bg .container{position:relative;z-index:1;}
 </style>
 </head>
 <body>
@@ -2001,7 +2001,7 @@
       <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Mo–Do 08:00–18:00 · Fr 08:00–14:00</span>
     </div>
     <div class="right">
-      <a href="tel:+4920112345670" class="item item-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 0201 · 123 456 7</a>
+      <a href="tel:+49201493126" class="item item-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 0201 · 493 126</a>
     </div>
   </div>
 </div>
@@ -2051,14 +2051,19 @@
               <span class="col-label">Weitere Leistungen</span>
               <ul class="mega-list">
                 <li><a href="aesthetik.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span>Ästhetik (biologisch)<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="/zahnerhaltung"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8a2 2 0 00-2-2h-3l-3-3-3 3H6a2 2 0 00-2 2v9a2 2 0 002 2h7"/><path d="M16 18l2 2 4-4"/></svg></span>Zahnerhaltung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="/parodontitis"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Parodontitis-Therapie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="ganzheitliche-zahnmedizin.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8a2 2 0 00-2-2h-3l-3-3-3 3H6a2 2 0 00-2 2v9a2 2 0 002 2h7"/><path d="M16 18l2 2 4-4"/></svg></span>Zahnerhaltung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="therapien.html#paro"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Parodontitis-Therapie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="prophylaxe.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span>Prophylaxe &amp; Zahnreinigung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="amalgamsanierung.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Amalgamsanierung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="ozontherapie.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s6 6.5 6 12a6 6 0 01-12 0c0-5.5 6-12 6-12z"/></svg></span>Ozontherapie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="neuraltherapie.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></span>Neuraltherapie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="ganzheitliche-zahnmedizin.html#meridian"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>Meridian-System (Zahn &amp; Organ)<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 </ul>
             </div>
           </div>
           <div class="mega-footer">
-            <span><strong>Leistungsübersicht</strong> · 8 Schwerpunkte in Essen-Werden</span>
-            <a href="/leistungen">Alle Leistungen ansehen <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></a>
+            <span><strong>Leistungsübersicht</strong> · 12 Schwerpunkte in Essen-Werden</span>
+            <a href="index.html#leistungen">Alle Leistungen ansehen <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></a>
           </div>
         </div>
       </li>
@@ -2072,7 +2077,7 @@
         <div class="mega-panel" role="menu" aria-label="Praxis">
           <div class="mega-inner">
             <div class="mega-col-cards">
-              <a href="/praxis/hauke-hellriegel" class="mega-card">
+              <a href="ueber-uns.html" class="mega-card">
                 <div class="card-image"><img src="images/hauke-portrait.jpg" alt="Hauke Hellriegel · Zahnarzt Essen" loading="lazy"></div>
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
                 <div class="card-text">
@@ -2080,7 +2085,7 @@
                   <p class="card-desc">Lernen Sie Ihren Zahnarzt persönlich kennen.</p>
                 </div>
               </a>
-              <a href="/praxis/rundgang" class="mega-card">
+              <a href="ueber-uns.html" class="mega-card">
                 <div class="card-image"><img src="images/praxis-raum.png" alt="Praxisräume Hauke Hellriegel" loading="lazy"></div>
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
                 <div class="card-text">
@@ -2088,7 +2093,7 @@
                   <p class="card-desc">Ein Blick in unsere Räume in Werden.</p>
                 </div>
               </a>
-              <a href="/praxis/team" class="mega-card">
+              <a href="ueber-uns.html" class="mega-card">
                 <div class="card-image"><img src="images/hauke-team.jpg" alt="Team Hauke Hellriegel · Praxis Essen" loading="lazy"></div>
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></span>
                 <div class="card-text">
@@ -2100,17 +2105,17 @@
             <div class="mega-col-list">
               <span class="col-label">Mehr über die Praxis</span>
               <ul class="mega-list">
-                <li><a href="/praxis/philosophie"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-5"/></svg></span>Philosophie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="/praxis/technologie"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/></svg></span>Technologie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="/praxis/sterilisation"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/></svg></span>Hygiene &amp; Sterilisation<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="/praxis/anfahrt"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Anfahrt &amp; Parkplätze<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="/praxis/sprechzeiten"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Sprechzeiten<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="philosophie.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-5"/></svg></span>Philosophie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="ueber-uns.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/></svg></span>Technologie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="ueber-uns.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/></svg></span>Hygiene &amp; Sterilisation<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="index.html#standort"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Anfahrt &amp; Parkplätze<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="sprechzeiten.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Sprechzeiten<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
               </ul>
             </div>
           </div>
           <div class="mega-footer">
             <span><strong>Heckstraße 31</strong> · 45239 Essen</span>
-            <a href="/kontakt">Termin vereinbaren <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></a>
+            <a href="kontakt.html">Termin vereinbaren <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></a>
           </div>
         </div>
       </li>
@@ -2177,7 +2182,7 @@
         <div class="mega-panel" role="menu" aria-label="Infomaterial">
           <div class="mega-inner">
             <div class="mega-col-cards">
-              <a href="/youtube" class="mega-card">
+              <a href="https://www.youtube.com/@biologischerzahnarzt" class="mega-card">
                 <div class="card-image"><img src="images/yt-thumb-D1C5FcUEuLw.jpg" alt="YouTube-Kanal Hauke Hellriegel" loading="lazy"></div>
                 <span class="icon icon-yt"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
                 <div class="card-text">
@@ -2193,7 +2198,7 @@
                   <p class="card-desc">Antworten auf die wichtigsten Patientenfragen.</p>
                 </div>
               </a>
-              <a href="/erstgespraech" class="mega-card">
+              <a href="erstgespraech.html" class="mega-card">
                 <div class="card-image"><img src="images/hauke-team.jpg" alt="Kostenloses Erstgespräch buchen" loading="lazy"></div>
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></span>
                 <div class="card-text">
@@ -2206,14 +2211,14 @@
               <span class="col-label">Weitere Ressourcen</span>
               <ul class="mega-list">
                 <li><a href="faq-implantate.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 015.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17.01"/></svg></span>Häufige Fragen<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="/downloads"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>Downloads &amp; Formulare<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="/erstgespraech"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></span>Kostenloses Erstgespräch<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="kontakt.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>Downloads &amp; Formulare<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="erstgespraech.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></span>Kostenloses Erstgespräch<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
               </ul>
             </div>
           </div>
           <div class="mega-footer">
             <span><strong>Patienteninformation</strong> · Wir nehmen uns Zeit für Sie</span>
-            <a href="/kontakt">Persönlich anfragen <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></a>
+            <a href="kontakt.html">Persönlich anfragen <svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></a>
           </div>
         </div>
       </li>
@@ -2244,8 +2249,8 @@
         Termin online buchen
         <span class="arrow"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"><line x1="0" y1="7" x2="29" y2="7"/><polyline points="22 1 29 7 22 13"/></svg></span>
       </a>
-      <a href="tel:+4920112345670" class="btn-ghost-light">
-        0201 · 123 456 7
+      <a href="tel:+49201493126" class="btn-ghost-light">
+        0201 · 493 126
       </a>
     </div>
   </div>
@@ -2255,7 +2260,7 @@
   <div class="container">
     <div class="k-split">
       <div class="k-split-img">
-        <img src="images/hauke-op.jpg" alt="">
+        <img src="images/implantat-closeup.jpg" alt="Präzise Prüfung eines Implantats — Detailarbeit bei Hauke Hellriegel">
       </div>
       <div class="k-split-text">
         <div class="kicker">Was bedeutet All-in-One?</div>
@@ -2298,7 +2303,8 @@
   </div>
 </section>
 
-<section class="k-section k-section-dark">
+<section class="k-section k-section-dark has-cta-bg">
+  <div class="cta-bgimg" aria-hidden="true"><img src="images/cta-keramik.jpg" alt="" loading="lazy"></div>
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
@@ -2309,7 +2315,7 @@
           Termin online buchen
           <span class="arrow"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"><line x1="0" y1="7" x2="29" y2="7"/><polyline points="22 1 29 7 22 13"/></svg></span>
         </a>
-        <a href="tel:+4920112345670" class="btn-ghost-light">0201 · 123 456 7</a>
+        <a href="tel:+49201493126" class="btn-ghost-light">0201 · 493 126</a>
       </div>
     </div>
   </div>
@@ -2342,12 +2348,12 @@
       <div class="footer-col">
         <h4>Praxis</h4>
         <ul>
-          <li><a href="/praxis">Über die Praxis</a></li>
-          <li><a href="/praxis/hauke-hellriegel">Hauke Hellriegel</a></li>
-          <li><a href="/praxis/team">Team</a></li>
-          <li><a href="/praxis/rundgang">Praxisrundgang</a></li>
-          <li><a href="/praxis/technologie">Technologie</a></li>
-          <li><a href="/praxis/karriere">Karriere</a></li>
+          <li><a href="ueber-uns.html">Über die Praxis</a></li>
+          <li><a href="ueber-uns.html">Hauke Hellriegel</a></li>
+          <li><a href="ueber-uns.html">Team</a></li>
+          <li><a href="ueber-uns.html">Praxisrundgang</a></li>
+          <li><a href="ueber-uns.html">Technologie</a></li>
+          <li><a href="karriere.html">Karriere</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2357,19 +2363,19 @@
           <li><a href="metallfreier-zahnersatz.html">Metallfreier Zahnersatz</a></li>
           <li><a href="aesthetik.html">Ästhetik (biologisch)</a></li>
           <li><a href="ganzheitliche-zahnmedizin.html">Ganzheitlich</a></li>
-          <li><a href="/zahnerhaltung">Zahnerhaltung</a></li>
-          <li><a href="/parodontitis">Parodontitis-Therapie</a></li>
+          <li><a href="ganzheitliche-zahnmedizin.html">Zahnerhaltung</a></li>
+          <li><a href="therapien.html#paro">Parodontitis-Therapie</a></li>
           <li><a href="sinuslift.html">Knochenaufbau &amp; Sinuslift</a></li>
           </ul>
       </div>
       <div class="footer-col">
         <h4>Patienten</h4>
         <ul>
-          <li><a href="/patienten/erstgespraech">Erstgespräch</a></li>
-          <li><a href="/patienten/erfahrungen">Bewertungen</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
-          <li><a href="/patienten/finanzierung">Finanzierung</a></li>
-          <li><a href="/patienten/downloads">Downloads</a></li>
+          <li><a href="erstgespraech.html">Erstgespräch</a></li>
+          <li><a href="index.html#bewertungen">Bewertungen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="kosten-finanzierung.html">Finanzierung</a></li>
+          <li><a href="kontakt.html">Downloads</a></li>
           <li><a href="https://www.youtube.com/@biologischerzahnarzt" target="_blank" rel="noopener">YouTube-Kanal</a></li>
         </ul>
       </div>
@@ -2382,7 +2388,7 @@
           Deutschland
         </address>
         <div class="links">
-          <a href="tel:+4920112345670"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 0201 · 123 456 7</a><br>
+          <a href="tel:+49201493126"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 0201 · 493 126</a><br>
           <a href="mailto:info@hellriegel-zahnmedizin.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@hellriegel-zahnmedizin.de</a>
         </div>
       </div>
@@ -2403,10 +2409,10 @@
         <span class="schmidtke-logo">schmidtke<span class="dot"></span></span>
       </a>
       <div class="legal">
-        <a href="/impressum">Impressum</a>
-        <a href="/datenschutz">Datenschutz</a>
-        <a href="/sitemap">Sitemap</a>
-        <a href="/cookies">Cookies</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="sitemap.html">Sitemap</a>
+        <a href="datenschutz.html#cookies">Cookies</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hellriegel-zahnmedizin.de/sitemap.xml
