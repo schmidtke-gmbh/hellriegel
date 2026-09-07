@@ -430,13 +430,13 @@
   /* Team-Bild zentral als Hauptkarte (vor Praxisraum) */
   .hero-team{
     position:absolute;
-    left:16%;bottom:0;
-    width:48%;
-    aspect-ratio:4/5;
+    left:auto;right:-14%;bottom:16%;
+    width:88%;
+    aspect-ratio:16/9;
     border-radius:22px;
     overflow:hidden;
     box-shadow:0 30px 70px rgba(27,31,42,.28),0 6px 18px rgba(27,31,42,.12);
-    z-index:2;
+    z-index:3;
     background:#dad6c8;
   }
   .hero-second img{
@@ -492,15 +492,15 @@
   /* Statue ganz rechts im Vordergrund — groß und ragend, kann über Praxis-Bild liegen */
   .hero-statue{
     position:absolute;
-    right:-18%;top:-22%;
+    right:-18%;top:-12%;
     width:88%;
-    z-index:3;
+    z-index:2;
     filter:drop-shadow(0 30px 60px rgba(27,31,42,.3));
     pointer-events:none;
   }
   .hero-statue img{width:100%;height:auto;display:block;}
 
-  .hero-tag{position:absolute;top:6%;left:-10px;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 16px 40px rgba(27,31,42,.12);display:flex;align-items:center;gap:12px;z-index:4;}
+  .hero-tag{position:absolute;top:50%;left:-10px;right:auto;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 16px 40px rgba(27,31,42,.12);display:flex;align-items:center;gap:12px;z-index:4;}
   .hero-tag .ico{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--c-gold-l),var(--c-gold-d));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .hero-tag .ico svg{width:18px;height:18px;color:#fff;}
   .hero-tag .txt{font-size:12px;line-height:1.4;}
@@ -995,7 +995,7 @@
   .smile-stage{
     position:relative;
     width:100%;
-    aspect-ratio:16/9;
+    aspect-ratio:1376/768;
   }
   .smile-stage img{
     width:100%;
@@ -1081,14 +1081,14 @@
 
   /* Positionen: relativ zur smile-stage — Dots auf der Zahnreihe (mittig vom Mund), Texte deutlich außen */
   /* Ästhetik: rechter Schneidezahn, lange Linie weit nach rechts in den Goldstaub */
-  .smile-label.l-aesthetik{top:30%;left:55%;--line-w:200px;}
+  .smile-label.l-aesthetik{top:31.5%;left:42.8%;--line-w:200px;}
   /* Zahnimplantate: mittlerer Schneidezahn, sehr lange Linie nach rechts */
-  .smile-label.l-implantat{top:38%;left:48%;--line-w:260px;}
+  .smile-label.l-implantat{top:35.5%;left:34.8%;--line-w:340px;}
   /* Prophylaxe: Dot auf linkem Schneidezahn, Linie + Text WEIT nach LINKS auf die linke Gesichtsseite */
   .smile-label.l-prophylaxe{
-    top:34%;
+    top:31.5%;
     left:auto;
-    right:74%;        /* Dot bei 26% from left — auf dem linken Schneidezahn */
+    right:73%;        /* Dot ~26,5% von links — auf den linken Frontzähnen */
     flex-direction:row-reverse;
     --line-w:130px;
   }
@@ -1637,12 +1637,12 @@
     .nav-burger{display:inline-flex;}
     .hero-grid,.ueber-grid,.standort-grid,.anwendung-layout,.implant-pin-grid{grid-template-columns:1fr;gap:48px;}
     .anwendung-text{padding:60px 24px;}
-    .smile-frame,.smile-frame img{min-height:380px;}
+    .smile-frame{min-height:380px;}
     .implant-pin-sticky{position:relative;top:auto;height:auto;max-height:none;margin:30px 0;}
     .implant-step{min-height:auto;opacity:1;}
     .ueber-img{order:-1;max-width:480px;margin:0 auto;}
     .hero-visual{max-width:560px;margin:0 auto;min-height:480px;}
-    .hero-team{width:72%;top:0;right:0;}
+    .hero-team{width:100%;left:0;right:auto;top:auto;bottom:0;}
     .hero-statue{width:65%;left:-6%;bottom:0;}
     .schwerp-grid,.ablauf-grid,.testi-grid,.yt-grid{grid-template-columns:1fr 1fr;gap:20px;}
     .tech-grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px;}
@@ -1668,6 +1668,13 @@
     .spotlight-stat{position:relative;margin-bottom:12px;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;}
     .hero-tag,.ueber-img .signature{display:none;}
   }
+  @media (max-width:680px){
+    .l-implantat{--line-w:80px;}
+    .l-aesthetik{--line-w:60px;}
+    .l-prophylaxe{--line-w:36px;}
+    .smile-label .text-block{font-size:11.5px;}
+  }
+  @media (max-width:680px){ .hero-sub br{display:none;} }
 </style>
 </head>
 <body>
@@ -1725,7 +1732,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 0 5 2.5 5 6 0 2-.5 4-1 6-.5 2-1 4-2 6-.4.8-1 1-2 1s-1.6-.2-2-1c-1-2-1.5-4-2-6s-1-4-1-6c0-3.5 2-6 5-6z"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Keramikimplantate</span>
-                  <p class="card-desc">Metallfreie Implantate inkl. spezieller Prophylaxe zum Werterhalt.</p>
+                  <p class="card-desc">Metallfreie Implantate inkl. spezieller Prophylaxe zum&nbsp;Werterhalt.</p>
                 </div>
               </a>
               <a href="metallfreier-zahnersatz.html" class="mega-card">
@@ -1733,7 +1740,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 0 5 2.5 5 6 0 2-.5 4-1 6-.5 2-1 4-2 6-.4.8-1 1-2 1s-1.6-.2-2-1c-1-2-1.5-4-2-6s-1-4-1-6c0-3.5 2-6 5-6z"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Metallfreier Zahnersatz</span>
-                  <p class="card-desc">Vollkeramik-Kronen, Inlays &amp; Brücken — 100&nbsp;% biokompatibel.</p>
+                  <p class="card-desc">Vollkeramik-Kronen, Inlays &amp; Brücken — 100&nbsp;%&nbsp;biokompatibel.</p>
                 </div>
               </a>
               <a href="ganzheitliche-zahnmedizin.html" class="mega-card">
@@ -1741,7 +1748,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7z"/><path d="M11 13v7"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Ganzheitliche Zahnmedizin</span>
-                  <p class="card-desc">Amalgam-Sanierung, devitale Zähne, NICO &amp; Neuraltherapie.</p>
+                  <p class="card-desc">Amalgam-Sanierung, devitale Zähne, NICO &amp;&nbsp;Neuraltherapie.</p>
                 </div>
               </a>
             </div>
@@ -1781,7 +1788,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Über uns</span>
-                  <p class="card-desc">Wer wir sind &amp; was uns antreibt.</p>
+                  <p class="card-desc">Wer wir sind &amp; was uns&nbsp;antreibt.</p>
                 </div>
               </a>
               <a href="philosophie.html" class="mega-card">
@@ -1789,7 +1796,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-5"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Philosophie</span>
-                  <p class="card-desc">Warum biologische Zahnmedizin für uns mehr ist als ein Trend.</p>
+                  <p class="card-desc">Warum biologische Zahnmedizin für uns mehr ist als ein&nbsp;Trend.</p>
                 </div>
               </a>
               <a href="ueber-uns.html" class="mega-card">
@@ -1797,7 +1804,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Technologie</span>
-                  <p class="card-desc">3D-DVT, Laser &amp; digitaler Workflow.</p>
+                  <p class="card-desc">3D-DVT, Laser &amp; digitaler&nbsp;Workflow.</p>
                 </div>
               </a>
             </div>
@@ -1833,7 +1840,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 0 5 2.5 5 6 0 2-.5 4-1 6-.5 2-1 4-2 6-.4.8-1 1-2 1s-1.6-.2-2-1c-1-2-1.5-4-2-6s-1-4-1-6c0-3.5 2-6 5-6z"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Keramikimplantate</span>
-                  <p class="card-desc">100 % metallfrei · biokompatibel &amp; ästhetisch.</p>
+                  <p class="card-desc">100 % metallfrei · biokompatibel &amp;&nbsp;ästhetisch.</p>
                 </div>
               </a>
               <a href="sofortimplantation.html" class="mega-card">
@@ -1841,7 +1848,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Sofortimplantation</span>
-                  <p class="card-desc">Implantat &amp; Krone in nur einer Sitzung.</p>
+                  <p class="card-desc">Implantat &amp; Krone in nur einer&nbsp;Sitzung.</p>
                 </div>
               </a>
               <a href="knochenaufbau.html" class="mega-card">
@@ -1849,7 +1856,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="12 2 22 8 12 14 2 8 12 2"/><polyline points="2 16 12 22 22 16"/><polyline points="2 12 12 18 22 12"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Knochenaufbau</span>
-                  <p class="card-desc">Wenn Knochenmaterial fehlt — biologische Lösungen.</p>
+                  <p class="card-desc">Wenn Knochenmaterial fehlt — biologische&nbsp;Lösungen.</p>
                 </div>
               </a>
             </div>
@@ -1886,7 +1893,7 @@
                 <span class="icon icon-yt"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">YouTube-Kanal</span>
-                  <p class="card-desc">Patientenfälle, Praxis-Einblicke &amp; Erklärvideos.</p>
+                  <p class="card-desc">Patientenfälle, Praxis-Einblicke &amp;&nbsp;Erklärvideos.</p>
                 </div>
               </a>
               <a href="faq-implantate.html" class="mega-card">
@@ -1894,7 +1901,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 015.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17.01"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Häufige Fragen</span>
-                  <p class="card-desc">Antworten auf die wichtigsten Patientenfragen.</p>
+                  <p class="card-desc">Antworten auf die wichtigsten&nbsp;Patientenfragen.</p>
                 </div>
               </a>
               <a href="erstgespraech.html" class="mega-card">
@@ -1902,7 +1909,7 @@
                 <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></span>
                 <div class="card-text">
                   <span class="card-title">Erstgespräch buchen</span>
-                  <p class="card-desc">Persönlich, unverbindlich &amp; ohne Verkaufsdruck.</p>
+                  <p class="card-desc">Persönlich, unverbindlich &amp; ohne&nbsp;Verkaufsdruck.</p>
                 </div>
               </a>
             </div>
@@ -1953,17 +1960,17 @@
       <div class="hero-text">
         <div class="location">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Zahnarzt in Essen · Werden
+          Zahnarzt in Essen-Werden
         </div>
         <h1 id="hero-h1">Schöne, gesunde Zähne.<br>Ein <span class="accent">Leben lang</span>.</h1>
-        <p class="hero-sub">Ihr <strong>Zahnarzt in Essen-Werden</strong> für Keramikimplantate, metallfreien Zahnersatz und persönliche Beratung – in entspannter Atmosphäre.</p>
-        <p class="hero-lead">In Essen-Werden bieten wir biologische Zahnmedizin, die Ihre Zähne und Ihre Gesamtgesundheit zusammen denkt – für Ihre langfristige Gesundheit und ein gutes Gefühl beim Lächeln.</p>
+        <p class="hero-sub">Ihr <strong>Zahnarzt in Essen-Werden</strong> für Keramikimplantate,<br>metallfreien Zahnersatz und persönliche Beratung –<br>in entspannter&nbsp;Atmosphäre.</p>
+        <p class="hero-lead">In Essen-Werden bieten wir biologische Zahnmedizin, die Ihre Zähne und Ihre Gesamtgesundheit zusammen denkt – für Ihre langfristige Gesundheit und ein gutes Gefühl beim&nbsp;Lächeln.</p>
         <div class="hero-ctas">
           <a href="#termin" class="btn btn-primary">
             Termin buchen
             <span class="arrow"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"><line x1="0" y1="7" x2="29" y2="7"/><polyline points="22 1 29 7 22 13"/></svg></span>
           </a>
-          <a href="#video" class="btn btn-ghost">
+          <a href="#youtube" class="btn btn-ghost">
             <span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg></span>
             Praxisvideo ansehen
           </a>
@@ -1980,7 +1987,7 @@
         <!-- Team-/Praxis-Bild zentral (später Video) -->
         <div class="hero-team" id="hero-team">
           <img src="images/hero-hauke.jpg" alt="Hauke Hellriegel in seinem Behandlungszimmer in Essen-Werden">
-          <span class="hero-team-tag"><span class="live-dot"></span>Praxis · Essen</span>
+          <span class="hero-team-tag"><span class="live-dot"></span>Praxis · Essen-Werden</span>
           <button class="hero-team-play" aria-label="Praxisvideo abspielen" type="button">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </button>
@@ -1988,7 +1995,6 @@
         <!-- Zweites Bild: Behandlungsraum -->
         <div class="hero-second">
           <img src="images/hauke-op2.jpg" alt="Hauke Hellriegel bei einer Behandlung · Praxis Essen-Werden">
-          <span class="hero-second-tag"><span class="gold-dot"></span>Praxisraum</span>
         </div>
         <!-- Statue ganz rechts im Vordergrund -->
         <div class="hero-statue">
@@ -2006,7 +2012,7 @@
 <!-- TRUST BAR -->
 <section class="trust-bar" aria-label="Bewertungsportale">
   <div class="container trust-bar-inner">
-    <h2>Bewertet auf</h2>
+    <h2>Bewertet&nbsp;auf</h2>
     <div class="trust-logos">
       <div class="trust-logo"><span class="italic">Google</span><span class="small">★ 4,7 · Google Reviews</span></div>
       <div class="trust-logo">jameda<span class="small">★ 4,9 · 89 Reviews</span></div>
@@ -2023,8 +2029,8 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">Unsere Schwerpunkte</div>
-      <h2 id="schwerp-h2">Zahnmedizin, die sich<br><span class="accent">sehen lassen</span> kann.</h2>
-      <p>Hochwertige Keramikimplantate, metallfreier Zahnersatz und eine Praxis, in der Sie als Mensch im Mittelpunkt stehen. Drei Schwerpunkte – ein Ziel: Ihre langfristige Zahngesundheit.</p>
+      <h2 id="schwerp-h2">Zahnmedizin, die sich<br><span class="accent">sehen lassen</span>&nbsp;kann.</h2>
+      <p>Hochwertige Keramikimplantate, metallfreier Zahnersatz und eine Praxis, in der Sie als Mensch im Mittelpunkt stehen. Drei Schwerpunkte – ein Ziel: Ihre langfristige&nbsp;Zahngesundheit.</p>
     </div>
     <div class="schwerp-grid">
       <article class="schwerp-card featured">
@@ -2043,7 +2049,7 @@
           </div>
           <div class="num">01 · KERAMIKIMPLANTATE</div>
           <h3><a href="keramikimplantate.html">Zahnersatz, der sich anfühlt wie <span class="accent">echt</span>.</a></h3>
-          <p>Hochwertige Keramikimplantate – metallfrei, biokompatibel und gewebefreundlich. Für Jahrzehnte gemacht.</p>
+          <p>Hochwertige Keramikimplantate – metallfrei, biokompatibel und gewebefreundlich. Für Jahrzehnte&nbsp;gemacht.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>100 % Keramik · metallfrei</strong></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Sofortimplantation möglich</li>
@@ -2069,8 +2075,8 @@
             </svg>
           </div>
           <div class="num">02 · METALLFREIER ZAHNERSATZ</div>
-          <h3><a href="metallfreier-zahnersatz.html"><span class="accent">Metallfreier</span> Zahnersatz.</a></h3>
-          <p>Vollkeramik-Kronen, Inlays und Brücken: Zahnersatz aus 100 % biokompatiblen Materialien — ohne jegliches Metall im Mund.</p>
+          <h3><a href="metallfreier-zahnersatz.html"><span class="accent">Metallfreier</span>&nbsp;Zahnersatz.</a></h3>
+          <p>Vollkeramik-Kronen, Inlays und Brücken: Zahnersatz aus 100 % biokompatiblen Materialien — ohne jegliches Metall im&nbsp;Mund.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>Digitales Smile-Design</strong></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vollkeramik-Kronen &amp; Inlays</li>
@@ -2094,7 +2100,7 @@
           </div>
           <div class="num">03 · GANZHEITLICHE ZAHNMEDIZIN</div>
           <h3><a href="ganzheitliche-zahnmedizin.html">Mehr als nur <span class="accent">Zähne</span>.</a></h3>
-          <p>Wir nehmen uns Zeit, hören zu und arbeiten mit körperverträglichen Materialien. Damit Sie sich rundum gut aufgehoben fühlen.</p>
+          <p>Wir nehmen uns Zeit, hören zu und arbeiten mit körperverträglichen Materialien. Damit Sie sich rundum gut aufgehoben&nbsp;fühlen.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>60-Minuten-Erstgespräch</strong></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Biokompatible Materialien</li>
@@ -2119,8 +2125,8 @@
             </svg>
           </div>
           <div class="num">04 · ÄSTHETIK · BIOLOGISCH</div>
-          <h3><a href="aesthetik.html"><span class="accent">Schön</span> und gesund.</a></h3>
-          <p>Ein ästhetisches Lächeln ist großartig — aber nur, wenn die Materialien dahinter biokompatibel sind. Wir denken Ästhetik immer gesund mit.</p>
+          <h3><a href="aesthetik.html"><span class="accent">Schön</span> und&nbsp;gesund.</a></h3>
+          <p>Ein ästhetisches Lächeln ist großartig — aber nur, wenn die Materialien dahinter biokompatibel sind. Wir denken Ästhetik immer gesund&nbsp;mit.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>Geprüft verträgliche Materialien</strong></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Schöne Frontzähne ohne Kompromiss</li>
@@ -2149,13 +2155,13 @@
         <div class="pin-head">
           <div class="kicker">Unser Spezialgebiet</div>
           <h2 id="pin-h2">Keramikimplantate aus<br><span class="accent">Essen-Werden</span>.</h2>
-          <p>Wir arbeiten konsequent metallfrei: hochreines Zirkonoxid für höchste Ansprüche an Biokompatibilität, Verträglichkeit, Gesundheit und Ästhetik.</p>
+          <p>Wir arbeiten konsequent metallfrei: hochreines Zirkonoxid für höchste Ansprüche an Biokompatibilität, Verträglichkeit, Gesundheit und&nbsp;Ästhetik.</p>
         </div>
 
         <div class="implant-step" data-step="1">
           <div class="step-num">Vorteil 01</div>
           <h3>100 % <span class="accent">Metallfrei</span>.</h3>
-          <p>Keramikimplantate aus hochreinem Zirkonoxid – ohne jegliche Metallbestandteile. Die natürliche Wahl für anspruchsvolle Patienten.</p>
+          <p>Keramikimplantate aus hochreinem Zirkonoxid – ohne jegliche Metallbestandteile. Die natürliche Wahl für anspruchsvolle&nbsp;Patienten.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Reines Zirkonoxid</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Keine Galvanik-Reaktionen</li>
@@ -2164,8 +2170,8 @@
 
         <div class="implant-step" data-step="2">
           <div class="step-num">Vorteil 02</div>
-          <h3><span class="accent">Biokompatibel</span> und körperneutral.</h3>
-          <p>Keramik wird vom Körper ideal vertragen. Keine allergischen Reaktionen, keine Belastung für das Immunsystem – auch bei sensiblen Patienten.</p>
+          <h3><span class="accent">Biokompatibel</span> und&nbsp;körperneutral.</h3>
+          <p>Keramik wird vom Körper ideal vertragen. Keine allergischen Reaktionen, keine Belastung für das Immunsystem – auch bei sensiblen&nbsp;Patienten.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Verträglichkeit klinisch geprüft</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Für sensible Patienten geeignet</li>
@@ -2175,7 +2181,7 @@
         <div class="implant-step" data-step="3">
           <div class="step-num">Vorteil 03</div>
           <h3>Ästhetisch <span class="accent">unsichtbar</span>.</h3>
-          <p>Naturweiße Farbe – kein dunkles Durchschimmern am Zahnfleischrand wie bei metallischen Lösungen. Perfekt auch im sichtbaren Frontzahnbereich.</p>
+          <p>Naturweiße Farbe – kein dunkles Durchschimmern am Zahnfleischrand wie bei metallischen Lösungen. Perfekt auch im sichtbaren&nbsp;Frontzahnbereich.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Zahnfarbenes Material</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Ideal im Frontzahnbereich</li>
@@ -2184,8 +2190,8 @@
 
         <div class="implant-step" data-step="4">
           <div class="step-num">Vorteil 04</div>
-          <h3>Für <span class="accent">Jahrzehnte</span> gemacht.</h3>
-          <p>Zirkonoxid ist eines der härtesten Werkstoffe der modernen Medizin – korrosionsfrei, formstabil und besonders gewebefreundlich am Übergang zum Zahnfleisch.</p>
+          <h3>Für <span class="accent">Jahrzehnte</span>&nbsp;gemacht.</h3>
+          <p>Zirkonoxid ist eines der härtesten Werkstoffe der modernen Medizin – korrosionsfrei, formstabil und besonders gewebefreundlich am Übergang zum&nbsp;Zahnfleisch.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Korrosionsfrei & extrem hart</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Zahnfleischfreundlicher Übergang</li>
@@ -2244,9 +2250,9 @@
       <div class="ther-text">
         <span class="kicker">Was uns besonders macht</span>
         <h2 id="ther-h2">Therapien, die <span class="accent">tiefer gehen</span>.</h2>
-        <p class="lead">Wir nutzen Verfahren, die in normalen Praxen kaum vorkommen — biologisch konsequent, von der Diagnostik bis zur Nachsorge. Was bei uns Standard ist, ist anderswo Premium-Sonderleistung.</p>
+        <p class="lead">Wir nutzen Verfahren, die in normalen Praxen kaum vorkommen — biologisch konsequent, von der Diagnostik bis zur Nachsorge. Was bei uns Standard ist, ist anderswo&nbsp;Premium-Sonderleistung.</p>
         <div class="ther-list">
-          <a href="therapien.html#laser">
+          <a href="therapien.html#photodynamik">
             <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="12" x2="22" y2="12"/><circle cx="6" cy="12" r="2"/></svg></span>
             <span><span class="label">Laser-Therapie</span><span class="sub">Verschiedene Wellenlängen · antibakteriell · regenerativ</span></span>
             <span class="arr"><svg viewBox="0 0 30 14"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span>
@@ -2309,9 +2315,9 @@
       </div>
       <div class="ueber-text">
         <div class="kicker">Über die Praxis</div>
-        <h2 id="ueber-h2">Ihr <span class="accent">Zahnarzt in Essen</span> –<br>seit über 15 Jahren.</h2>
-        <p>Hauke Hellriegel führt die Praxis in Essen-Werden mit einer klaren Überzeugung: Zahnmedizin gehört auf höchstem Niveau betrieben – fachlich, biologisch und menschlich. Als spezialisierter Implantologe setzt er konsequent auf Keramikimplantate und metallfreie, biokompatible Materialien.</p>
-        <p>Ob metallfreier Zahnersatz, komplexe Implantatversorgung oder Routine-Vorsorge: In dieser Praxis bekommen Sie als Patient die Zeit, die Beratung und die Sorgfalt, die Sie verdienen.</p>
+        <h2 id="ueber-h2">Ihr <span class="accent">Zahnarzt in Essen</span> –<br>seit über 15&nbsp;Jahren.</h2>
+        <p>Hauke Hellriegel führt die Praxis in Essen-Werden mit einer klaren Überzeugung: Zahnmedizin gehört auf höchstem Niveau betrieben – fachlich, biologisch und menschlich. Als spezialisierter Implantologe setzt er konsequent auf Keramikimplantate und metallfreie, biokompatible&nbsp;Materialien.</p>
+        <p>Ob metallfreier Zahnersatz, komplexe Implantatversorgung oder Routine-Vorsorge: In dieser Praxis bekommen Sie als Patient die Zeit, die Beratung und die Sorgfalt, die Sie&nbsp;verdienen.</p>
         <div class="ueber-stats">
           <div class="ueber-stat"><strong>15+</strong><span>Jahre Erfahrung</span></div>
           <div class="ueber-stat"><strong>3.500+</strong><span>Implantate gesetzt</span></div>
@@ -2338,7 +2344,7 @@
     <div class="section-head">
       <div class="section-kicker">Einblicke</div>
       <h2 id="einb-h2">Ein Blick in unsere <span class="accent">Praxis</span>.</h2>
-      <p>Helle Räume, modernste Technik, ruhige Atmosphäre — willkommen in Essen-Werden.</p>
+      <p>Helle Räume, modernste Technik, ruhige Atmosphäre — willkommen in&nbsp;Essen-Werden.</p>
     </div>
     <div class="fan-wrap">
       <div class="fan-tile t-left">
@@ -2363,7 +2369,7 @@
     <div class="anwendung-text">
       <div class="kicker">Alles aus einer Hand</div>
       <h2 id="anw-h2">Ihre Zahngesundheit<br>ist unsere <span class="accent">Verantwortung</span>.</h2>
-      <p>Von der sanften Vorsorge über metallfreie Keramikimplantate bis hin zu vollkeramischem Zahnersatz – in unserer Praxis in Essen-Werden bekommen Sie alles, was zu einem gesunden, langlebigen Lächeln gehört. Persönlich. Biologisch. Aus einer Hand.</p>
+      <p>Von der sanften Vorsorge über metallfreie Keramikimplantate bis hin zu vollkeramischem Zahnersatz – in unserer Praxis in Essen-Werden bekommen Sie alles, was zu einem gesunden, langlebigen Lächeln gehört. Persönlich. Biologisch. Aus einer&nbsp;Hand.</p>
       <a href="#termin" class="btn btn-primary" style="align-self:flex-start;">
         Kontakt aufnehmen
         <span class="arrow"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"><line x1="0" y1="7" x2="29" y2="7"/><polyline points="22 1 29 7 22 13"/></svg></span>
@@ -2372,7 +2378,7 @@
     <div class="smile-frame">
       <!-- Stage hält die Bild-Aspect-Ratio — sodass Labels relativ zu den Zähnen bleiben -->
       <div class="smile-stage">
-        <img src="images/smile-anwendung-bg.png" alt="Strahlendes Lächeln · Anwendungsbeispiel · Zahnarzt Essen">
+        <img src="images/smile-anwendung-bg.jpg" alt="Strahlendes Lächeln · Anwendungsbeispiel · Zahnarzt Essen">
         <!-- Labels mit Radar-Animation, Positionen sind feste % auf der Stage -->
         <div class="smile-label l-aesthetik">
           <div class="dot"></div>
@@ -2419,13 +2425,13 @@
     <div class="section-head">
       <div class="section-kicker" style="color:var(--c-gold-l);">Behandlungsablauf</div>
       <h2 id="ablauf-h2">In vier Schritten zu<br>Ihrem neuen <span class="accent">Lächeln</span>.</h2>
-      <p>Vom ersten Gespräch bis zur Nachsorge – transparent, vorhersehbar und ohne Überraschungen.</p>
+      <p>Vom ersten Gespräch bis zur Nachsorge – transparent, vorhersehbar und ohne&nbsp;Überraschungen.</p>
     </div>
     <div class="ablauf-grid">
-      <div class="step"><div class="step-num">01</div><h3>Erstgespräch</h3><p>Persönliches 60-Minuten-Gespräch in entspannter Atmosphäre. Wir hören zu, prüfen den Befund und besprechen Ihre Ziele.</p><span class="duration">60 Min · kostenfrei</span></div>
-      <div class="step"><div class="step-num">02</div><h3>Diagnostik & Planung</h3><p>3D-Scan, digitale Smile-Simulation und ein detaillierter Heil- und Kostenplan. Sie wissen vorab, was Sie erwartet.</p><span class="duration">1–2 Tage</span></div>
-      <div class="step"><div class="step-num">03</div><h3>Behandlung</h3><p>Präzise, schmerzarm, modern. Hochwertige Materialien, Lupenbrillen-Präzision und ein ruhiges, sanftes Vorgehen.</p><span class="duration">Sitzungen individuell</span></div>
-      <div class="step"><div class="step-num">04</div><h3>Nachsorge & Recall</h3><p>Wir bleiben dran: regelmäßige Kontrolltermine, Prophylaxe und Garantieleistungen für nachhaltige Ergebnisse.</p><span class="duration">Lebenslang</span></div>
+      <div class="step"><div class="step-num">01</div><h3>Erstgespräch</h3><p>Persönliches 60-Minuten-Gespräch in entspannter Atmosphäre. Wir hören zu, prüfen den Befund und besprechen Ihre&nbsp;Ziele.</p><span class="duration">60 Min · kostenfrei</span></div>
+      <div class="step"><div class="step-num">02</div><h3>Diagnostik &&nbsp;Planung</h3><p>3D-Scan, digitale Smile-Simulation und ein detaillierter Heil- und Kostenplan. Sie wissen vorab, was Sie&nbsp;erwartet.</p><span class="duration">1–2 Tage</span></div>
+      <div class="step"><div class="step-num">03</div><h3>Behandlung</h3><p>Präzise, schmerzarm, modern. Hochwertige Materialien, Lupenbrillen-Präzision und ein ruhiges, sanftes&nbsp;Vorgehen.</p><span class="duration">Sitzungen individuell</span></div>
+      <div class="step"><div class="step-num">04</div><h3>Nachsorge &&nbsp;Recall</h3><p>Wir bleiben dran: regelmäßige Kontrolltermine, Prophylaxe und Garantieleistungen für nachhaltige&nbsp;Ergebnisse.</p><span class="duration">Lebenslang</span></div>
     </div>
   </div>
 </section>
@@ -2435,26 +2441,26 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">Patientenstimmen</div>
-      <h2 id="testi-h2">Was Patienten über uns sagen.</h2>
-      <p>★ 4,7 bei Google – ehrliche Stimmen aus Essen und Umgebung.</p>
+      <h2 id="testi-h2">Was Patienten über uns&nbsp;sagen.</h2>
+      <p>★ 4,7 bei Google – ehrliche Stimmen aus Essen und&nbsp;Umgebung.</p>
     </div>
     <div class="testi-grid">
       <article class="testi-card">
         <span class="source">Google</span>
         <div class="stars">★ ★ ★ ★ ★</div>
-        <p class="quote">Endlich ein Zahnarzt in Essen, bei dem ich keine Angst habe! Hauke Hellriegel hat sich eine Stunde Zeit genommen, alles erklärt und meine Keramikimplantate haben mein Leben verändert. Absolute Empfehlung.</p>
+        <p class="quote">Endlich ein Zahnarzt in Essen, bei dem ich keine Angst habe! Hauke Hellriegel hat sich eine Stunde Zeit genommen, alles erklärt und meine Keramikimplantate haben mein Leben verändert. Absolute&nbsp;Empfehlung.</p>
         <div class="author"><div class="avatar">SR</div><div class="info"><strong>Sandra R.</strong><span>Patientin · Essen-Werden</span></div></div>
       </article>
       <article class="testi-card">
         <span class="source">Jameda</span>
         <div class="stars">★ ★ ★ ★ ★</div>
-        <p class="quote">Eine wirklich angenehme Praxis. Modern, sauber, freundliches Team. Mein Smile Design mit Veneers ist genauso geworden, wie wir es geplant hatten. Kann ich nur weiterempfehlen.</p>
+        <p class="quote">Eine wirklich angenehme Praxis. Modern, sauber, freundliches Team. Mein Smile Design mit Veneers ist genauso geworden, wie wir es geplant hatten. Kann ich nur&nbsp;weiterempfehlen.</p>
         <div class="author"><div class="avatar">MK</div><div class="info"><strong>Markus K.</strong><span>Patient · Essen</span></div></div>
       </article>
       <article class="testi-card">
         <span class="source">Google</span>
         <div class="stars">★ ★ ★ ★ ★</div>
-        <p class="quote">Ich bin extra aus Düsseldorf gekommen, weil ich einen ganzheitlichen Zahnarzt gesucht habe, der auf metallfreie Lösungen setzt. Beratung top, Behandlung schmerzfrei, Ergebnis erstklassig.</p>
+        <p class="quote">Ich bin extra aus Düsseldorf gekommen, weil ich einen ganzheitlichen Zahnarzt gesucht habe, der auf metallfreie Lösungen setzt. Beratung top, Behandlung schmerzfrei, Ergebnis&nbsp;erstklassig.</p>
         <div class="author"><div class="avatar">PT</div><div class="info"><strong>Petra T.</strong><span>Patientin · Düsseldorf</span></div></div>
       </article>
     </div>
@@ -2472,8 +2478,8 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">Technologie & Ausstattung</div>
-      <h2 id="tech-h2">Modernste Technologie.<br>Für <span class="accent">präzise</span> Ergebnisse.</h2>
-      <p>Wir investieren in modernste Geräte und Verfahren – damit Sie schmerzfrei, schnell und mit höchster Qualität behandelt werden.</p>
+      <h2 id="tech-h2">Modernste Technologie.<br>Für <span class="accent">präzise</span>&nbsp;Ergebnisse.</h2>
+      <p>Wir investieren in modernste Geräte und Verfahren – damit Sie schmerzfrei, schnell und mit höchster Qualität behandelt&nbsp;werden.</p>
     </div>
     <div class="tech-grid">
       <!-- Großes Bento-Tile: 3D-Röntgen (2x2) -->
@@ -2481,8 +2487,8 @@
         <div class="tc-img" style="background-image:url('images/hauke-op2.jpg');"></div>
         <div class="tc-content">
           <span class="tc-kicker"><span class="dot"></span>Diagnostik</span>
-          <h3>3D-Röntgen · DVT-Scanner</h3>
-          <p>Strahlungsarme 3D-Diagnostik für präzise Implantatplanung. Jeder Eingriff wird vorher digital simuliert — für maximale Sicherheit.</p>
+          <h3>3D-Röntgen ·&nbsp;DVT-Scanner</h3>
+          <p>Strahlungsarme 3D-Diagnostik für präzise Implantatplanung. Jeder Eingriff wird vorher digital simuliert — für maximale&nbsp;Sicherheit.</p>
         </div>
       </article>
 
@@ -2509,8 +2515,8 @@
         <div class="tc-img" style="background-image:url('images/tech-workflow.jpg');"></div>
         <div class="tc-content">
           <span class="tc-kicker"><span class="dot"></span>Workflow</span>
-          <h3>Digitaler Workflow & CAD/CAM</h3>
-          <p>Intraoral-Scanner und digitale Planung — Zahnersatz wird in unserem eigenen Haus passgenau gefertigt.</p>
+          <h3>Digitaler Workflow &&nbsp;CAD/CAM</h3>
+          <p>Intraoral-Scanner und digitale Planung — Zahnersatz wird in unserem eigenen Haus passgenau&nbsp;gefertigt.</p>
         </div>
       </article>
     </div>
@@ -2522,8 +2528,8 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">Häufig gestellte Fragen</div>
-      <h2 id="faq-h2">Antworten auf Ihre Fragen.</h2>
-      <p>Die wichtigsten Fragen rund um unsere Praxis in Essen-Werden, Keramikimplantate und metallfreien Zahnersatz.</p>
+      <h2 id="faq-h2">Antworten auf Ihre&nbsp;Fragen.</h2>
+      <p>Die wichtigsten Fragen rund um unsere Praxis in Essen-Werden, Keramikimplantate und metallfreien&nbsp;Zahnersatz.</p>
     </div>
     <div class="faq-wrap">
       <details class="faq-item" open>
@@ -2561,7 +2567,7 @@
       <div class="standort-info">
         <div class="kicker">Standort & Sprechzeiten</div>
         <h2 id="stand-h2">Mitten in <span class="accent">Essen-Werden</span>.</h2>
-        <p>Unsere Praxis liegt im Herzen von Essen-Werden, idyllisch im Süden der Stadt, direkt an der Ruhr. Patientenparkplätze direkt vor der Tür, gute Anbindung mit Bus und S-Bahn — aus dem gesamten Ruhrgebiet bestens erreichbar.</p>
+        <p>Unsere Praxis liegt im Herzen von Essen-Werden, idyllisch im Süden der Stadt, direkt an der Ruhr. Patientenparkplätze direkt vor der Tür, gute Anbindung mit Bus und S-Bahn — aus dem gesamten Ruhrgebiet bestens&nbsp;erreichbar.</p>
         <div class="standort-blocks">
           <div class="standort-block">
             <div class="head">
@@ -2644,11 +2650,11 @@
   <div class="container cta-inner">
     <div class="cta-text">
       <div class="kicker">Bereit für Ihr neues Lächeln?</div>
-      <h2 id="cta-h2">Termin <span class="accent">vereinbaren</span><br>in Essen.</h2>
-      <p>Vereinbaren Sie jetzt Ihr kostenfreies Erstgespräch in unserer Praxis in Essen-Werden. Wir nehmen uns Zeit für Sie.</p>
+      <h2 id="cta-h2">Termin <span class="accent">vereinbaren</span><br>in&nbsp;Essen.</h2>
+      <p>Vereinbaren Sie jetzt Ihr kostenfreies Erstgespräch in unserer Praxis in Essen-Werden. Wir nehmen uns Zeit für&nbsp;Sie.</p>
     </div>
     <div class="cta-buttons">
-      <a href="#termin-form" class="btn btn-primary">
+      <a href="erstgespraech.html" class="btn btn-primary">
         Termin online buchen
         <span class="arrow"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"><line x1="0" y1="7" x2="29" y2="7"/><polyline points="22 1 29 7 22 13"/></svg></span>
       </a>
@@ -2666,7 +2672,7 @@
     <div class="section-head">
       <div class="section-kicker">YouTube · Hauke Hellriegel</div>
       <h2 id="yt-h2">Zahnmedizin auf <span class="accent">YouTube</span>.</h2>
-      <p>Auf unserem YouTube-Kanal erklären wir Keramikimplantate, metallfreien Zahnersatz und biologische Zahnmedizin verständlich, ehrlich und auf den Punkt – direkt aus der Praxis in Essen-Werden.</p>
+      <p>Auf unserem YouTube-Kanal erklären wir Keramikimplantate, metallfreien Zahnersatz und biologische Zahnmedizin verständlich, ehrlich und auf den Punkt – direkt aus der Praxis in&nbsp;Essen-Werden.</p>
       <a href="https://www.youtube.com/@biologischerzahnarzt" target="_blank" rel="noopener" class="channel-info">
         <span class="yt-icon"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
         <span>@biologischerzahnarzt</span>
@@ -2683,8 +2689,8 @@
         </a>
         <div class="yt-content">
           <div class="yt-meta">Hauke Hellriegel<span class="dot"></span>Biologische Zahnmedizin</div>
-          <h3>Titanimplantate: Verborgene Risiken & Nebenwirkungen enthüllt!</h3>
-          <p>Warum Keramikimplantate die bessere Wahl sind — und was Metall im Mund mit Ihrer Gesundheit macht.</p>
+          <h3>Titanimplantate: Verborgene Risiken & Nebenwirkungen&nbsp;enthüllt!</h3>
+          <p>Warum Keramikimplantate die bessere Wahl sind — und was Metall im Mund mit Ihrer Gesundheit&nbsp;macht.</p>
           <a href="https://youtu.be/Cif9G3f_MVo" target="_blank" rel="noopener" class="yt-watch">
             <span class="yt-mini"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
             Auf YouTube ansehen
@@ -2701,8 +2707,8 @@
         </a>
         <div class="yt-content">
           <div class="yt-meta">Hauke Hellriegel<span class="dot"></span>Biologische Zahnmedizin</div>
-          <h3>Warum dein Kiefer dich heimlich KRANK macht</h3>
-          <p>Wie Kiefergelenk und Bisslage Einfluss auf den gesamten Körper haben — der ganzheitliche Zusammenhang erklärt.</p>
+          <h3>Warum dein Kiefer dich heimlich KRANK&nbsp;macht</h3>
+          <p>Wie Kiefergelenk und Bisslage Einfluss auf den gesamten Körper haben — der ganzheitliche Zusammenhang&nbsp;erklärt.</p>
           <a href="https://youtu.be/D1C5FcUEuLw" target="_blank" rel="noopener" class="yt-watch">
             <span class="yt-mini"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
             Auf YouTube ansehen
@@ -2719,8 +2725,8 @@
         </a>
         <div class="yt-content">
           <div class="yt-meta">Hauke Hellriegel<span class="dot"></span>Biologische Zahnmedizin</div>
-          <h3>Hohe Kosten beim biologischen Zahnarzt? DAS ist der Grund</h3>
-          <p>Was hinter den Preisen einer biologischen Praxis steckt — Materialien, Technologie und Zeit, die wirklich zählen.</p>
+          <h3>Hohe Kosten beim biologischen Zahnarzt? DAS ist der&nbsp;Grund</h3>
+          <p>Was hinter den Preisen einer biologischen Praxis steckt — Materialien, Technologie und Zeit, die wirklich&nbsp;zählen.</p>
           <a href="https://youtu.be/BnaemLrx4K0" target="_blank" rel="noopener" class="yt-watch">
             <span class="yt-mini"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
             Auf YouTube ansehen
@@ -2752,7 +2758,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <img src="images/logoquer.png" alt="Hauke Hellriegel · Biologische Zahnmedizin Essen" class="logo">
-        <p>Ihr Zahnarzt in Essen-Werden. Spezialisiert auf Keramikimplantate, metallfreien Zahnersatz und ganzheitliche Zahnmedizin.</p>
+        <p>Ihr Zahnarzt in Essen-Werden. Spezialisiert auf Keramikimplantate, metallfreien Zahnersatz und ganzheitliche&nbsp;Zahnmedizin.</p>
         <!-- HH-Brand-Detail -->
         <svg class="brand-mark dark" style="width:42px;height:42px;opacity:.55;margin-bottom:18px;" aria-hidden="true"><use href="#brand-hh"/></svg>
         <div class="social">
