@@ -68,6 +68,31 @@
     .p-grid{grid-template-columns:1fr;}
     .panel{padding:26px 22px;}
   }
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>

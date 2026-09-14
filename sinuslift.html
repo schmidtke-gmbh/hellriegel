@@ -2054,6 +2054,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2349,7 +2374,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Wann nötig?</div>
-        <h2>Nicht jeder<br><span class="accent">braucht einen&nbsp;Sinuslift.</span></h2>
+        <h2>Nicht jeder<br><span class="accent">braucht einen Sinuslift.</span></h2>
         <p>Ehrlich gesagt: Nicht jeder Patient braucht einen Sinuslift. Manchmal ist eine angepasste Implantatposition oder ein anderes Konzept der bessere Weg, wir prüfen das immer&nbsp;zuerst.</p><p>Ob interner („geschlossener") oder externer Sinuslift, die Entscheidung treffen wir nach Ihrer individuellen Anatomie, nicht nach Schema&nbsp;F.</p><p>Wir führen den Eingriff so minimalinvasiv wie möglich durch und arbeiten bevorzugt mit körpereigenen Wachstumsfaktoren (A-PRF), um Fremdmaterial gering zu&nbsp;halten.</p>
       </div>
     </div>
@@ -2360,18 +2385,18 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Zwei Verfahren</div>
-      <h2>Intern oder extern<br><span class="accent">individuell&nbsp;entschieden.</span></h2>
+      <h2>Intern oder extern<br><span class="accent">individuell entschieden.</span></h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
         <div class="v-num">Geschlossen</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
-        <h3>Interner&nbsp;Sinuslift</h3>
+        <h3>Interner Sinuslift</h3>
         <p>Bei moderatem Knochenmangel: Der Knochen wird durch die Implantatbohrung sanft angehoben, weniger Schwellung, schnellere&nbsp;Heilung.</p>
       </div><div class="k-value-card">
         <div class="v-num">Offen</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Externer&nbsp;Sinuslift</h3>
+        <h3>Externer Sinuslift</h3>
         <p>Bei deutlichem Knochenmangel: Zugang seitlich über das Zahnfleisch, präzise Anhebung der&nbsp;Kieferhöhlenschleimhaut.</p>
       </div><div class="k-value-card">
         <div class="v-num">Eigenblut</div>
@@ -2393,7 +2418,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre&nbsp;Situation.</h2>
+      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre Situation.</h2>
       <p>Im ausführlichen Erstgespräch nehmen wir uns Zeit für Ihre Fragen, biologisch, ehrlich, ohne&nbsp;Verkaufsdruck.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

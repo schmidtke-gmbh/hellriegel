@@ -2054,6 +2054,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2349,7 +2374,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Warum sofort?</div>
-        <h2>Ein OP-Termin,<br><span class="accent">eine&nbsp;Heilungsphase.</span></h2>
+        <h2>Ein OP-Termin,<br><span class="accent">eine Heilungsphase.</span></h2>
         <p>Ein großer Vorteil der Sofortimplantation: Wir nutzen die körpereigene Heilungskompetenz nach der Zahnentfernung gleichzeitig für das Einwachsen des Implantats. Knochen und Zahnfleisch bleiben nicht nur erhalten, sie werden im Wachstum aktiv&nbsp;gefördert.</p><p>Durch die einzigartigen Materialeigenschaften des Zirkonoxids regenerieren die Strukturen direkt am Implantat. Das ist biologisch elegant, und für Sie deutlich angenehmer als ein Knochenaufbau in einer separaten Operation Monate&nbsp;später.</p><p>In vielen Fällen versorgen wir die Zahnlücke sofort mit einem festsitzenden Provisorium. Sie verlassen die Praxis nicht mit einer sichtbaren&nbsp;Lücke.</p>
       </div>
     </div>
@@ -2360,28 +2385,28 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Wann ist Sofortimplantation möglich?</div>
-      <h2>Nicht für jeden,<br><span class="accent">aber für&nbsp;viele.</span></h2>
+      <h2>Nicht für jeden,<br><span class="accent">aber für viele.</span></h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
         <div class="v-num">Knochen</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
-        <h3>Gesunder&nbsp;Restknochen</h3>
+        <h3>Gesunder Restknochen</h3>
         <p>Wenn der Kieferknochen um den entfernten Zahn herum intakt ist und gute Primärstabilität bietet, ist eine Sofortimplantation der biologisch sauberste&nbsp;Weg.</p>
       </div><div class="k-value-card">
         <div class="v-num">Akut</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Keine akute&nbsp;Entzündung</h3>
+        <h3>Keine akute Entzündung</h3>
         <p>Bei akuten apikalen Entzündungen warten wir die Ausheilung ab, alles andere wäre unseriös. Mit Ozon-Therapie beschleunigen wir den&nbsp;Heilungsprozess.</p>
       </div><div class="k-value-card">
         <div class="v-num">Gesund</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>Gute&nbsp;Allgemeingesundheit</h3>
+        <h3>Gute Allgemeingesundheit</h3>
         <p>Stabile Allgemeingesundheit, kontrolliertes Immunsystem, ausreichende Vitalstoffversorgung, die biologischen Voraussetzungen prüfen wir vorab&nbsp;gemeinsam.</p>
       </div><div class="k-value-card">
         <div class="v-num">Klar</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Realistische&nbsp;Erwartung</h3>
+        <h3>Realistische Erwartung</h3>
         <p>Sofortimplantate brauchen die gleiche Einheilzeit wie klassische Implantate, was sofort kommt, ist die Implantation, nicht die finale&nbsp;Krone.</p>
       </div>
     </div>
@@ -2392,19 +2417,19 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Der Ablauf</div>
-      <h2>So läuft eine Sofortimplantation<span class="accent"> bei uns&nbsp;ab.</span></h2>
+      <h2>So läuft eine Sofortimplantation<span class="accent"> bei uns ab.</span></h2>
     </div>
     <div class="sp-steps">
       <div class="sp-step">
         <span class="sp-num">01</span>
         <div class="sp-content">
-          <h3>Diagnostik &&nbsp;Planung</h3>
+          <h3>Diagnostik & Planung</h3>
           <p>3D-DVT, Knochenanalyse, Anamnese, und ein Vorbereitungsprogramm aus Mikronährstoffen und Ernährung. Der Körper soll bestmöglich vorbereitet&nbsp;sein.</p>
         </div>
       </div><div class="sp-step">
         <span class="sp-num">02</span>
         <div class="sp-content">
-          <h3>Schonende&nbsp;Zahnentfernung</h3>
+          <h3>Schonende Zahnentfernung</h3>
           <p>Wir entfernen den Zahn so atraumatisch wie möglich. Erhalt der Knochenwände hat absolute Priorität, daraus wächst Ihr neuer&nbsp;Halt.</p>
         </div>
       </div><div class="sp-step">
@@ -2416,13 +2441,13 @@
       </div><div class="sp-step">
         <span class="sp-num">04</span>
         <div class="sp-content">
-          <h3>Provisorische&nbsp;Versorgung</h3>
+          <h3>Provisorische Versorgung</h3>
           <p>Wenn die Primärstabilität es zulässt: festsitzendes Provisorium am selben Tag. Sie verlassen die Praxis mit Zahn, nicht mit&nbsp;Lücke.</p>
         </div>
       </div><div class="sp-step">
         <span class="sp-num">05</span>
         <div class="sp-content">
-          <h3>Einheilung & finale&nbsp;Krone</h3>
+          <h3>Einheilung & finale Krone</h3>
           <p>Nach 3–5 Monaten Einheilung folgt die definitive Vollkeramikkrone, präzise gefertigt, biokompatibel und auf lange Haltbarkeit&nbsp;ausgelegt.</p>
         </div>
       </div>
@@ -2435,7 +2460,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre&nbsp;Situation.</h2>
+      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre Situation.</h2>
       <p>Im ausführlichen Erstgespräch nehmen wir uns Zeit für Ihre Fragen, biologisch, ehrlich, ohne&nbsp;Verkaufsdruck.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

@@ -2099,6 +2099,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2394,7 +2419,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Was ist Ozon?</div>
-        <h2>Sauerstoff in seiner<br><span class="accent">aktivsten&nbsp;Form.</span></h2>
+        <h2>Sauerstoff in seiner<br><span class="accent">aktivsten Form.</span></h2>
         <p>Ozon (O₃) besteht aus drei Sauerstoffatomen und wird in der Medizin seit rund 100 Jahren zur Keimreduktion eingesetzt. In der Zahnheilkunde wirkt es hochwirksam gegen Bakterien, Viren und Pilze, und zerfällt danach rückstandsfrei zu reinem&nbsp;Sauerstoff.</p><p>Je nach Einsatzgebiet applizieren wir Ozon als Gas mit speziellen Aufsätzen, als ozonisiertes Wasser zur Spülung oder als ozonisiertes Öl zur Nachpflege. Die Behandlung dauert oft nur wenige Minuten und lässt sich nahtlos in andere Termine&nbsp;integrieren.</p><p>Wichtig für die Einordnung: Die Ozontherapie ist ein komplementäres Verfahren. Sie ergänzt Diagnostik und klassische Therapie sinnvoll, sie ersetzt sie&nbsp;nicht.</p>
       </div>
     </div>
@@ -2421,12 +2446,12 @@
       </div><div class="k-value-card">
         <div class="v-num">Heilung</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Wundheilung nach&nbsp;OP</h3>
+        <h3>Wundheilung nach OP</h3>
         <p>Nach Zahnentfernung, Implantation oder chirurgischen Eingriffen unterstützt Ozon die Ausheilung des OP-Gebiets, ebenso bei Aphten und kleinen&nbsp;Schleimhautverletzungen.</p>
       </div><div class="k-value-card">
         <div class="v-num">Herde</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>Entzündungen &&nbsp;Herde</h3>
+        <h3>Entzündungen & Herde</h3>
         <p>Bei chronischen Entzündungsherden im Kiefer setzen wir Ozon gezielt zur Keimreduktion ein, eingebettet in unser ganzheitliches&nbsp;Behandlungskonzept.</p>
       </div>
     </div>
@@ -2437,19 +2462,19 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Der Ablauf</div>
-      <h2>So setzen wir Ozon<span class="accent"> bei Ihnen&nbsp;ein.</span></h2>
+      <h2>So setzen wir Ozon<span class="accent"> bei Ihnen ein.</span></h2>
     </div>
     <div class="sp-steps">
       <div class="sp-step">
         <span class="sp-num">01</span>
         <div class="sp-content">
-          <h3>Diagnose &&nbsp;Indikation</h3>
+          <h3>Diagnose & Indikation</h3>
           <p>Wir prüfen, ob und wo Ozon Ihre Behandlung sinnvoll ergänzt, von der Kariesfrühtherapie bis zur&nbsp;OP-Nachsorge.</p>
         </div>
       </div><div class="sp-step">
         <span class="sp-num">02</span>
         <div class="sp-content">
-          <h3>Gezielte&nbsp;Anwendung</h3>
+          <h3>Gezielte Anwendung</h3>
           <p>Ozon wird als Gas, Wasser oder Öl exakt dosiert direkt am Behandlungsort appliziert, schmerzarm und in wenigen&nbsp;Minuten.</p>
         </div>
       </div><div class="sp-step">
@@ -2473,23 +2498,23 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Kosten &amp; Erstattung</div>
-      <h2>Überschaubare Kosten,<br><span class="accent">klare&nbsp;Ansage.</span></h2>
+      <h2>Überschaubare Kosten,<br><span class="accent">klare Ansage.</span></h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
         <div class="v-num">GOZ</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>Abrechnung nach&nbsp;GOZ</h3>
+        <h3>Abrechnung nach GOZ</h3>
         <p>Die Ozonbehandlung ist eine Privatleistung und wird nach Aufwand berechnet, als Einzelanwendung meist im überschaubaren zweistelligen&nbsp;Bereich.</p>
       </div><div class="k-value-card">
         <div class="v-num">Kasse</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Keine&nbsp;Kassenleistung</h3>
+        <h3>Keine Kassenleistung</h3>
         <p>Gesetzliche Kassen übernehmen die Ozontherapie in der Regel nicht. Private Versicherungen und Zusatztarife erstatten je nach&nbsp;Vertrag.</p>
       </div><div class="k-value-card">
         <div class="v-num">Ehrlich</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Vorab&nbsp;transparent</h3>
+        <h3>Vorab transparent</h3>
         <p>Ob und wie oft Ozon bei Ihnen sinnvoll ist, sagen wir Ihnen offen, inklusive der Kosten, bevor wir&nbsp;beginnen.</p>
       </div>
     </div>
@@ -2531,7 +2556,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre&nbsp;Situation.</h2>
+      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre Situation.</h2>
       <p>Im ausführlichen Erstgespräch nehmen wir uns Zeit für Ihre Fragen, biologisch, ehrlich, ohne&nbsp;Verkaufsdruck.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

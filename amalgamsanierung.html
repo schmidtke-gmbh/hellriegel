@@ -2099,6 +2099,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2394,7 +2419,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Warum jetzt?</div>
-        <h2>Ein Material<br><span class="accent">im&nbsp;Auslauf.</span></h2>
+        <h2>Ein Material<br><span class="accent">im Auslauf.</span></h2>
         <p>Seit Januar 2025 ist Dentalamalgam in der EU für neue Füllungen weitgehend verboten, aus Umwelt- und Vorsorgegründen. Millionen vorhandener Füllungen bleiben jedoch im Mund und geben über Jahre geringe Mengen Quecksilber ab, etwa beim Kauen und&nbsp;Zähneknirschen.</p><p>Aus Sicht der biologischen Zahnmedizin gilt: Jede vermeidbare Dauerbelastung ist es wert, vermieden zu werden, besonders bei chronischen Beschwerden, Kinderwunsch oder geschwächtem Immunsystem. Wir beraten sachlich und ohne Angstmache, ob und wann eine Sanierung für Sie sinnvoll&nbsp;ist.</p><p>Nach der Entfernung versorgen wir den Zahn ausschließlich <a href="metallfreier-zahnersatz.html">metallfrei und biokompatibel</a>, mit Vollkeramik oder hochwertigem Komposit, passend zu Befund und&nbsp;Budget.</p>
       </div>
     </div>
@@ -2405,7 +2430,7 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Unser Schutzkonzept</div>
-      <h2>Mehrfacher Schutz bei<br><span class="accent">jeder&nbsp;Entfernung.</span></h2>
+      <h2>Mehrfacher Schutz bei<br><span class="accent">jeder Entfernung.</span></h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
@@ -2421,12 +2446,12 @@
       </div><div class="k-value-card">
         <div class="v-num">Sauerstoff</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Frischluft über&nbsp;Nasenmaske</h3>
+        <h3>Frischluft über Nasenmaske</h3>
         <p>Während der Entfernung atmen Sie über eine separate Sauerstoff- bzw. Frischluftzufuhr, nicht die Luft über dem&nbsp;Behandlungsfeld.</p>
       </div><div class="k-value-card">
         <div class="v-num">Technik</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>Schonendes&nbsp;Herausdrehen</h3>
+        <h3>Schonendes Herausdrehen</h3>
         <p>Wir trennen die Füllung niedrigtourig in wenige große Stücke, statt sie fein zu zerbohren, so entsteht deutlich weniger&nbsp;Quecksilberdampf.</p>
       </div>
     </div>
@@ -2437,13 +2462,13 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Der Ablauf</div>
-      <h2>So läuft eine Amalgamsanierung<span class="accent"> bei uns&nbsp;ab.</span></h2>
+      <h2>So läuft eine Amalgamsanierung<span class="accent"> bei uns ab.</span></h2>
     </div>
     <div class="sp-steps">
       <div class="sp-step">
         <span class="sp-num">01</span>
         <div class="sp-content">
-          <h3>Befund &&nbsp;Beratung</h3>
+          <h3>Befund & Beratung</h3>
           <p>Wir sichten alle Füllungen, besprechen Ihre Situation und legen Reihenfolge und Tempo fest, meist quadrantenweise in mehreren&nbsp;Terminen.</p>
         </div>
       </div><div class="sp-step">
@@ -2455,19 +2480,19 @@
       </div><div class="sp-step">
         <span class="sp-num">03</span>
         <div class="sp-content">
-          <h3>Geschützte&nbsp;Entfernung</h3>
+          <h3>Geschützte Entfernung</h3>
           <p>Unter Kofferdam, Spezialabsaugung und Frischluftzufuhr entfernen wir das Amalgam schonend und vollständig, inklusive Kontrolle der&nbsp;Kavität.</p>
         </div>
       </div><div class="sp-step">
         <span class="sp-num">04</span>
         <div class="sp-content">
-          <h3>Biokompatible&nbsp;Versorgung</h3>
+          <h3>Biokompatible Versorgung</h3>
           <p>Der Zahn erhält eine metallfreie Neuversorgung aus Komposit oder Vollkeramik, stabil, ästhetisch und&nbsp;verträglich.</p>
         </div>
       </div><div class="sp-step">
         <span class="sp-num">05</span>
         <div class="sp-content">
-          <h3>Nachsorge &&nbsp;Ausleitung</h3>
+          <h3>Nachsorge & Ausleitung</h3>
           <p>Bei Bedarf begleiten wir die anschließende Ausleitungsphase in Zusammenarbeit mit umweltmedizinisch tätigen&nbsp;Kollegen.</p>
         </div>
       </div>
@@ -2485,17 +2510,17 @@
       <div class="k-value-card">
         <div class="v-num">Kasse</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Basis übernimmt die&nbsp;Kasse</h3>
+        <h3>Basis übernimmt die Kasse</h3>
         <p>Die einfache Entfernung defekter Füllungen und eine Basisversorgung sind Kassenleistung. Bei nachgewiesener Allergie übernehmen Kassen teils&nbsp;mehr.</p>
       </div><div class="k-value-card">
         <div class="v-num">GOZ</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>Schutzmaßnahmen&nbsp;privat</h3>
+        <h3>Schutzmaßnahmen privat</h3>
         <p>Kofferdam, Spezialschutz und hochwertige metallfreie Füllungen sind Privatleistungen nach GOZ. Sie erhalten vorab einen schriftlichen&nbsp;Kostenplan.</p>
       </div><div class="k-value-card">
         <div class="v-num">Planbar</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Schrittweise&nbsp;sanieren</h3>
+        <h3>Schrittweise sanieren</h3>
         <p>Die Sanierung lässt sich über mehrere Termine und Quartale strecken, medizinisch sinnvoll und finanziell&nbsp;planbar.</p>
       </div>
     </div>
@@ -2537,7 +2562,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre&nbsp;Situation.</h2>
+      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre Situation.</h2>
       <p>Im ausführlichen Erstgespräch nehmen wir uns Zeit für Ihre Fragen, biologisch, ehrlich, ohne&nbsp;Verkaufsdruck.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

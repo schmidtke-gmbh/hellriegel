@@ -2039,6 +2039,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2333,7 +2358,7 @@
 
     E-Mail: <a href="mailto:info@hellriegel-zahnmedizin.de" style="color:var(--c-gold-d);">info@hellriegel-zahnmedizin.de</a></p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Berufsbezeichnung &amp; berufsrechtliche&nbsp;Regelungen</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Berufsbezeichnung &amp; berufsrechtliche Regelungen</h2>
     <p>Berufsbezeichnung: <strong>Zahnarzt</strong> (verliehen in Deutschland)<br>
     Zuständige Kammer: <strong>Zahnärztekammer Nordrhein</strong>, Emanuel-Leutze-Straße 8, 40547 Düsseldorf<br>
     <a href="https://www.zaek-nr.de" target="_blank" rel="noopener" style="color:var(--c-gold-d);">www.zaek-nr.de</a></p>
@@ -2350,7 +2375,7 @@
     <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Umsatzsteuer-ID</h2>
     <p>Zahnärztliche Leistungen sind gemäß § 4 Nr. 14 UStG&nbsp;umsatzsteuerbefreit.</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Redaktionell&nbsp;verantwortlich</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Redaktionell verantwortlich</h2>
     <p>Hauke Hellriegel (Anschrift wie&nbsp;oben)</p>
 
     <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">EU-Streitschlichtung</h2>

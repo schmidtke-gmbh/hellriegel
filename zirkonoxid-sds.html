@@ -2054,6 +2054,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2364,7 +2389,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Unser Partner</div>
-        <h2>Warum wir auf<br><span class="accent">SDS&nbsp;setzen.</span></h2>
+        <h2>Warum wir auf<br><span class="accent">SDS setzen.</span></h2>
         <p>Swiss Dental Solutions (SDS) ist der Schweizer Pionier für Keramikimplantate. Über 20 Jahre Erfahrung im Bereich Zirkonoxid-Implantologie, ständige Weiterentwicklung, kompromisslose Qualität, das sind die Gründe, warum wir hier konsequent&nbsp;setzen.</p><p>Die einteiligen SDS-Implantate ermöglichen ein besonders schonendes biologisches Konzept: kein Mikrospalt zwischen Implantat und Abutment, an dem sich Bakterien sammeln&nbsp;könnten.</p><p>Das SDS-System ist zertifiziert nach dem „Clean Implant"-Standard, höchste Reinheit der Oberfläche, keine Rückstände aus der Produktion. Sie spüren den Unterschied im Mund nicht. Ihr Körper&nbsp;schon.</p>
       </div>
     </div>
@@ -2375,7 +2400,7 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Vorteile von Zirkonoxid</div>
-      <h2>Warum Keramik<br><span class="accent">auch bei&nbsp;Implantaten?</span></h2>
+      <h2>Warum Keramik<br><span class="accent">auch bei Implantaten?</span></h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
@@ -2396,7 +2421,7 @@
       </div><div class="k-value-card">
         <div class="v-num">Langlebig</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>25+ Jahre&nbsp;Haltbarkeit</h3>
+        <h3>25+ Jahre Haltbarkeit</h3>
         <p>Korrosionsfrei, formstabil, extrem hart. Bei guter Pflege ein Implantat fürs&nbsp;Leben.</p>
       </div>
     </div>
@@ -2408,7 +2433,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre&nbsp;Situation.</h2>
+      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre Situation.</h2>
       <p>Im ausführlichen Erstgespräch nehmen wir uns Zeit für Ihre Fragen, biologisch, ehrlich, ohne&nbsp;Verkaufsdruck.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

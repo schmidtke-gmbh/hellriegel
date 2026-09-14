@@ -2054,6 +2054,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2349,7 +2374,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Was sind Keramikimplantate?</div>
-        <h2>Künstliche Zahnwurzeln<br><span class="accent">aus&nbsp;Keramik.</span></h2>
+        <h2>Künstliche Zahnwurzeln<br><span class="accent">aus Keramik.</span></h2>
         <p>Ein Keramikimplantat ist eine künstliche Zahnwurzel aus Zirkoniumdioxid, die fest im Kieferknochen verankert wird. Darauf wird die neue Krone befestigt, das Ergebnis fühlt sich an wie ein eigener Zahn und ist optisch nicht von ihm zu&nbsp;unterscheiden.</p>
         <p>Im Unterschied zum klassischen Titan-Implantat kommt dabei kein Metall in Ihren Körper. Zirkonoxid ist chemisch inert, korrosionsfrei und immunologisch sehr gut verträglich. Abstoßungsreaktionen sind kaum bekannt. Knochen und Zahnfleisch wachsen direkt an die Keramik&nbsp;an.</p>
         <p>Wir arbeiten mit einem der erfahrensten Systeme am Markt: <a href="zirkonoxid-sds.html">Zirkonoxid-Implantaten von Swiss Dental Solutions (SDS)</a>. Schweizer Qualität mit über 20 Jahren Keramik-Erfahrung. Darüber hinaus arbeiten wir mit weiteren etablierten Keramik-Implantatsystemen, und versorgen selbstverständlich auch Patienten, deren Implantate von anderen Herstellern&nbsp;stammen.</p>
@@ -2366,7 +2391,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Keramik vs. Titan</div>
-        <h2>Der Unterschied liegt<br><span class="accent">im&nbsp;Material.</span></h2>
+        <h2>Der Unterschied liegt<br><span class="accent">im Material.</span></h2>
         <p>Titan ist seit Jahrzehnten bewährt, aber es ist und bleibt ein Metall. Es kann Ionen an das umliegende Gewebe abgeben und schimmert bei dünnem Zahnfleisch gräulich durch. Für sensibilisierte oder biologisch orientierte Patienten ist das oft ein&nbsp;Ausschlusskriterium.</p>
         <p>Zirkonoxid dagegen ist zahnfarben, elektrisch neutral und lagert deutlich weniger Plaque an. Das senkt das Risiko für Periimplantitis, die gefürchtete Entzündung rund um das Implantat und häufigste Ursache für&nbsp;Implantatverlust.</p>
         <p>Welche Lösung für Sie die richtige ist, klären wir gemeinsam, ehrlich, auf Basis Ihrer Ausgangssituation und ohne Verkaufsdruck. Antworten auf typische Fragen finden Sie auch in unseren <a href="faq-implantate.html">FAQ zu Implantaten</a>.</p>
@@ -2379,28 +2404,28 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Für wen geeignet?</div>
-      <h2>Ideal, wenn Ihnen<br><span class="accent">diese Dinge wichtig&nbsp;sind.</span></h2>
+      <h2>Ideal, wenn Ihnen<br><span class="accent">diese Dinge wichtig sind.</span></h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
         <div class="v-num">Weiß</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Maximale&nbsp;Ästhetik</h3>
+        <h3>Maximale Ästhetik</h3>
         <p>Gerade im Frontzahnbereich entscheidend: kein graues Durchschimmern am Zahnfleischrand, auch bei dünnem oder zurückgehendem&nbsp;Zahnfleisch.</p>
       </div><div class="k-value-card">
         <div class="v-num">Neutral</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
-        <h3>Metallallergie &amp;&nbsp;Unverträglichkeit</h3>
+        <h3>Metallallergie &amp; Unverträglichkeit</h3>
         <p>Bei Allergien, Sensibilisierungen oder Autoimmunerkrankungen ist die metallfreie Lösung die verträgliche Alternative zu&nbsp;Titan.</p>
       </div><div class="k-value-card">
         <div class="v-num">Bio</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Biologischer&nbsp;Anspruch</h3>
+        <h3>Biologischer Anspruch</h3>
         <p>Sie möchten so wenig Fremdmaterial wie möglich im Körper? Keramikimplantate fügen sich konsequent in unser ganzheitliches Konzept&nbsp;ein.</p>
       </div><div class="k-value-card">
         <div class="v-num">Sauber</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>Langfristige&nbsp;Gesundheit</h3>
+        <h3>Langfristige Gesundheit</h3>
         <p>Weniger Plaque-Anlagerung bedeutet weniger Entzündungsrisiko, für ein Implantat, das bei guter Pflege lange&nbsp;hält.</p>
       </div>
     </div>
@@ -2412,7 +2437,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre&nbsp;Situation.</h2>
+      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre Situation.</h2>
       <p>Im ausführlichen Erstgespräch nehmen wir uns Zeit für Ihre Fragen, biologisch, ehrlich, ohne&nbsp;Verkaufsdruck.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

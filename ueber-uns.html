@@ -2045,6 +2045,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2546,7 +2571,7 @@
     <div class="u-tech-grid">
       <div class="u-tech-card">
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
-        <h3>3D-DVT (Digitale&nbsp;Volumentomographie)</h3>
+        <h3>3D-DVT (Digitale Volumentomographie)</h3>
         <p>Strahlungsarme 3D-Bildgebung für präzise Implantatplanung und Diagnostik komplexer Fälle, ohne externe&nbsp;Überweisung.</p>
       </div>
       <div class="u-tech-card">
@@ -2561,12 +2586,12 @@
       </div>
       <div class="u-tech-card">
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Sterilisation nach&nbsp;RKI-Standard</h3>
+        <h3>Sterilisation nach RKI-Standard</h3>
         <p>Eigene Sterilisationsabteilung mit dokumentierter Aufbereitung, kompromisslose Hygiene als selbstverständliche&nbsp;Basis.</p>
       </div>
       <div class="u-tech-card">
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7z"/><path d="M11 13v7"/></svg></div>
-        <h3>Biokompatible&nbsp;Materialien</h3>
+        <h3>Biokompatible Materialien</h3>
         <p>Wir arbeiten ausschließlich mit getesteten, metallfreien Werkstoffen, von Keramikimplantaten bis&nbsp;Komposit-Füllungen.</p>
       </div>
       <div class="u-tech-card">

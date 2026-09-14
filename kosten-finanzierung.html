@@ -2054,6 +2054,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2349,7 +2374,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Unser Anspruch</div>
-        <h2>Klar reden<br><span class="accent">auch über&nbsp;Geld.</span></h2>
+        <h2>Klar reden<br><span class="accent">auch über Geld.</span></h2>
         <p>Wir reden offen über Geld. Im Erstgespräch erhalten Sie einen vorläufigen Kostenrahmen, nach der ausführlichen Diagnostik einen detaillierten Heil- und Kostenplan, ohne Versteckspiel, ohne&nbsp;Druck.</p><p>Was wir <strong>nicht</strong> machen: Behandlungen empfehlen, die Sie nicht brauchen. Wir machen nur das, was medizinisch und biologisch Sinn macht, auch wenn das manchmal weniger ist, als andere vorschlagen&nbsp;würden.</p><p>Gesetzliche Krankenversicherungen erstatten meist nur einen Festzuschuss. Wir helfen Ihnen, Heil- und Kostenplan sowie Erstattungswege verständlich aufzubereiten, auch wenn es etwas komplexer&nbsp;wird.</p>
       </div>
     </div>
@@ -2360,28 +2385,28 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">BFS health finance · Unser Finanzierungs-Partner</div>
-      <h2>Behandlung jetzt<br><span class="accent">in Raten&nbsp;zahlen.</span></h2>
+      <h2>Behandlung jetzt<br><span class="accent">in Raten zahlen.</span></h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
         <div class="v-num">0% Zinsen</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
-        <h3>Bis zu 24 Monate&nbsp;zinsfrei</h3>
+        <h3>Bis zu 24 Monate zinsfrei</h3>
         <p>Bei vielen Behandlungen sind Ratenzahlungen über 12–24 Monate komplett ohne Zinsen möglich. Wir informieren Sie zu den aktuellen&nbsp;Konditionen.</p>
       </div><div class="k-value-card">
         <div class="v-num">Einfach</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Ohne&nbsp;Bonitätshürde</h3>
+        <h3>Ohne Bonitätshürde</h3>
         <p>Die BFS arbeitet im Factoring-Modell, keine klassische Bankprüfung, deutlich einfacher als eine&nbsp;Bankfinanzierung.</p>
       </div><div class="k-value-card">
         <div class="v-num">Klar</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>Rechnung direkt zu&nbsp;Ihnen</h3>
+        <h3>Rechnung direkt zu Ihnen</h3>
         <p>Die BFS übernimmt die Abrechnung. Sie erhalten Ihre Rechnung direkt nach Hause und entscheiden über die&nbsp;Zahlungsweise.</p>
       </div><div class="k-value-card">
         <div class="v-num">Steuer</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Volle&nbsp;Steuervorteile</h3>
+        <h3>Volle Steuervorteile</h3>
         <p>Ihre Zahnbehandlung bleibt steuerlich voll absetzbar, auch bei Ratenzahlung über&nbsp;BFS.</p>
       </div>
     </div>
@@ -2392,25 +2417,25 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">So einfach geht's</div>
-      <h2>Von der Beratung<span class="accent"> zur&nbsp;Behandlung.</span></h2>
+      <h2>Von der Beratung<span class="accent"> zur Behandlung.</span></h2>
     </div>
     <div class="sp-steps">
       <div class="sp-step">
         <span class="sp-num">01</span>
         <div class="sp-content">
-          <h3>Kostenfreies&nbsp;Erstgespräch</h3>
+          <h3>Kostenfreies Erstgespräch</h3>
           <p>Wir besprechen Ihre Wünsche, prüfen die biologische Ausgangssituation und geben Ihnen einen ersten&nbsp;Kostenrahmen.</p>
         </div>
       </div><div class="sp-step">
         <span class="sp-num">02</span>
         <div class="sp-content">
-          <h3>Detaillierter&nbsp;Heilplan</h3>
+          <h3>Detaillierter Heilplan</h3>
           <p>Nach der vollständigen Diagnostik (DVT, Blutbild, ggf. immunologische Tests) erhalten Sie einen transparenten Heil- und&nbsp;Kostenplan.</p>
         </div>
       </div><div class="sp-step">
         <span class="sp-num">03</span>
         <div class="sp-content">
-          <h3>Finanzierungsantrag&nbsp;(optional)</h3>
+          <h3>Finanzierungsantrag (optional)</h3>
           <p>Wenn gewünscht: Wir leiten alle Unterlagen direkt an die BFS weiter. Die Zusage liegt meist innerhalb von 1–2 Werktagen&nbsp;vor.</p>
         </div>
       </div><div class="sp-step">
@@ -2429,7 +2454,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre&nbsp;Situation.</h2>
+      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre Situation.</h2>
       <p>Im ausführlichen Erstgespräch nehmen wir uns Zeit für Ihre Fragen, biologisch, ehrlich, ohne&nbsp;Verkaufsdruck.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

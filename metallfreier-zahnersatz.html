@@ -2054,6 +2054,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2349,7 +2374,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Warum metallfrei?</div>
-        <h2>Metalle<br><span class="accent">haben im Mund nichts&nbsp;verloren.</span></h2>
+        <h2>Metalle<br><span class="accent">haben im Mund nichts verloren.</span></h2>
         <p>Metalle haben in der Zahnmedizin lange dominiert, moderne Analysenmethoden zeigen aber, dass durch chemische und physikalische Prozesse feinste Legierungsbestandteile herausgelöst werden&nbsp;können.</p><p>Diese Bestandteile können mit Ihrem Organismus interagieren und im Körper aufgenommen werden, das wollen wir vermeiden. Gerade bei langfristigem Zahnersatz, der Jahrzehnte im Mund&nbsp;bleibt.</p><p>Metallfrei heißt für uns nicht nur „kein Metall sichtbar", sondern wirklich keine Metallbestandteile, auch nicht versteckt im Gerüst, auch nicht in der&nbsp;Befestigung.</p>
       </div>
     </div>
@@ -2360,7 +2385,7 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Was wir anbieten</div>
-      <h2>Drei Werkstoffe<br><span class="accent">für jede&nbsp;Situation.</span></h2>
+      <h2>Drei Werkstoffe<br><span class="accent">für jede Situation.</span></h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
@@ -2381,7 +2406,7 @@
       </div><div class="k-value-card">
         <div class="v-num">Flexibel</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>PEEK für&nbsp;Prothesen</h3>
+        <h3>PEEK für Prothesen</h3>
         <p>Polyetheretherketon (PEEK): hochmoderner Kunststoff für herausnehmbare Prothesen. Leicht, biokompatibel, keine&nbsp;Metall-Klammern.</p>
       </div>
     </div>
@@ -2396,7 +2421,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Individuelle Materialprüfung</div>
-        <h2>Auf Wunsch:<br><span class="accent">getestet auf&nbsp;Verträglichkeit.</span></h2>
+        <h2>Auf Wunsch:<br><span class="accent">getestet auf Verträglichkeit.</span></h2>
         <p>Auch metallfreie Werkstoffe können bei sehr sensiblen Patienten Reaktionen auslösen. Auf Wunsch lassen wir die geplanten Materialien individuell auf Verträglichkeit testen (ART, Autonomer Response Testing), bevor wir sie dauerhaft in Ihren Mund&nbsp;einbauen.</p><p>Unsere Materialauswahl ist nach biologischen Kriterien geprüft. Wir kennen die Inhaltsstoffe unserer Werkstoffe genau und können Ihnen bei Bedarf detailliert Auskunft&nbsp;geben.</p><p>Wenn Sie bekannte Allergien oder Unverträglichkeiten haben, bringen Sie uns Ihre Befunde mit. Wir richten die Materialauswahl danach&nbsp;aus.</p>
       </div>
     </div>
@@ -2408,7 +2433,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre&nbsp;Situation.</h2>
+      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre Situation.</h2>
       <p>Im ausführlichen Erstgespräch nehmen wir uns Zeit für Ihre Fragen, biologisch, ehrlich, ohne&nbsp;Verkaufsdruck.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

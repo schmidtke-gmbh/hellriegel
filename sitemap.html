@@ -2039,6 +2039,36 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  /* Zwei-Spalten-Blöcke, die vorher inline gesetzt waren */
+  .zwei-spalten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;}
+  .zwei-spalten.weit{gap:40px;}
+  @media (max-width:820px){ .zwei-spalten{grid-template-columns:minmax(0,1fr);} }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2319,7 +2349,7 @@
 
 <section class="k-section">
   <div class="container" style="max-width:960px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+    <div class="zwei-spalten weit">
 
       <div>
         <div style="font-size:11px;font-weight:700;color:var(--c-gold-d);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;">Praxis</div>

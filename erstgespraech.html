@@ -2069,6 +2069,31 @@
     .funnel-intro{padding:34px 0 4px;}
     .funnel-foot .container{flex-direction:column;align-items:flex-start;gap:12px;}
   }
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2136,7 +2161,7 @@
       <!-- STEP 1 -->
       <div class="wiz-panel active" data-panel="0">
         <div class="wiz-kicker">Schritt 1 von 5</div>
-        <h2>Worum geht es bei&nbsp;Ihnen?</h2>
+        <h2>Worum geht es bei Ihnen?</h2>
         <p class="wiz-lead">Wählen Sie das Thema, das Ihrem Anliegen am nächsten kommt. Damit können wir uns optimal auf das Gespräch&nbsp;vorbereiten.</p>
         <div class="wiz-radio-grid">
           <label class="wiz-radio"><input type="radio" name="anliegen" value="Keramikimplantate"><span class="rlabel"><strong>Keramikimplantate</strong><em>Metallfreie Implantate aus Zirkonoxid</em></span></label>
@@ -2152,7 +2177,7 @@
       <!-- STEP 2 -->
       <div class="wiz-panel" data-panel="1">
         <div class="wiz-kicker">Schritt 2 von 5</div>
-        <h2>Was möchten Sie&nbsp;erreichen?</h2>
+        <h2>Was möchten Sie erreichen?</h2>
         <p class="wiz-lead">Erzählen Sie uns kurz Ihre Situation. Je mehr Sie schildern, desto besser können wir uns vorbereiten. Kein Roman, ein paar Sätze&nbsp;reichen.</p>
         <textarea name="ziel" placeholder="Ich hätte gerne … / Bei mir ist folgende Situation … / Mich beschäftigt …" rows="7"></textarea>
       </div>
@@ -2160,7 +2185,7 @@
       <!-- STEP 3 -->
       <div class="wiz-panel" data-panel="2">
         <div class="wiz-kicker">Schritt 3 von 5</div>
-        <h2>Wie&nbsp;dringend?</h2>
+        <h2>Wie dringend?</h2>
         <p class="wiz-lead">Damit wir die passende Terminart vorschlagen&nbsp;können.</p>
         <div class="wiz-radio-grid">
           <label class="wiz-radio"><input type="radio" name="dringlichkeit" value="Akut"><span class="rlabel"><strong>Akut · Beschwerden</strong><em>Ich habe konkrete Schmerzen/Probleme</em></span></label>
@@ -2176,7 +2201,7 @@
       <!-- STEP 4 -->
       <div class="wiz-panel" data-panel="3">
         <div class="wiz-kicker">Schritt 4 von 5</div>
-        <h2>Ihre&nbsp;Kontaktdaten.</h2>
+        <h2>Ihre Kontaktdaten.</h2>
         <p class="wiz-lead">Damit wir Sie erreichen können. Alle Angaben werden vertraulich&nbsp;behandelt.</p>
         <div class="wiz-grid">
           <div class="wiz-field"><label>Vorname *</label><input type="text" name="vorname" required autocomplete="given-name" autocapitalize="words"></div>
@@ -2202,7 +2227,7 @@
       <!-- STEP 5 -->
       <div class="wiz-panel" data-panel="4">
         <div class="wiz-kicker">Schritt 5 von 5</div>
-        <h2>Alles auf einen&nbsp;Blick.</h2>
+        <h2>Alles auf einen Blick.</h2>
         <p class="wiz-lead">Bitte überprüfen Sie Ihre Angaben. Danach senden wir Ihre Anfrage direkt an unsere&nbsp;Praxis.</p>
         <div class="wiz-summary" id="wiz-summary"></div>
         <div style="margin-top:24px;padding:18px 22px;background:var(--c-hellgrau);border-radius:14px;font-size:13.5px;color:var(--c-text);line-height:1.7;">
@@ -2222,7 +2247,7 @@
       <!-- Success -->
       <div class="wiz-success" id="wiz-success">
         <div class="wiz-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h2>Danke, wir melden&nbsp;uns!</h2>
+        <h2>Danke, wir melden uns!</h2>
         <p>Ihre Anfrage ist bei uns eingegangen. Wir rufen Sie innerhalb von 24–48 Stunden zurück, um einen persönlichen Termin zu&nbsp;vereinbaren.</p>
         <a href="index.html" class="btn btn-primary" style="margin-top:24px;">Zurück zur Startseite</a>
       </div>

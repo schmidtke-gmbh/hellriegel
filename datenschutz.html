@@ -2039,6 +2039,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2321,18 +2346,18 @@
   <div class="container" style="max-width:820px;">
     <div style="font-size:15px;line-height:1.75;color:var(--c-text);">
 
-    <h2 style="font-size:22px;margin:0 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">1 ·&nbsp;Verantwortlicher</h2>
+    <h2 style="font-size:22px;margin:0 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">1 · Verantwortlicher</h2>
     <p>Verantwortlicher im Sinne der DSGVO ist:<br>
     <strong>Hauke Hellriegel</strong>, Heckstraße 31, 45239 Essen<br>
     Telefon: <a href="tel:+49201493126" style="color:var(--c-gold-d);">0201 · 493 126</a>, E-Mail: <a href="mailto:info@hellriegel-zahnmedizin.de" style="color:var(--c-gold-d);">info@hellriegel-zahnmedizin.de</a></p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">2 · Erhebung allgemeiner Daten beim Besuch der&nbsp;Website</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">2 · Erhebung allgemeiner Daten beim Besuch der Website</h2>
     <p>Beim rein informatorischen Besuch der Website erheben wir nur die personenbezogenen Daten, die Ihr Browser an unseren Server übermittelt (Server-Logfiles): IP-Adresse, Datum und Uhrzeit, Zeitzonendifferenz, Inhalt der Anforderung, Zugriffsstatus, jeweils übertragene Datenmenge, verweisende URL, Browser, Betriebssystem. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionsfähigen&nbsp;Website).</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;" id="cookies">3 ·&nbsp;Cookies</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;" id="cookies">3 · Cookies</h2>
     <p>Unsere Website verwendet Cookies. Technisch notwendige Cookies werden auf Basis von Art. 6 Abs. 1 lit. f DSGVO gespeichert. Alle weiteren Cookies (Analyse, Marketing) werden nur nach Ihrer Einwilligung gemäß § 25 Abs. 1 TTDSG i.V.m. Art. 6 Abs. 1 lit. a DSGVO gesetzt. Sie können Ihre Einwilligung jederzeit über die Cookie-Einstellungen&nbsp;widerrufen.</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">4 · Google Analytics&nbsp;4</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">4 · Google Analytics 4</h2>
     <p>Diese Website nutzt <strong>Google Analytics 4 (GA4)</strong>, einen Webanalysedienst der Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland). GA4 verwendet Cookies zur Analyse Ihrer Website-Nutzung. Die durch die Cookies erzeugten Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort&nbsp;gespeichert.</p>
     <p><strong>IP-Anonymisierung:</strong> Wir setzen GA4 mit aktivierter IP-Anonymisierung ein. Ihre IP-Adresse wird von Google innerhalb der EU/EWR&nbsp;gekürzt.</p>
     <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über den&nbsp;Cookie-Banner).</p>
@@ -2341,7 +2366,7 @@
     <p><strong>Widerspruch:</strong> Sie können die Datenerfassung durch GA4 verhindern, indem Sie das Browser-Add-on installieren: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--c-gold-d);">tools.google.com/dlpage/gaoptout</a>. Oder direkt in unseren Cookie-Einstellungen&nbsp;widersprechen.</p>
     <p>Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--c-gold-d);">policies.google.com/privacy</a></p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">5 · Meta-Pixel &amp; Meta Ads (Facebook /&nbsp;Instagram)</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">5 · Meta-Pixel &amp; Meta Ads (Facebook / Instagram)</h2>
     <p>Auf unserer Website setzen wir das <strong>Meta-Pixel (Facebook-Pixel)</strong> der Meta Platforms Ireland Ltd. (4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland) ein. Damit können wir Aktionen von Nutzern messen, die nach Klick auf eine Facebook- oder Instagram-Werbeanzeige auf unserer Website landen&nbsp;(Conversion-Tracking).</p>
     <p>Zusätzlich nutzen wir die <strong>Custom-Audience-Funktion</strong> zur zielgruppenspezifischen Ausspielung von Werbeanzeigen (Meta Ads) und die Advanced-Matching-Funktion, bei der über den Pixel gehashte Informationen (z.B. E-Mail, Telefonnummer) an Meta übertragen&nbsp;werden.</p>
     <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über den&nbsp;Cookie-Banner).</p>
@@ -2349,16 +2374,16 @@
     <p><strong>Widerspruch:</strong> In Ihren Facebook-Werbeeinstellungen (<a href="https://www.facebook.com/settings?tab=ads" target="_blank" rel="noopener" style="color:var(--c-gold-d);">facebook.com/settings?tab=ads</a>) oder direkt über unseren&nbsp;Cookie-Banner.</p>
     <p>Weitere Informationen: <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener" style="color:var(--c-gold-d);">facebook.com/policy.php</a></p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">6 ·&nbsp;YouTube-Einbindung</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">6 · YouTube-Einbindung</h2>
     <p>Wir binden auf unserer Website YouTube-Videos ein. Betreiber ist die Google Ireland Limited. Beim Aufruf von Seiten mit YouTube-Videos wird eine Verbindung zu YouTube-Servern hergestellt. Wir nutzen den erweiterten Datenschutzmodus ("no-cookie"), soweit möglich. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO&nbsp;(Einwilligung).</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">7 · Kontaktformular / Terminbuchung /&nbsp;Bewerbungsformular</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">7 · Kontaktformular / Terminbuchung / Bewerbungsformular</h2>
     <p>Wenn Sie uns per Kontaktformular, Terminbuchung oder Bewerbungsformular Anfragen zukommen lassen, werden Ihre Angaben zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vertragsvorbereitende Maßnahmen) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Bei Bewerbungen: § 26&nbsp;BDSG.</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">8 · Patientendaten in der&nbsp;Behandlung</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">8 · Patientendaten in der Behandlung</h2>
     <p>Bei Ihrer Behandlung in unserer Praxis erheben und verarbeiten wir Ihre Gesundheitsdaten (Anamnese, Diagnosen, Röntgen, Behandlungsdokumentation) gemäß Art. 9 Abs. 2 lit. h DSGVO i.V.m. § 22 Abs. 1 Nr. 1 lit. b BDSG. Aufbewahrungsfrist: 10 Jahre gemäß § 630f Abs. 3 BGB. Empfänger können sein: Zahnlabor, Kostenträger (bei Abrechnung), BFS health finance (Factoring, wenn gewünscht), überweisende/weiterbehandelnde&nbsp;Ärzte.</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">9 · Ihre&nbsp;Rechte</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">9 · Ihre Rechte</h2>
     <p>Sie haben jederzeit das Recht&nbsp;auf:</p>
     <ul style="margin:0 0 20px 20px;">
       <li>Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
@@ -2372,7 +2397,7 @@
     </ul>
     <p>Zuständige Aufsichtsbehörde: <strong>Landesbeauftragte für Datenschutz und Informationsfreiheit NRW</strong>, Kavalleriestraße 2–4, 40213&nbsp;Düsseldorf</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">10 ·&nbsp;SSL-Verschlüsselung</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">10 · SSL-Verschlüsselung</h2>
     <p>Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an "https://" in der Adresszeile des&nbsp;Browsers.</p>
 
     <p style="font-size:12px;color:var(--c-muted);margin-top:48px;padding-top:24px;border-top:1px solid var(--c-border);">Stand: Juli&nbsp;2026.</p>

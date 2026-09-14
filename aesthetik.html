@@ -2045,6 +2045,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2372,7 +2397,7 @@
       <div class="k-value-card">
         <div class="v-num">Veneers</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>Veneers&nbsp;(selektiv)</h3>
+        <h3>Veneers (selektiv)</h3>
         <p>Wenn medizinisch oder ästhetisch wirklich sinnvoll: dünne Keramik-Schalen an der Zahnvorderseite. Wir empfehlen sie nicht reflexartig, sondern nur, wenn sie&nbsp;passen.</p>
       </div>
       <div class="k-value-card">
@@ -2415,7 +2440,7 @@
       <div class="sp-step">
         <span class="sp-num">01</span>
         <div class="sp-content">
-          <h3>Erstgespräch &amp;&nbsp;Analyse</h3>
+          <h3>Erstgespräch &amp; Analyse</h3>
           <p>Was wünschen Sie sich? Wo stehen wir aktuell? Wir nehmen uns Zeit für ein ehrliches Gespräch, Fotos &amp; Funktionsanalyse, und beraten Sie auf&nbsp;Augenhöhe.</p>
         </div>
       </div>
@@ -2429,21 +2454,21 @@
       <div class="sp-step">
         <span class="sp-num">03</span>
         <div class="sp-content">
-          <h3>Materialcheck&nbsp;(optional)</h3>
+          <h3>Materialcheck (optional)</h3>
           <p>Auf Wunsch prüfen wir die geplanten Materialien individuell auf Verträglichkeit. Bei Allergien oder sensiblen Patienten ein wichtiger&nbsp;Schritt.</p>
         </div>
       </div>
       <div class="sp-step">
         <span class="sp-num">04</span>
         <div class="sp-content">
-          <h3>Substanzschonende&nbsp;Behandlung</h3>
+          <h3>Substanzschonende Behandlung</h3>
           <p>Wir schleifen so wenig wie möglich, arbeiten mit Lupenbrille und nutzen ausschließlich metallfreie&nbsp;Werkstoffe.</p>
         </div>
       </div>
       <div class="sp-step">
         <span class="sp-num">05</span>
         <div class="sp-content">
-          <h3>Eingliederung &amp;&nbsp;Nachsorge</h3>
+          <h3>Eingliederung &amp; Nachsorge</h3>
           <p>Präzises Einsetzen, finaler Feinschliff, Foto-Dokumentation. Und ein klarer Nachsorge-Plan, damit Ihr Lächeln lange schön&nbsp;bleibt.</p>
         </div>
       </div>
@@ -2457,7 +2482,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Lass uns über<br>dein <span class="accent" style="color:var(--c-gold-l);">Lächeln</span>&nbsp;sprechen.</h2>
+      <h2>Lass uns über<br>dein <span class="accent" style="color:var(--c-gold-l);">Lächeln</span> sprechen.</h2>
       <p>Ehrlich, ohne Verkaufsdruck, wir sagen Ihnen auch, wenn ein Eingriff aus unserer Sicht nicht nötig&nbsp;ist.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

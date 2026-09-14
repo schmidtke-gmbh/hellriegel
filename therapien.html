@@ -2045,6 +2045,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2340,7 +2365,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Therapie 01 · Laser</div>
-        <h2>Laser-Therapie:<br><span class="accent">verschiedene Wellenlängen</span>, präzise&nbsp;Wirkung.</h2>
+        <h2>Laser-Therapie:<br><span class="accent">verschiedene Wellenlängen</span>, präzise Wirkung.</h2>
         <p>Wir arbeiten mit unterschiedlichen Laser-Wellenlängen, jede Farbe für ein spezifisches Einsatzgebiet: <strong>antibakteriell, antiviral, durchblutungsfördernd, regenerativ</strong>. Das nutzen wir lokal in der Behandlung und systemisch als <strong>Laser-Infusion</strong>.</p>
         <p>Konkrete Einsatzgebiete: Parodontaltherapie, Wundheilung nach OPs, Longevity-Unterstützung, Schmerzlinderung. Ergänzend arbeiten wir mit <strong>photosensiblen Farbstoffen</strong>, die auf die Wellenlänge des Lasers abgestimmt sind, ein komplementäres Verfahren, das wir zurückhaltend und indikationsbezogen&nbsp;einsetzen.</p>
       </div>
@@ -2357,7 +2382,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Therapie 02 · Ozon</div>
-        <h2>Ozon:<br><span class="accent">desinfiziert</span> ohne&nbsp;Antibiotika.</h2>
+        <h2>Ozon:<br><span class="accent">desinfiziert</span> ohne Antibiotika.</h2>
         <p>Ozon ist eines unserer wichtigsten Werkzeuge: <strong>desinfiziert bei OPs, fördert die Durchblutung, tötet Keime, behandelt Herpes und Aften</strong>. Wir nutzen es als Mundspülung, als OP-Spülung, im behandlungsbegleitenden Wasser für Zahnfleischtaschen, und in der&nbsp;Parodontitis-Therapie.</p>
         <p>Der Vorteil: gezielte Wirkung ohne systemische Antibiotika-Belastung. Das schont das Mikrobiom, eine Säule biologischer&nbsp;Zahnmedizin.</p>
       </div>
@@ -2376,7 +2401,7 @@
       <div class="k-value-card">
         <div class="v-num">Vitamin C</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Hochdosis-Vitamin&nbsp;C</h3>
+        <h3>Hochdosis-Vitamin C</h3>
         <p>Vitamin C ist ein wichtiger Baustein zahlreicher Stoffwechsel- und Regenerationsprozesse. Je nach Konzentration können gezielt antioxidative oder oxidative Reize gesetzt&nbsp;werden.</p>
       </div>
       <div class="k-value-card">
@@ -2440,7 +2465,7 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Therapie 06 · Parodontitis-Therapie</div>
-      <h2>Parodontitis:<br><span class="accent">tiefer behandelt</span> als&nbsp;üblich.</h2>
+      <h2>Parodontitis:<br><span class="accent">tiefer behandelt</span> als üblich.</h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
@@ -2452,19 +2477,19 @@
       <div class="k-value-card">
         <div class="v-num">Laser</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
-        <h3>Laser &amp;&nbsp;Infusionen</h3>
+        <h3>Laser &amp; Infusionen</h3>
         <p>Antibakterielle Laserwellenlängen lokal in den Taschen, plus Vitamin-C- und Laser-Infusionen zur systemischen&nbsp;Unterstützung.</p>
       </div>
       <div class="k-value-card">
         <div class="v-num">Aromaöle</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7z"/></svg></div>
-        <h3>Aromaöle statt&nbsp;Antibiose</h3>
+        <h3>Aromaöle statt Antibiose</h3>
         <p>Wir setzen wenn möglich auf natürliche Wirkstoffe (Aromaöle, Ozon, Eigenblut). Antibiose nur, wenn es wirklich nötig&nbsp;ist.</p>
       </div>
       <div class="k-value-card">
         <div class="v-num">Regeneration</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-        <h3>Gesteuerte&nbsp;Gewebsregeneration</h3>
+        <h3>Gesteuerte Gewebsregeneration</h3>
         <p>Mit A-PRF (Eigenblut) in die Taschen. Wachstumsfaktoren regen das Gewebe zur eigenen Heilung an. Biologisch, ohne&nbsp;Fremdmaterial.</p>
       </div>
     </div>
@@ -2481,7 +2506,7 @@
   <div class="container">
     <div class="u-cta-final">
       <div class="kicker" style="color:var(--c-gold-l);">Persönliches Erstgespräch</div>
-      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre&nbsp;Situation.</h2>
+      <h2>Sprechen wir <span class="accent" style="color:var(--c-gold-l);">persönlich</span><br>über Ihre Situation.</h2>
       <p>Welche dieser Therapien für Sie sinnvoll sind, klären wir gemeinsam, biologisch, ehrlich, ohne&nbsp;Verkaufsdruck.</p>
       <div class="u-cta-buttons">
         <a href="erstgespraech.html" class="btn btn-primary">

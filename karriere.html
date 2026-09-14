@@ -1910,6 +1910,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2226,7 +2251,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Unser Anspruch</div>
-        <h2>Hoher Anspruch heißt bei uns <span class="accent">Miteinander</span>, nicht&nbsp;Ellenbogen.</h2>
+        <h2>Hoher Anspruch heißt bei uns <span class="accent">Miteinander</span>, nicht Ellenbogen.</h2>
         <p>Wir sind ein eingespieltes Team mit hohem Anspruch, fachlich und menschlich. Jede und jeder bei uns bringt Expertise mit: von der chirurgischen Assistenz über das Praxismanagement bis zur Prophylaxe arbeiten wir auf einem Niveau, das spürbar ist, für unsere Patienten und&nbsp;füreinander.</p>
         <p>Wir unterstützen uns im Alltag, springen ein, wo es nötig ist, und teilen Wissen, damit alle wachsen können. Unsere Abläufe sind präzise, unser Umgang herzlich. Echtes Teamwork entsteht nicht durch Vorgaben, sondern durch&nbsp;Vertrauen.</p>
       </div>
@@ -2245,25 +2270,25 @@
       <div class="k-value-card">
         <div class="v-num">01 · Sicherheit</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Unbefristete&nbsp;Verträge</h3>
+        <h3>Unbefristete Verträge</h3>
         <p>Gehalt und Arbeitszeiten besprechen wir transparent, mit Blick auf dein Leben und deine Wünsche. Kein Versteckspiel, keine&nbsp;Überraschungen.</p>
       </div>
       <div class="k-value-card">
         <div class="v-num">02 · Verlässlichkeit</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3>Klare&nbsp;Arbeitszeiten</h3>
+        <h3>Klare Arbeitszeiten</h3>
         <p>Geregelte Zeiten, Raum für Flexibilität. Wenn du individuelle Wünsche hast, lass uns reden. Wir finden ein Modell, das für beide Seiten&nbsp;passt.</p>
       </div>
       <div class="k-value-card">
         <div class="v-num">03 · Wachstum</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-        <h3>Fort- &amp;&nbsp;Weiterbildung</h3>
+        <h3>Fort- &amp; Weiterbildung</h3>
         <p>Von der ZFA zur ZMF, von der Assistenz zur Teamleitung, wir begleiten dich in deiner Entwicklung und fördern Fortbildungen aktiv, zeitlich und&nbsp;finanziell.</p>
       </div>
       <div class="k-value-card">
         <div class="v-num">04 · Gemeinschaft</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <h3>Echte&nbsp;Teamkultur</h3>
+        <h3>Echte Teamkultur</h3>
         <p>Hier zählt nicht nur Leistung, sondern Persönlichkeit. Sommerfeste, Mittagspausen, Ausflüge. Miteinander ist bei uns gelebter Alltag, nicht&nbsp;Schlagwort.</p>
       </div>
     </div>
@@ -2329,7 +2354,7 @@
           <span class="k-job-tag gold">Vollzeit / Teilzeit</span>
           <span class="k-job-tag">Sofort</span>
         </div>
-        <h3>Zahnarzt&nbsp;(m/w/d)</h3>
+        <h3>Zahnarzt (m/w/d)</h3>
         <p>Du arbeitest Seite an Seite mit Hauke, auf einem klar definierten Spezialgebiet: biologische Zahnmedizin, Keramikimplantate, metallfreier Zahnersatz. Kein Akkord, keine Standardabläufe. Stattdessen: Zeit für jeden Fall, modernste Technik und eine echte fachliche&nbsp;Auseinandersetzung.</p>
         <ul class="k-job-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Spezialisierung auf Keramikimplantologie</li>
@@ -2347,7 +2372,7 @@
           <span class="k-job-tag gold">Vollzeit / Teilzeit</span>
           <span class="k-job-tag">Sofort</span>
         </div>
-        <h3>Behandlungsassistenz (ZFA /&nbsp;ZMF)</h3>
+        <h3>Behandlungsassistenz (ZFA / ZMF)</h3>
         <p>Du arbeitest in einer Praxis, die sich auf komplexe Fälle in Implantologie, Prothetik und ästhetischer Zahnmedizin spezialisiert hat, als Teil eines eingespielten Behandlungsteams, nicht als klassische&nbsp;Assistenz.</p>
         <ul class="k-job-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Chirurgische &amp; prothetische Assistenz</li>
@@ -2366,7 +2391,7 @@
           <span class="k-job-tag gold">Vollzeit / Teilzeit</span>
           <span class="k-job-tag">Sofort</span>
         </div>
-        <h3>Prophylaxe-Assistenz (ZMP /&nbsp;DH)</h3>
+        <h3>Prophylaxe-Assistenz (ZMP / DH)</h3>
         <p>Du betreust unsere Patienten in der Prophylaxe-Sprechstunde, auch und gerade bei Keramik-Implantaten, wo eine spezielle Pflege gefragt ist. Wir sind eine biologische Praxis: keine Akkord-Reinigung, sondern Zeit für jeden Patienten, Diagnostik &amp; Beratung auf&nbsp;Augenhöhe.</p>
         <ul class="k-job-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Spezielle Implantat-Prophylaxe (SDS-Keramik)</li>
@@ -2385,7 +2410,7 @@
           <span class="k-job-tag gold">Ausbildung</span>
           <span class="k-job-tag">ab 01.08.</span>
         </div>
-        <h3>Auszubildende ZFA&nbsp;(m/w/d)</h3>
+        <h3>Auszubildende ZFA (m/w/d)</h3>
         <p>Lerne Zahnmedizin auf einem Niveau, das in normalen Praxen nicht vorkommt: Keramikimplantate, navigierte Chirurgie, biologische Materialien, digitaler Workflow. Du bekommst von Tag 1 eine Mentorin an deine&nbsp;Seite.</p>
         <ul class="k-job-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Persönlicher Mentor:in vom ersten Tag</li>
@@ -2476,7 +2501,7 @@
         <p style="display:none !important;" aria-hidden="true"><label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div class="k-form-head">
           <span class="k-form-num">01 · Bewerbung</span>
-          <h3>Erzähl uns kurz von&nbsp;dir.</h3>
+          <h3>Erzähl uns kurz von dir.</h3>
         </div>
 
         <div class="k-form-grid">

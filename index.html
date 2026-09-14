@@ -1755,6 +1755,31 @@
     .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
   }
   .footer-contact .tel-hours{display:block;font-size:12px;line-height:1.55;color:var(--c-muted);margin:-2px 0 10px 25px;}
+
+  /* Witwen ohne &nbsp; vermeiden, sonst entstehen unteilbare Wortpaare */
+  h1,h2,h3{text-wrap:pretty;}
+  h1,h2,h3,h4,p,li,.card-title,.card-desc,.v-num,.kicker{overflow-wrap:break-word;}
+  @media (max-width:680px){
+    .ueber-img .gold-disc{right:-10px;top:-10px;width:84px;height:84px;}
+  }
+
+  @media (max-width:1080px){
+    /* Scroll-Kippanimation erzeugt auf schmalen Schirmen eine gedrehte Bounding-Box
+       und damit horizontales Scrollen. Auf Mobil daher aus. */
+    .implant-frame{transform:none!important;}
+    .implant-pin,.therapien-teaser,.ueber,.hero,.einblicke,.anwendung{overflow-x:clip;}
+  }
+
+  @media (max-width:1080px){
+    .u-tech-grid{grid-template-columns:minmax(0,1fr);}
+    .u-tech-grid > *,.u-values-grid > *,.k-values-grid > *,.tech-grid > *{min-width:0;}
+  }
+
+  @media (max-width:1080px){
+    /* Sicherheitsnetz: nie horizontal scrollbar. clip statt hidden,
+       damit position:sticky (Header) weiter funktioniert. */
+    html,body{overflow-x:clip;}
+  }
 </style>
 </head>
 <body>
@@ -2093,7 +2118,7 @@
 <!-- TRUST BAR -->
 <section class="trust-bar" aria-label="Bewertungsportale">
   <div class="container trust-bar-inner">
-    <h2>Bewertet&nbsp;auf</h2>
+    <h2>Bewertet auf</h2>
     <div class="trust-logos">
       <div class="trust-logo"><span class="italic">Google</span><span class="small">★ 4,7 · Google Reviews</span></div>
       <div class="trust-logo">jameda<span class="small">Bewertungsportal</span></div>
@@ -2110,7 +2135,7 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">Unsere Schwerpunkte</div>
-      <h2 id="schwerp-h2">Zahnmedizin, die sich<br><span class="accent">sehen lassen</span>&nbsp;kann.</h2>
+      <h2 id="schwerp-h2">Zahnmedizin, die sich<br><span class="accent">sehen lassen</span> kann.</h2>
       <p>Hochwertige Keramikimplantate, metallfreier Zahnersatz und eine Praxis, in der Sie als Mensch im Mittelpunkt stehen. Drei Schwerpunkte, ein Ziel: Ihre langfristige&nbsp;Zahngesundheit.</p>
     </div>
     <div class="schwerp-grid">
@@ -2156,7 +2181,7 @@
             </svg>
           </div>
           <div class="num">02 · METALLFREIER ZAHNERSATZ</div>
-          <h3><a href="metallfreier-zahnersatz.html"><span class="accent">Metallfreier</span>&nbsp;Zahnersatz.</a></h3>
+          <h3><a href="metallfreier-zahnersatz.html"><span class="accent">Metallfreier</span> Zahnersatz.</a></h3>
           <p>Vollkeramik-Kronen, Inlays und Brücken: Zahnersatz aus 100 % biokompatiblen Materialien, ohne jegliches Metall im&nbsp;Mund.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>Ästhetische Vorab-Simulation</strong></li>
@@ -2206,7 +2231,7 @@
             </svg>
           </div>
           <div class="num">04 · ÄSTHETIK · BIOLOGISCH</div>
-          <h3><a href="aesthetik.html"><span class="accent">Schön</span> und&nbsp;gesund.</a></h3>
+          <h3><a href="aesthetik.html"><span class="accent">Schön</span> und gesund.</a></h3>
           <p>Ein ästhetisches Lächeln ist großartig, aber nur, wenn die Materialien dahinter biokompatibel sind. Wir denken Ästhetik immer gesund&nbsp;mit.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>Geprüft verträgliche Materialien</strong></li>
@@ -2251,7 +2276,7 @@
 
         <div class="implant-step" data-step="2">
           <div class="step-num">Vorteil 02</div>
-          <h3><span class="accent">Biokompatibel</span> und&nbsp;körperneutral.</h3>
+          <h3><span class="accent">Biokompatibel</span> und körperneutral.</h3>
           <p>Keramik wird vom Körper ideal vertragen. Keine allergischen Reaktionen, keine Belastung für das Immunsystem, auch bei sensiblen&nbsp;Patienten.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Verträglichkeit klinisch geprüft</li>
@@ -2271,7 +2296,7 @@
 
         <div class="implant-step" data-step="4">
           <div class="step-num">Vorteil 04</div>
-          <h3>Für <span class="accent">Jahrzehnte</span>&nbsp;gemacht.</h3>
+          <h3>Für <span class="accent">Jahrzehnte</span> gemacht.</h3>
           <p>Zirkonoxid ist eines der härtesten Werkstoffe der modernen Medizin, korrosionsfrei, formstabil und besonders gewebefreundlich am Übergang zum&nbsp;Zahnfleisch.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Korrosionsfrei & extrem hart</li>
@@ -2396,7 +2421,7 @@
       </div>
       <div class="ueber-text">
         <div class="kicker">Über die Praxis</div>
-        <h2 id="ueber-h2">Ihr <span class="accent">Zahnarzt in Essen</span>,<br>seit über 15&nbsp;Jahren.</h2>
+        <h2 id="ueber-h2">Ihr <span class="accent">Zahnarzt in Essen</span>,<br>seit über 15 Jahren.</h2>
         <p>Hauke Hellriegel führt die Praxis in Essen-Werden mit einer klaren Überzeugung: Zahnmedizin gehört auf höchstem Niveau betrieben, fachlich, biologisch und menschlich. Als spezialisierter Implantologe setzt er konsequent auf Keramikimplantate und metallfreie, biokompatible&nbsp;Materialien.</p>
         <p>Ob metallfreier Zahnersatz, komplexe Implantatversorgung oder Routine-Vorsorge: In dieser Praxis bekommen Sie als Patient die Zeit, die Beratung und die Sorgfalt, die Sie&nbsp;verdienen.</p>
         <div class="ueber-stats">
@@ -2515,9 +2540,9 @@
     </div>
     <div class="ablauf-grid">
       <div class="step"><div class="step-num">01</div><h3>Erstgespräch</h3><p>Persönliches 60-Minuten-Gespräch in entspannter Atmosphäre. Wir hören zu, prüfen den Befund und besprechen Ihre&nbsp;Ziele.</p><span class="duration">60 Min · kostenfrei</span></div>
-      <div class="step"><div class="step-num">02</div><h3>Diagnostik &&nbsp;Planung</h3><p>3D-Scan, digitale Smile-Simulation und ein detaillierter Heil- und Kostenplan. Sie wissen vorab, was Sie&nbsp;erwartet.</p><span class="duration">1–2 Tage</span></div>
+      <div class="step"><div class="step-num">02</div><h3>Diagnostik & Planung</h3><p>3D-Scan, digitale Smile-Simulation und ein detaillierter Heil- und Kostenplan. Sie wissen vorab, was Sie&nbsp;erwartet.</p><span class="duration">1–2 Tage</span></div>
       <div class="step"><div class="step-num">03</div><h3>Behandlung</h3><p>Präzise, schmerzarm, modern. Hochwertige Materialien, Lupenbrillen-Präzision und ein ruhiges, sanftes&nbsp;Vorgehen.</p><span class="duration">Sitzungen individuell</span></div>
-      <div class="step"><div class="step-num">04</div><h3>Nachsorge &&nbsp;Recall</h3><p>Wir bleiben dran: regelmäßige Kontrolltermine, Prophylaxe und Garantieleistungen für nachhaltige&nbsp;Ergebnisse.</p><span class="duration">Lebenslang</span></div>
+      <div class="step"><div class="step-num">04</div><h3>Nachsorge & Recall</h3><p>Wir bleiben dran: regelmäßige Kontrolltermine, Prophylaxe und Garantieleistungen für nachhaltige&nbsp;Ergebnisse.</p><span class="duration">Lebenslang</span></div>
     </div>
   </div>
 </section>
@@ -2527,7 +2552,7 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">Bewertungen</div>
-      <h2 id="testi-h2">Was Patienten über uns&nbsp;sagen.</h2>
+      <h2 id="testi-h2">Was Patienten über uns sagen.</h2>
       <p>Transparent und öffentlich: unsere Bewertungen bei&nbsp;Google.</p>
     </div>
     <div class="testi-grid" style="grid-template-columns:1fr;max-width:560px;margin:0 auto;">
@@ -2552,7 +2577,7 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">Technologie & Ausstattung</div>
-      <h2 id="tech-h2">Modernste Technologie.<br>Für <span class="accent">präzise</span>&nbsp;Ergebnisse.</h2>
+      <h2 id="tech-h2">Modernste Technologie.<br>Für <span class="accent">präzise</span> Ergebnisse.</h2>
       <p>Wir investieren in modernste Geräte und Verfahren, damit Sie schmerzfrei, schnell und mit höchster Qualität behandelt&nbsp;werden.</p>
     </div>
     <div class="tech-grid">
@@ -2561,7 +2586,7 @@
         <div class="tc-img" style="background-image:url('images/hauke-op2.jpg');"></div>
         <div class="tc-content">
           <span class="tc-kicker"><span class="dot"></span>Diagnostik</span>
-          <h3>3D-Röntgen ·&nbsp;DVT-Scanner</h3>
+          <h3>3D-Röntgen · DVT-Scanner</h3>
           <p>Strahlungsarme 3D-Diagnostik für präzise Implantatplanung. Jeder Eingriff wird vorher digital simuliert, für maximale&nbsp;Sicherheit.</p>
         </div>
       </article>
@@ -2589,7 +2614,7 @@
         <div class="tc-img" style="background-image:url('images/tech-workflow.jpg');"></div>
         <div class="tc-content">
           <span class="tc-kicker"><span class="dot"></span>Workflow</span>
-          <h3>Digitaler Workflow &&nbsp;CAD/CAM</h3>
+          <h3>Digitaler Workflow & CAD/CAM</h3>
           <p>Vom strahlungsarmen 3D-Röntgen bis zur digitalen Behandlungsplanung. Für Versorgungen, die von Anfang an passen.</p>
         </div>
       </article>
@@ -2602,7 +2627,7 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">Häufig gestellte Fragen</div>
-      <h2 id="faq-h2">Antworten auf Ihre&nbsp;Fragen.</h2>
+      <h2 id="faq-h2">Antworten auf Ihre Fragen.</h2>
       <p>Die wichtigsten Fragen rund um unsere Praxis in Essen-Werden, Keramikimplantate und metallfreien&nbsp;Zahnersatz.</p>
     </div>
     <div class="faq-wrap">
@@ -2724,7 +2749,7 @@
   <div class="container cta-inner">
     <div class="cta-text">
       <div class="kicker">Bereit für Ihr neues Lächeln?</div>
-      <h2 id="cta-h2">Termin <span class="accent">vereinbaren</span><br>in&nbsp;Essen.</h2>
+      <h2 id="cta-h2">Termin <span class="accent">vereinbaren</span><br>in Essen.</h2>
       <p>Vereinbaren Sie jetzt Ihr kostenfreies Erstgespräch in unserer Praxis in Essen-Werden. Wir nehmen uns Zeit für&nbsp;Sie.</p>
     </div>
     <div class="cta-buttons">
@@ -2762,7 +2787,7 @@
         </a>
         <div class="yt-content">
           <div class="yt-meta">Hauke Hellriegel<span class="dot"></span>Biologische Zahnmedizin</div>
-          <h3>Titanimplantate: Verborgene Risiken & Nebenwirkungen&nbsp;enthüllt!</h3>
+          <h3>Titanimplantate: Verborgene Risiken & Nebenwirkungen enthüllt!</h3>
           <p>Warum Keramikimplantate die bessere Wahl sind, und was Metall im Mund mit Ihrer Gesundheit&nbsp;macht.</p>
           <a href="https://youtu.be/Cif9G3f_MVo" target="_blank" rel="noopener" class="yt-watch">
             <span class="yt-mini"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
@@ -2780,7 +2805,7 @@
         </a>
         <div class="yt-content">
           <div class="yt-meta">Hauke Hellriegel<span class="dot"></span>Biologische Zahnmedizin</div>
-          <h3>Warum dein Kiefer dich heimlich KRANK&nbsp;macht</h3>
+          <h3>Warum dein Kiefer dich heimlich KRANK macht</h3>
           <p>Wie Kiefergelenk und Bisslage Einfluss auf den gesamten Körper haben, der ganzheitliche Zusammenhang&nbsp;erklärt.</p>
           <a href="https://youtu.be/D1C5FcUEuLw" target="_blank" rel="noopener" class="yt-watch">
             <span class="yt-mini"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
@@ -2798,7 +2823,7 @@
         </a>
         <div class="yt-content">
           <div class="yt-meta">Hauke Hellriegel<span class="dot"></span>Biologische Zahnmedizin</div>
-          <h3>Hohe Kosten beim biologischen Zahnarzt? DAS ist der&nbsp;Grund</h3>
+          <h3>Hohe Kosten beim biologischen Zahnarzt? DAS ist der Grund</h3>
           <p>Was hinter den Preisen einer biologischen Praxis steckt. Materialien, Technologie und Zeit, die wirklich&nbsp;zählen.</p>
           <a href="https://youtu.be/BnaemLrx4K0" target="_blank" rel="noopener" class="yt-watch">
             <span class="yt-mini"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
