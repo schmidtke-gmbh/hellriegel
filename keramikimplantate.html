@@ -64,6 +64,10 @@
     {"@type":"City","name":"Bochum"},
     {"@type":"City","name":"Düsseldorf"}
   ],
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Wednesday","Friday"],"opens":"08:00","closes":"15:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday"],"opens":"08:00","closes":"19:30"}
+  ],
   "medicalSpecialty": ["Dentistry","CosmeticDentistry","Implantology"],
   "availableService": [
     {"@type":"MedicalProcedure","name":"Keramikimplantate"},
@@ -1970,6 +1974,85 @@
   .u-cta-buttons{align-items:center;}
   .u-cta-buttons .arrow{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;flex:0 0 auto;}
   .u-cta-buttons .arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;}
+
+  /* ===== MOBILE-OPTIMIERUNG (Header, Drawer-Navigation, Ueberlauf-Haertung) ===== */
+  @media (max-width:1080px){
+    .nav-wrap{padding-top:10px;padding-bottom:10px;gap:12px;}
+    .nav-logo{flex:0 0 auto;}
+    .nav-logo img{height:58px;}
+    .nav-btn-outline{display:none;}
+    .nav-btn-sm{padding:11px 16px;gap:9px;letter-spacing:1.1px;}
+    .nav-burger{display:inline-flex;flex:0 0 auto;}
+    .hero-grid,.ueber-grid,.standort-grid,.anwendung-layout,.implant-pin-grid{grid-template-columns:minmax(0,1fr);}
+    .hero-grid>*,.ueber-grid>*,.standort-grid>*,.anwendung-layout>*,.implant-pin-grid>*{min-width:0;}
+    .implant-frame{max-width:100%;}
+    .implant-frame img{max-width:100%;height:auto;}
+    .smile-frame,.smile-stage,.anwendung-text{max-width:100%;min-width:0;}
+  }
+  @media (max-width:680px){
+    .btn{white-space:normal;max-width:100%;}
+  }
+  @media (max-width:400px){
+    .nav-logo img{height:50px;}
+    .nav-btn-sm{font-size:10px;padding:10px 13px;gap:7px;}
+    .nav-btn-sm .arrow{display:none;}
+  }
+  .mnav-overlay{position:fixed;inset:0;background:rgba(27,31,42,.5);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;z-index:998;}
+  .mnav-overlay.open{opacity:1;visibility:visible;}
+  .mnav{position:fixed;top:0;right:0;height:100%;height:100dvh;width:min(88vw,380px);background:#fff;z-index:999;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;box-shadow:-20px 0 50px rgba(27,31,42,.18);}
+  .mnav.open{transform:none;}
+  .mnav-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;border-bottom:1px solid var(--c-border);flex:0 0 auto;}
+  .mnav-head img{height:46px;width:auto;display:block;}
+  .mnav-close{width:42px;height:42px;border:1px solid var(--c-border);border-radius:50%;background:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;color:var(--c-anthrazit);flex:0 0 auto;}
+  .mnav-close svg{width:18px;height:18px;}
+  .mnav-body{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:4px 0 16px;}
+  .mnav-group{border-bottom:1px solid var(--c-border);}
+  .mnav-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--c-anthrazit);text-align:left;}
+  .mnav-trigger svg{width:16px;height:16px;color:var(--c-gold-d);transition:transform .25s ease;flex:0 0 auto;}
+  .mnav-group.open .mnav-trigger svg{transform:rotate(180deg);}
+  .mnav-panel{max-height:0;overflow:hidden;transition:max-height .32s ease;}
+  .mnav-group.open .mnav-panel{max-height:800px;}
+  .mnav-panel a{display:block;padding:12px 18px 12px 32px;font-size:14.5px;color:var(--c-text);border-top:1px solid rgba(27,31,42,.05);}
+  .mnav-panel a:active{background:var(--c-hellgrau);}
+  .mnav-foot{flex:0 0 auto;border-top:1px solid var(--c-border);padding:16px 18px calc(16px + env(safe-area-inset-bottom));display:grid;gap:10px;background:var(--c-hellgrau);}
+  .mnav-foot a{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 16px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;}
+  .mnav-foot .f-gold{background:var(--c-gold);color:#fff;}
+  .mnav-foot .f-line{border:1.5px solid var(--c-gold);color:var(--c-anthrazit);}
+  .mnav-foot svg{width:15px;height:15px;flex:0 0 auto;}
+  body.mnav-open{overflow:hidden;}
+  @media (prefers-reduced-motion:reduce){
+    .mnav,.mnav-overlay,.mnav-panel,.mnav-trigger svg{transition:none!important;}
+  }
+
+  /* Footer-Bottom + Smile-Sektion auf Mobil */
+  .smile-legend{display:none;}
+  @media (max-width:680px){
+    .footer-bottom{grid-template-columns:1fr;justify-items:center;text-align:center;gap:22px;}
+    .footer-bottom > div:first-child,.footer-bottom .footer-credit,.footer-bottom .legal{justify-self:center;}
+    .footer-bottom .legal{flex-wrap:wrap;justify-content:center;gap:10px 20px;}
+    .footer-bottom .legal a{margin-left:0;}
+    .smile-frame{min-height:0;flex-direction:column;justify-content:center;padding-bottom:6px;}
+    .smile-stage{overflow:hidden;}
+    .smile-label .line,.smile-label .text-block{display:none;}
+    .smile-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px 0 0;padding:0 16px;list-style:none;}
+    .smile-legend li{font-size:11px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--c-anthrazit);background:#fff;border:1px solid var(--c-border);border-radius:999px;padding:8px 14px;}
+  }
+
+  /* Kein horizontaler Ueberlauf auf Mobil: Grids und Flex-Container begrenzen */
+  @media (max-width:1080px){
+    .k-hero > .container,.k-section > .container,section > .container{min-width:0;width:100%;}
+    .k-split,.k-apply-wrap{grid-template-columns:minmax(0,1fr);}
+    .k-split > *,.k-values-grid > *,.u-stats > *,.k-jobs-grid > *{min-width:0;}
+    .k-split-img,.k-split-img img,.sp-content{max-width:100%;min-width:0;}
+    #meridian .meridian-grid,#meridian .meridian-grid > *{min-width:0;}
+  }
+  @media (max-width:980px){
+    .k-values-grid,.u-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:680px){
+    .k-values-grid,.u-stats,.k-jobs-grid,.k-form-grid,.k-gallery{grid-template-columns:minmax(0,1fr);}
+    .cta-row,.k-hero .cta-row,.u-cta-buttons{flex-wrap:wrap;}
+  }
 </style>
 </head>
 <body>
@@ -2051,7 +2134,7 @@
               <span class="col-label">Weitere Leistungen</span>
               <ul class="mega-list">
                 <li><a href="aesthetik.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span>Ästhetik<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="ganzheitliche-zahnmedizin.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8a2 2 0 00-2-2h-3l-3-3-3 3H6a2 2 0 00-2 2v9a2 2 0 002 2h7"/><path d="M16 18l2 2 4-4"/></svg></span>Zahnerhaltung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="ganzheitliche-zahnmedizin.html#zahnerhaltung"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8a2 2 0 00-2-2h-3l-3-3-3 3H6a2 2 0 00-2 2v9a2 2 0 002 2h7"/><path d="M16 18l2 2 4-4"/></svg></span>Zahnerhaltung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="therapien.html#paro"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Parodontitis-Therapie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="prophylaxe.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span>Prophylaxe &amp; Zahnreinigung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="amalgamsanierung.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Amalgamsanierung<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
@@ -2107,7 +2190,7 @@
               <span class="col-label">Mehr über die Praxis</span>
               <ul class="mega-list">
                 <li><a href="philosophie.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-5"/></svg></span>Philosophie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
-                <li><a href="ueber-uns.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/></svg></span>Technologie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
+                <li><a href="ueber-uns.html#technologie"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/></svg></span>Technologie<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="ueber-uns.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/></svg></span>Hygiene &amp; Sterilisation<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="index.html#standort"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Anfahrt &amp; Parkplätze<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
                 <li><a href="sprechzeiten.html"><span class="li-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Sprechzeiten<span class="li-arrow"><svg viewBox="0 0 24 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"><line x1="0" y1="7" x2="22" y2="7"/><polyline points="17 1 23 7 17 13"/></svg></span></a></li>
@@ -2370,7 +2453,7 @@
           <li><a href="ueber-uns.html">Hauke Hellriegel</a></li>
           <li><a href="ueber-uns.html">Team</a></li>
           <li><a href="ueber-uns.html">Praxisrundgang</a></li>
-          <li><a href="ueber-uns.html">Technologie</a></li>
+          <li><a href="ueber-uns.html#technologie">Technologie</a></li>
           <li><a href="karriere.html">Karriere</a></li>
         </ul>
       </div>
@@ -2381,7 +2464,7 @@
           <li><a href="metallfreier-zahnersatz.html">Metallfreier Zahnersatz</a></li>
           <li><a href="aesthetik.html">Ästhetik</a></li>
           <li><a href="ganzheitliche-zahnmedizin.html">Ganzheitlich</a></li>
-          <li><a href="ganzheitliche-zahnmedizin.html">Zahnerhaltung</a></li>
+          <li><a href="ganzheitliche-zahnmedizin.html#zahnerhaltung">Zahnerhaltung</a></li>
           <li><a href="therapien.html#paro">Parodontitis-Therapie</a></li>
           <li><a href="sinuslift.html">Knochenaufbau &amp; Sinuslift</a></li>
           </ul>
@@ -2591,5 +2674,58 @@
   })();
 </script>
 
+<script>
+/* Mobile-Navigation: Drawer wird aus dem bestehenden Mega-Menue aufgebaut */
+(function(){
+  var burger=document.querySelector('.nav-burger');
+  var menu=document.querySelector('.nav-menu');
+  if(!burger||!menu||document.querySelector('.mnav')) return;
+  var logoImg=document.querySelector('.nav-logo img');
+  var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');};
+  var ov=document.createElement('div'); ov.className='mnav-overlay';
+  var nav=document.createElement('div'); nav.className='mnav';
+  nav.setAttribute('role','dialog'); nav.setAttribute('aria-modal','true'); nav.setAttribute('aria-label','Navigation');
+  var groups='';
+  Array.prototype.forEach.call(menu.children,function(li){
+    var trig=li.querySelector('.mega-trigger')||li.querySelector('a');
+    if(!trig) return;
+    var label=(trig.textContent||'').replace(/\s+/g,' ').trim();
+    var links=li.querySelectorAll('.mega-panel a');
+    if(!links.length){
+      groups+='<div class="mnav-group"><a class="mnav-trigger" href="'+esc(trig.getAttribute('href')||'#')+'">'+esc(label)+'</a></div>';
+      return;
+    }
+    var items='';
+    Array.prototype.forEach.call(links,function(a){
+      var t=a.querySelector('.card-title');
+      var txt=t?t.textContent.trim():(a.textContent||'').replace(/\s+/g,' ').trim();
+      if(!txt) return;
+      items+='<a href="'+esc(a.getAttribute('href')||'#')+'">'+esc(txt)+'</a>';
+    });
+    groups+='<div class="mnav-group"><button type="button" class="mnav-trigger" aria-expanded="false">'+esc(label)+'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="mnav-panel">'+items+'</div></div>';
+  });
+  nav.innerHTML='<div class="mnav-head"><img src="'+esc(logoImg?logoImg.getAttribute('src'):'')+'" alt="Hauke Hellriegel"><button type="button" class="mnav-close" aria-label="Menue schliessen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button></div>'
+    +'<div class="mnav-body">'+groups+'</div>'
+    +'<div class="mnav-foot"><a class="f-gold" href="kontakt.html">Termin buchen</a>'
+    +'<a class="f-line" href="tel:+49201493126"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0201 49 31 26</a></div>';
+  document.body.appendChild(ov); document.body.appendChild(nav);
+  function open(){nav.classList.add('open');ov.classList.add('open');document.body.classList.add('mnav-open');burger.setAttribute('aria-expanded','true');}
+  function close(){nav.classList.remove('open');ov.classList.remove('open');document.body.classList.remove('mnav-open');burger.setAttribute('aria-expanded','false');}
+  burger.setAttribute('aria-expanded','false');
+  burger.addEventListener('click',function(e){e.preventDefault();open();});
+  ov.addEventListener('click',close);
+  nav.querySelector('.mnav-close').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  Array.prototype.forEach.call(nav.querySelectorAll('button.mnav-trigger'),function(b){
+    b.addEventListener('click',function(){
+      var g=b.parentNode, isOpen=g.classList.toggle('open');
+      b.setAttribute('aria-expanded',isOpen?'true':'false');
+    });
+  });
+  Array.prototype.forEach.call(nav.querySelectorAll('.mnav-panel a, .mnav-foot a'),function(a){
+    a.addEventListener('click',close);
+  });
+})();
+</script>
 </body>
 </html>
