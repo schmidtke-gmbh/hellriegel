@@ -2070,6 +2070,52 @@
        damit position:sticky (Header) weiter funktioniert. */
     html,body{overflow-x:clip;}
   }
+
+  /* Mobile-Feinschliff: Logo, Hero-Collage, Trust-Leiste */
+  @media (max-width:1080px){
+    .nav-logo img{height:68px;}
+    .nav-btn-sm{padding:11px 15px;gap:8px;letter-spacing:1px;}
+  }
+  @media (max-width:420px){
+    .nav-logo img{height:60px;}
+    .nav-btn-sm{font-size:10px;padding:10px 12px;gap:6px;}
+    .nav-btn-sm .arrow{display:none;}
+  }
+  @media (max-width:680px){
+    /* Hero: Collage aus Statue und OP-Foto funktioniert auf schmalen Schirmen nicht,
+       daher nur die Videokarte, sauber über die volle Breite. */
+    .hero{padding:32px 0 36px;}
+    .hero-grid{display:block!important;}
+    .hero-visual{min-height:0!important;height:auto!important;max-width:100%;margin:28px 0 0;display:block;}
+    .hero-statue,.hero-second{display:none!important;}
+    .hero-team{position:static!important;width:100%!important;height:auto!important;aspect-ratio:16/9;margin:0!important;}
+    .hero-team img{width:100%;height:100%;object-fit:cover;}
+    /* Trust-Leiste untereinander statt nebeneinander */
+    .trust-bar > .container{flex-direction:column;align-items:flex-start;gap:22px;}
+    .trust-bar h2{margin:0;}
+    .trust-logos{flex-direction:row;flex-wrap:wrap;align-items:center;gap:14px 30px;width:100%;}
+    .trust-bar .stat{margin:0;}
+  }
+
+  /* Überschriften: keine Brüche mitten im Wort, dafür kleinere Schrift auf schmalen Schirmen */
+  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto;}
+  @media (max-width:460px){
+    h1{font-size:clamp(20px,8vw,40px);}
+    h2{font-size:clamp(18px,6.8vw,28px);}
+    h3{font-size:clamp(15.5px,4.6vw,20px);}
+  }
+  @media (max-width:1080px){
+    /* .k-split.reverse ist spezifischer als .k-split und blieb sonst zweispaltig */
+    .k-split.reverse{grid-template-columns:minmax(0,1fr);}
+  }
+
+  @media (max-width:980px){
+    /* ID-Regel war spezifischer als die mobilen Klassenregeln */
+    #kosten .k-values-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:680px){
+    #kosten .k-values-grid{grid-template-columns:minmax(0,1fr);}
+  }
 </style>
 </head>
 <body>
