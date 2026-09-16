@@ -2200,23 +2200,22 @@
 
     <!-- Progress -->
     <div class="wiz-progress">
-      <div class="wiz-progress-bar" id="wiz-bar" style="width:20%;"></div>
+      <div class="wiz-progress-bar" id="wiz-bar" style="width:25%;"></div>
       <div class="wiz-steps">
         <div class="wiz-step active" data-idx="0"><span>1</span><em>Anliegen</em></div>
         <div class="wiz-step" data-idx="1"><span>2</span><em>Ziel</em></div>
         <div class="wiz-step" data-idx="2"><span>3</span><em>Zeitraum</em></div>
-        <div class="wiz-step" data-idx="3"><span>4</span><em>Ihre Daten</em></div>
-        <div class="wiz-step" data-idx="4"><span>5</span><em>Übersicht</em></div>
+        <div class="wiz-step" data-idx="3"><span>4</span><em>Kontakt</em></div>
       </div>
     </div>
 
-    <form class="wiz-form" id="wiz-form" name="erstgespraech" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+    <form class="wiz-form" id="wiz-form" name="erstgespraech" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="erstgespraech">
       <p style="display:none !important;" aria-hidden="true"><label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
       <!-- STEP 1 -->
       <div class="wiz-panel active" data-panel="0">
-        <div class="wiz-kicker">Schritt 1 von 5</div>
+        <div class="wiz-kicker">Schritt 1 von 4</div>
         <h2>Worum geht es bei Ihnen?</h2>
         <p class="wiz-lead">Wählen Sie das Thema, das Ihrem Anliegen am nächsten kommt. Damit können wir uns optimal auf das Gespräch&nbsp;vorbereiten.</p>
         <div class="wiz-radio-grid">
@@ -2232,7 +2231,7 @@
 
       <!-- STEP 2 -->
       <div class="wiz-panel" data-panel="1">
-        <div class="wiz-kicker">Schritt 2 von 5</div>
+        <div class="wiz-kicker">Schritt 2 von 4</div>
         <h2>Was möchten Sie erreichen?</h2>
         <p class="wiz-lead">Erzählen Sie uns kurz Ihre Situation. Je mehr Sie schildern, desto besser können wir uns vorbereiten. Kein Roman, ein paar Sätze&nbsp;reichen.</p>
         <textarea name="ziel" placeholder="Ich hätte gerne … / Bei mir ist folgende Situation … / Mich beschäftigt …" rows="7"></textarea>
@@ -2240,7 +2239,7 @@
 
       <!-- STEP 3 -->
       <div class="wiz-panel" data-panel="2">
-        <div class="wiz-kicker">Schritt 3 von 5</div>
+        <div class="wiz-kicker">Schritt 3 von 4</div>
         <h2>Wie dringend?</h2>
         <p class="wiz-lead">Damit wir die passende Terminart vorschlagen&nbsp;können.</p>
         <div class="wiz-radio-grid">
@@ -2256,7 +2255,7 @@
 
       <!-- STEP 4 -->
       <div class="wiz-panel" data-panel="3">
-        <div class="wiz-kicker">Schritt 4 von 5</div>
+        <div class="wiz-kicker">Schritt 4 von 4</div>
         <h2>Ihre Kontaktdaten.</h2>
         <p class="wiz-lead">Damit wir Sie erreichen können. Alle Angaben werden vertraulich&nbsp;behandelt.</p>
         <div class="wiz-grid">
@@ -2278,21 +2277,14 @@
           <input type="checkbox" name="consent" required>
           <span>Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>. Die Einwilligung kann jederzeit widerrufen werden.</span>
         </label>
-      </div>
-
-      <!-- STEP 5 -->
-      <div class="wiz-panel" data-panel="4">
-        <div class="wiz-kicker">Schritt 5 von 5</div>
-        <h2>Alles auf einen Blick.</h2>
-        <p class="wiz-lead">Bitte überprüfen Sie Ihre Angaben. Danach senden wir Ihre Anfrage direkt an unsere&nbsp;Praxis.</p>
-        <div class="wiz-summary" id="wiz-summary"></div>
         <div style="margin-top:24px;padding:18px 22px;background:var(--c-hellgrau);border-radius:14px;font-size:13.5px;color:var(--c-text);line-height:1.7;">
           <strong style="color:var(--c-anthrazit);">Was passiert danach?</strong><br>
           Wir rufen Sie innerhalb von 24–48 Stunden zurück und stimmen einen persönlichen Ersttermin ab (Dauer: ca. 60 Min., kostenlos). Danach bekommen Sie einen transparenten Heil- und Kostenplan, ohne Verkaufsdruck.
         </div>
       </div>
 
-      <!-- Navigation -->
+      <!-- STEP 5 -->
+<!-- Navigation -->
       <div class="wiz-nav">
         <button type="button" class="wiz-btn wiz-back" id="wiz-back" disabled>← Zurück</button>
         <button type="button" class="wiz-btn wiz-next" id="wiz-next">Weiter →</button>
@@ -2376,11 +2368,59 @@
     .wiz-steps{gap:6px;}
     .wiz-step em{display:none;}
   }
+
+  /* ===== Funnel auf Daumenbedienung (mobil) ===== */
+  .wiz-radio .rlabel{position:relative;padding-left:52px;}
+  .wiz-radio .rlabel::before{
+    content:"";position:absolute;left:19px;top:50%;transform:translateY(-50%);
+    width:20px;height:20px;border-radius:50%;border:2px solid var(--c-border);
+    background:#fff;transition:border-color .2s ease,box-shadow .2s ease;
+  }
+  .wiz-radio input:checked + .rlabel::before{
+    border-color:var(--c-gold);
+    box-shadow:inset 0 0 0 4.5px var(--c-gold);
+  }
+  .wiz-radio input:focus-visible + .rlabel{outline:2px solid var(--c-gold-d);outline-offset:2px;}
+
+  @media (max-width:680px){
+    /* Kompakter, damit alle Antworten ohne Scrollen sichtbar sind */
+    .funnel-intro{padding:22px 0 0;}
+    .funnel-intro h1{margin:8px 0 10px;}
+    .funnel-intro .lead{display:none;}
+    .wiz-progress{margin-bottom:20px;}
+    .wiz-step span{width:28px;height:28px;font-size:12px;}
+    .wiz-panel h2{font-size:22px;margin-bottom:10px;}
+    .wiz-kicker{margin-bottom:8px;}
+    /* Auf Auswahlschritten stört der Erklärtext nur */
+    .wiz-panel:has(.wiz-radio-grid) .wiz-lead{display:none;}
+    .wiz-radio-grid{gap:9px;}
+    .wiz-radio .rlabel{padding:15px 16px 15px 46px;border-width:2px;border-radius:12px;}
+    .wiz-radio .rlabel strong{font-size:14px;}
+    /* Zusatzzeilen raus, damit alle Antworten ohne Scrollen auf den Schirm passen */
+    .wiz-radio .rlabel em{display:none;}
+    .funnel-intro .kicker{display:none;}
+    .funnel-intro h1{font-size:23px!important;letter-spacing:-.4px;margin:0 0 6px;}
+    .funnel-intro{padding:16px 0 0;}
+    .wiz-radio .rlabel::before{left:16px;width:19px;height:19px;}
+    .wiz-radio:active .rlabel{transform:none;border-color:var(--c-gold);background:rgba(197,166,74,.08);}
+    .wiz-radio:hover .rlabel{transform:none;}
+
+    /* Weiter-Button bleibt am unteren Rand erreichbar */
+    .wiz-nav{
+      position:sticky;bottom:0;z-index:20;
+      margin:22px -20px 0;padding:12px 20px calc(12px + env(safe-area-inset-bottom));
+      background:rgba(255,255,255,.96);backdrop-filter:blur(8px);
+      border-top:1px solid var(--c-border);
+    }
+    .wiz-btn{flex:1 1 auto;justify-content:center;}
+    .funnel-form-section{padding-bottom:20px;}
+  }
+
 </style>
 
 <script>
 (function(){
-  const total = 5;
+  const total = 4;
   let idx = 0;
   const bar = document.getElementById('wiz-bar');
   const steps = document.querySelectorAll('.wiz-step');
@@ -2404,28 +2444,30 @@
     if (i === total - 1) {
       btnNext.style.display = 'none';
       btnSubmit.style.display = 'inline-flex';
-      buildSummary();
     } else {
       btnNext.style.display = 'inline-flex';
       btnSubmit.style.display = 'none';
     }
-    // Scroll to top of wizard
-    document.querySelector('.wiz-progress').scrollIntoView({behavior:'smooth', block:'start'});
+    // Frage direkt unter den Kopfbereich scrollen
+    const kopf = document.querySelector('.funnel-head');
+    const ziel = document.querySelector('.wiz-progress');
+    const versatz = (kopf ? kopf.getBoundingClientRect().height : 0) + 12;
+    const y = ziel.getBoundingClientRect().top + window.scrollY - versatz;
+    window.scrollTo({top: Math.max(0, y), behavior: 'smooth'});
   }
 
-  function buildSummary(){
-    const d = new FormData(form);
-    const items = [
-      ['Anliegen', d.get('anliegen') || '<em>keine Angabe</em>'],
-      ['Ziel', d.get('ziel') || '<em>keine Angabe</em>'],
-      ['Dringlichkeit', d.get('dringlichkeit') || '<em>keine Angabe</em>'],
-      ['Name', ((d.get('vorname')||'') + ' ' + (d.get('nachname')||'')).trim() || '<em>keine Angabe</em>'],
-      ['E-Mail', d.get('email') || '<em>keine Angabe</em>'],
-      ['Telefon', d.get('telefon') || '<em>keine Angabe</em>'],
-      ['Rückruf', d.get('rueckruf') || '<em>egal</em>'],
-    ];
-    document.getElementById('wiz-summary').innerHTML =
-      items.map(([k,v]) => `<div class="row"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+
+  // Pflichtfelder und Einwilligung prüfen, bevor abgesendet wird
+  function schrittGueltig(i){
+    const panel = panels[i];
+    const felder = panel.querySelectorAll('input[required],select[required],textarea[required]');
+    for (const f of felder){
+      if (!f.checkValidity()){
+        f.reportValidity();
+        return false;
+      }
+    }
+    return true;
   }
 
   btnNext.addEventListener('click', () => {
@@ -2436,6 +2478,7 @@
   });
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (!schrittGueltig(idx)) return;
     const errEl = document.getElementById('wiz-error');
     errEl.style.display = 'none';
     const submitBtn = document.getElementById('wiz-submit');
