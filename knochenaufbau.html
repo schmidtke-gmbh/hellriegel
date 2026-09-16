@@ -19,7 +19,10 @@
 <meta property="og:title" content="Knochenaufbau Essen · Biologisch & schonend · Hauke Hellriegel">
 <meta property="og:description" content="Knochenaufbau in Essen-Werden mit biokompatiblen Materialien und körpereigenen Wachstumsfaktoren (A-PRF). Möglichst wenig Fremdmaterial, möglichst viel Eigenheilung.">
 <meta property="og:url" content="https://hellriegel-zahnmedizin.de/knochenaufbau.html">
-<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/hauke-portrait.jpg">
+<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hauke Hellriegel, Zahnarzt in Essen-Werden">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Knochenaufbau Essen · Biologisch & schonend · Hauke Hellriegel">
 <meta name="twitter:description" content="Knochenaufbau in Essen-Werden mit biokompatiblen Materialien und körpereigenen Wachstumsfaktoren (A-PRF). Möglichst wenig Fremdmaterial, möglichst viel Eigenheilung.">
@@ -41,7 +44,7 @@
   "description": "Zahnarztpraxis in Essen-Werden. Schwerpunkte: Keramikimplantate, ästhetische Zahnmedizin, ganzheitliche Behandlung.",
   "url": "https://hellriegel-zahnmedizin.de/",
   "logo": "https://hellriegel-zahnmedizin.de/images/logoquer.png",
-  "image": "https://hellriegel-zahnmedizin.de/images/Hellriegel_Visuals_60x60_3.png",
+  "image": "https://hellriegel-zahnmedizin.de/images/og-share.jpg",
   "telephone": "+49-201-493126",
   "email": "info@hellriegel-zahnmedizin.de",
   "priceRange": "€€€",
@@ -2107,11 +2110,12 @@
   }
 
   /* Überschriften: keine Brüche mitten im Wort, dafür kleinere Schrift auf schmalen Schirmen */
-  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto;}
+  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:manual;hyphens:manual;}
   @media (max-width:460px){
-    h1{font-size:clamp(20px,8vw,40px);}
-    h2{font-size:clamp(18px,6.8vw,28px);}
-    h3{font-size:clamp(15.5px,4.6vw,20px);}
+    /* !important, weil Seitenregeln wie .k-hero h1 spezifischer sind */
+    h1{font-size:clamp(20px,7.6vw,40px)!important;}
+    h2{font-size:clamp(18px,6.4vw,28px)!important;}
+    h3{font-size:clamp(15.5px,4.4vw,20px)!important;}
   }
   @media (max-width:1080px){
     /* .k-split.reverse ist spezifischer als .k-split und blieb sonst zweispaltig */
@@ -2126,6 +2130,12 @@
     #kosten .k-values-grid{grid-template-columns:minmax(0,1fr);}
   }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C5A64A">
 </head>
 <body>
 
@@ -2398,7 +2408,7 @@
   </div>
   <div class="container">
     <div class="kicker">Implantologie</div>
-    <h1 id="hero-h1">Knochenaufbau,<br><span class="accent">biologisch</span> &amp; schonend.</h1>
+    <h1 id="hero-h1">Knochen&shy;aufbau,<br><span class="accent">biologisch</span> &amp; schonend.</h1>
     <p class="lead">Wenn ein Zahn lange fehlt, zieht sich der Kieferknochen zurück. Manchmal so stark, dass für ein Implantat zunächst Knochen wieder aufgebaut werden muss. Unser Anspruch: möglichst wenig Fremdmaterial, möglichst viel Eigenheilung, und nur das, was wirklich Sinn&nbsp;macht.</p>
     <div class="cta-row">
       <a href="erstgespraech.html" class="btn btn-primary">
@@ -2416,7 +2426,7 @@
   <div class="container">
     <div class="k-split">
       <div class="k-split-img">
-        <img src="images/mega-knochenaufbau.png" alt="">
+        <img src="images/mega-knochenaufbau.png" alt="Knochenersatzmaterial in einer Glasschale, daneben ein Keramikimplantat aus Zirkonoxid">
       </div>
       <div class="k-split-text">
         <div class="kicker">Unser Ansatz</div>
@@ -2452,7 +2462,7 @@
       </div><div class="k-value-card">
         <div class="v-num">Heilung</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Ozon & Mikronährstoffe</h3>
+        <h3>Ozon & Mikro&shy;nährstoffe</h3>
         <p>Begleitend zur OP: Ozon-Therapie für die Wundheilung, individuelle Mikronährstoff-Kur für die&nbsp;Regeneration.</p>
       </div>
     </div>

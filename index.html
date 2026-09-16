@@ -19,7 +19,10 @@
 <meta property="og:title" content="Zahnarzt Essen · Hauke Hellriegel · Moderne Zahnmedizin">
 <meta property="og:description" content="Keramikimplantate, metallfreier Zahnersatz und ganzheitliche Behandlung in Essen-Werden. Praxis mit 4,7-Sterne-Bewertung bei Google.">
 <meta property="og:url" content="https://hellriegel-zahnmedizin.de/">
-<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/Hellriegel_Visuals_60x60_3.png">
+<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hauke Hellriegel, Zahnarzt in Essen-Werden">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zahnarzt Essen · Hauke Hellriegel">
 <meta name="twitter:description" content="Moderne Zahnmedizin in Essen-Werden. Keramikimplantate, metallfreier Zahnersatz & Ganzheitlich.">
@@ -41,7 +44,7 @@
   "description": "Zahnarztpraxis in Essen-Werden. Schwerpunkte: Keramikimplantate, metallfreier Zahnersatz, ganzheitliche Behandlung.",
   "url": "https://hellriegel-zahnmedizin.de/",
   "logo": "https://hellriegel-zahnmedizin.de/images/logoquer.png",
-  "image": "https://hellriegel-zahnmedizin.de/images/Hellriegel_Visuals_60x60_3.png",
+  "image": "https://hellriegel-zahnmedizin.de/images/og-share.jpg",
   "telephone": "+49-201-493126",
   "email": "info@hellriegel-zahnmedizin.de",
   "priceRange": "€€€",
@@ -1808,11 +1811,12 @@
   }
 
   /* Überschriften: keine Brüche mitten im Wort, dafür kleinere Schrift auf schmalen Schirmen */
-  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto;}
+  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:manual;hyphens:manual;}
   @media (max-width:460px){
-    h1{font-size:clamp(20px,8vw,40px);}
-    h2{font-size:clamp(18px,6.8vw,28px);}
-    h3{font-size:clamp(15.5px,4.6vw,20px);}
+    /* !important, weil Seitenregeln wie .k-hero h1 spezifischer sind */
+    h1{font-size:clamp(20px,7.6vw,40px)!important;}
+    h2{font-size:clamp(18px,6.4vw,28px)!important;}
+    h3{font-size:clamp(15.5px,4.4vw,20px)!important;}
   }
   @media (max-width:1080px){
     /* .k-split.reverse ist spezifischer als .k-split und blieb sonst zweispaltig */
@@ -1827,6 +1831,12 @@
     #kosten .k-values-grid{grid-template-columns:minmax(0,1fr);}
   }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C5A64A">
 </head>
 <body>
 
@@ -2181,7 +2191,7 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">Unsere Schwerpunkte</div>
-      <h2 id="schwerp-h2">Zahnmedizin, die sich<br><span class="accent">sehen lassen</span> kann.</h2>
+      <h2 id="schwerp-h2">Zahn&shy;medizin, die sich<br><span class="accent">sehen lassen</span> kann.</h2>
       <p>Hochwertige Keramikimplantate, metallfreier Zahnersatz und eine Praxis, in der Sie als Mensch im Mittelpunkt stehen. Drei Schwerpunkte, ein Ziel: Ihre langfristige&nbsp;Zahngesundheit.</p>
     </div>
     <div class="schwerp-grid">
@@ -2200,7 +2210,7 @@
             </svg>
           </div>
           <div class="num">01 · KERAMIKIMPLANTATE</div>
-          <h3><a href="keramikimplantate.html">Zahnersatz, der sich anfühlt wie <span class="accent">echt</span>.</a></h3>
+          <h3><a href="keramikimplantate.html">Zahn&shy;ersatz, der sich anfühlt wie <span class="accent">echt</span>.</a></h3>
           <p>Hochwertige Keramikimplantate, metallfrei, biokompatibel und gewebefreundlich. Für Jahrzehnte&nbsp;gemacht.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>100 % Keramik · metallfrei</strong></li>
@@ -2227,7 +2237,7 @@
             </svg>
           </div>
           <div class="num">02 · METALLFREIER ZAHNERSATZ</div>
-          <h3><a href="metallfreier-zahnersatz.html"><span class="accent">Metallfreier</span> Zahnersatz.</a></h3>
+          <h3><a href="metallfreier-zahnersatz.html"><span class="accent">Metall&shy;freier</span> Zahn&shy;ersatz.</a></h3>
           <p>Vollkeramik-Kronen, Inlays und Brücken: Zahnersatz aus 100 % biokompatiblen Materialien, ohne jegliches Metall im&nbsp;Mund.</p>
           <ul class="feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><strong>Ästhetische Vorab-Simulation</strong></li>
@@ -2306,7 +2316,7 @@
       <div class="implant-pin-left">
         <div class="pin-head">
           <div class="kicker">Unser Spezialgebiet</div>
-          <h2 id="pin-h2">Keramikimplantate aus<br><span class="accent">Essen-Werden</span>.</h2>
+          <h2 id="pin-h2">Keramik&shy;implantate aus<br><span class="accent">Essen-Werden</span>.</h2>
           <p>Wir arbeiten konsequent metallfrei: hochreines Zirkonoxid für höchste Ansprüche an Biokompatibilität, Verträglichkeit, Gesundheit und&nbsp;Ästhetik.</p>
         </div>
 
@@ -2520,7 +2530,7 @@
   <div class="anwendung-layout">
     <div class="anwendung-text">
       <div class="kicker">Alles aus einer Hand</div>
-      <h2 id="anw-h2">Ihre Zahngesundheit<br>ist unsere <span class="accent">Verantwortung</span>.</h2>
+      <h2 id="anw-h2">Ihre Zahn&shy;gesundheit<br>ist unsere <span class="accent">Verant&shy;wortung</span>.</h2>
       <p>Von der sanften Vorsorge über metallfreie Keramikimplantate bis hin zu vollkeramischem Zahnersatz, in unserer Praxis in Essen-Werden bekommen Sie alles, was zu einem gesunden, langlebigen Lächeln gehört. Persönlich. Biologisch. Aus einer&nbsp;Hand.</p>
       <a href="#termin" class="btn btn-primary" style="align-self:flex-start;">
         Kontakt aufnehmen
@@ -2815,7 +2825,7 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">YouTube · Hauke Hellriegel</div>
-      <h2 id="yt-h2">Zahnmedizin auf <span class="accent">YouTube</span>.</h2>
+      <h2 id="yt-h2">Zahn&shy;medizin auf <span class="accent">YouTube</span>.</h2>
       <p>Auf unserem YouTube-Kanal erklären wir Keramikimplantate, metallfreien Zahnersatz und biologische Zahnmedizin verständlich, ehrlich und auf den Punkt, direkt aus der Praxis in&nbsp;Essen-Werden.</p>
       <a href="https://www.youtube.com/@biologischerzahnarzt" target="_blank" rel="noopener" class="channel-info">
         <span class="yt-icon"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>
@@ -2833,7 +2843,7 @@
         </a>
         <div class="yt-content">
           <div class="yt-meta">Hauke Hellriegel<span class="dot"></span>Biologische Zahnmedizin</div>
-          <h3>Titanimplantate: Verborgene Risiken & Nebenwirkungen enthüllt!</h3>
+          <h3>Titan&shy;implantate: Verborgene Risiken & Neben&shy;wirkungen enthüllt!</h3>
           <p>Warum Keramikimplantate die bessere Wahl sind, und was Metall im Mund mit Ihrer Gesundheit&nbsp;macht.</p>
           <a href="https://youtu.be/Cif9G3f_MVo" target="_blank" rel="noopener" class="yt-watch">
             <span class="yt-mini"><svg aria-hidden="true"><use href="#yt-logo"/></svg></span>

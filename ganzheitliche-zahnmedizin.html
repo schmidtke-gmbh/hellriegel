@@ -19,7 +19,10 @@
 <meta property="og:title" content="Biologische Zahnmedizin Essen · Ganzheitlicher Ansatz · Hauke Hellriegel">
 <meta property="og:description" content="Biologische und ganzheitliche Zahnmedizin in Essen-Werden: Mundraum im Kontext des Gesamtorganismus. Mikronährstoffanalytik, A-PRF, Ozon-Therapie, biokompatible Materialien.">
 <meta property="og:url" content="https://hellriegel-zahnmedizin.de/ganzheitliche-zahnmedizin.html">
-<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/hauke-portrait.jpg">
+<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hauke Hellriegel, Zahnarzt in Essen-Werden">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Biologische Zahnmedizin Essen · Ganzheitlicher Ansatz · Hauke Hellriegel">
 <meta name="twitter:description" content="Biologische und ganzheitliche Zahnmedizin in Essen-Werden: Mundraum im Kontext des Gesamtorganismus. Mikronährstoffanalytik, A-PRF, Ozon-Therapie, biokompatible Materialien.">
@@ -41,7 +44,7 @@
   "description": "Zahnarztpraxis in Essen-Werden. Schwerpunkte: Keramikimplantate, ästhetische Zahnmedizin, ganzheitliche Behandlung.",
   "url": "https://hellriegel-zahnmedizin.de/",
   "logo": "https://hellriegel-zahnmedizin.de/images/logoquer.png",
-  "image": "https://hellriegel-zahnmedizin.de/images/Hellriegel_Visuals_60x60_3.png",
+  "image": "https://hellriegel-zahnmedizin.de/images/og-share.jpg",
   "telephone": "+49-201-493126",
   "email": "info@hellriegel-zahnmedizin.de",
   "priceRange": "€€€",
@@ -2156,11 +2159,12 @@
   }
 
   /* Überschriften: keine Brüche mitten im Wort, dafür kleinere Schrift auf schmalen Schirmen */
-  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto;}
+  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:manual;hyphens:manual;}
   @media (max-width:460px){
-    h1{font-size:clamp(20px,8vw,40px);}
-    h2{font-size:clamp(18px,6.8vw,28px);}
-    h3{font-size:clamp(15.5px,4.6vw,20px);}
+    /* !important, weil Seitenregeln wie .k-hero h1 spezifischer sind */
+    h1{font-size:clamp(20px,7.6vw,40px)!important;}
+    h2{font-size:clamp(18px,6.4vw,28px)!important;}
+    h3{font-size:clamp(15.5px,4.4vw,20px)!important;}
   }
   @media (max-width:1080px){
     /* .k-split.reverse ist spezifischer als .k-split und blieb sonst zweispaltig */
@@ -2175,6 +2179,12 @@
     #kosten .k-values-grid{grid-template-columns:minmax(0,1fr);}
   }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C5A64A">
 </head>
 <body>
 
@@ -2446,7 +2456,7 @@
   </div>
   <div class="container">
     <div class="kicker">Leistungen</div>
-    <h1 id="hero-h1">Biologische<br><span class="accent">Zahnmedizin</span>. Den Menschen denken.</h1>
+    <h1 id="hero-h1">Biologische<br><span class="accent">Zahn&shy;medizin</span>. Den Menschen denken.</h1>
     <p class="lead">Wir betrachten den Mundraum nicht isoliert, sondern immer im Kontext des Gesamtorganismus. Was im Mund passiert, wirkt sich auf den ganzen Körper aus, deshalb arbeiten wir mit einem ganzheitlichen&nbsp;Behandlungskonzept.</p>
     <div class="cta-row">
       <a href="erstgespraech.html" class="btn btn-primary">
@@ -2464,7 +2474,7 @@
   <div class="container">
     <div class="k-split">
       <div class="k-split-img">
-        <img src="images/mega-ganzheitlich.png" alt="">
+        <img src="images/mega-ganzheitlich.png" alt="Frische Salbeiblätter in einer weißen Schale auf dunklem Stein, umgeben von Rohmineralien">
       </div>
       <div class="k-split-text">
         <div class="kicker">Unser Ansatz</div>
@@ -2490,7 +2500,7 @@
       </div><div class="k-value-card">
         <div class="v-num">Labor</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Mikronährstoffanalytik</h3>
+        <h3>Mikro&shy;nährstoff&shy;analytik</h3>
         <p>Vitamin D3, K2, Magnesium, Zink, RANTES und TNF-Alpha sind nur Beispiele für gezielte Blutwertbestimmungen als Basis für eine biologisch optimierte&nbsp;Behandlung.</p>
       </div><div class="k-value-card">
         <div class="v-num">3D</div>
@@ -2500,7 +2510,7 @@
       </div><div class="k-value-card">
         <div class="v-num">ART</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Ganzheitliche Verfahren</h3>
+        <h3>Ganzheit&shy;liche Verfahren</h3>
         <p>Wir nutzen ergänzend den Autonomen-Response-Test (ART) nach Dr.&nbsp;Klinghardt.</p>
       </div>
     </div>
@@ -2539,7 +2549,7 @@
   <div class="container">
     <div class="k-split reverse">
       <div class="k-split-img">
-        <img src="images/mega-knochenaufbau.png" alt="">
+        <img src="images/mega-knochenaufbau.png" alt="Glasschale mit weißem Knochenersatzmaterial neben einem Keramikimplantat">
       </div>
       <div class="k-split-text">
         <div class="kicker">Was bedeutet "biologisch" konkret?</div>
@@ -2554,7 +2564,7 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Was wir behandeln</div>
-      <h2>Ganzheitliche<br><span class="accent">Schwerpunkte.</span></h2>
+      <h2>Ganzheit&shy;liche<br><span class="accent">Schwer&shy;punkte.</span></h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
@@ -2575,7 +2585,7 @@
       </div><div class="k-value-card">
         <div class="v-num">Nerven</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 014 13c0-5 7-10 7-10s7 5 7 10a7 7 0 01-7 7zM11 13v7"/></svg></div>
-        <h3>Neuraltherapie</h3>
+        <h3>Neural&shy;therapie</h3>
         <p>Behandlung von Störfeldern und Trigeminus-Beschwerden mit homöopathischer&nbsp;Neuraltherapie.</p>
       </div>
     </div>

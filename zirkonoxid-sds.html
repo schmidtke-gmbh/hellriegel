@@ -19,7 +19,10 @@
 <meta property="og:title" content="Zirkonoxid Keramikimplantate · Swiss Dental Solutions · Hauke Hellriegel Essen">
 <meta property="og:description" content="Zirkonoxid-Keramikimplantate von SDS (Swiss Dental Solutions) in Essen-Werden. Biokompatibel, metallfrei, mit jahrzehntelanger Schweizer Erfahrung.">
 <meta property="og:url" content="https://hellriegel-zahnmedizin.de/zirkonoxid-sds.html">
-<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/hauke-portrait.jpg">
+<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hauke Hellriegel, Zahnarzt in Essen-Werden">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zirkonoxid Keramikimplantate · Swiss Dental Solutions · Hauke Hellriegel Essen">
 <meta name="twitter:description" content="Zirkonoxid-Keramikimplantate von SDS (Swiss Dental Solutions) in Essen-Werden. Biokompatibel, metallfrei, mit jahrzehntelanger Schweizer Erfahrung.">
@@ -41,7 +44,7 @@
   "description": "Zahnarztpraxis in Essen-Werden. Schwerpunkte: Keramikimplantate, ästhetische Zahnmedizin, ganzheitliche Behandlung.",
   "url": "https://hellriegel-zahnmedizin.de/",
   "logo": "https://hellriegel-zahnmedizin.de/images/logoquer.png",
-  "image": "https://hellriegel-zahnmedizin.de/images/Hellriegel_Visuals_60x60_3.png",
+  "image": "https://hellriegel-zahnmedizin.de/images/og-share.jpg",
   "telephone": "+49-201-493126",
   "email": "info@hellriegel-zahnmedizin.de",
   "priceRange": "€€€",
@@ -2107,11 +2110,12 @@
   }
 
   /* Überschriften: keine Brüche mitten im Wort, dafür kleinere Schrift auf schmalen Schirmen */
-  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto;}
+  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:manual;hyphens:manual;}
   @media (max-width:460px){
-    h1{font-size:clamp(20px,8vw,40px);}
-    h2{font-size:clamp(18px,6.8vw,28px);}
-    h3{font-size:clamp(15.5px,4.6vw,20px);}
+    /* !important, weil Seitenregeln wie .k-hero h1 spezifischer sind */
+    h1{font-size:clamp(20px,7.6vw,40px)!important;}
+    h2{font-size:clamp(18px,6.4vw,28px)!important;}
+    h3{font-size:clamp(15.5px,4.4vw,20px)!important;}
   }
   @media (max-width:1080px){
     /* .k-split.reverse ist spezifischer als .k-split und blieb sonst zweispaltig */
@@ -2126,6 +2130,12 @@
     #kosten .k-values-grid{grid-template-columns:minmax(0,1fr);}
   }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C5A64A">
 </head>
 <body>
 
@@ -2416,11 +2426,11 @@
   <div class="container">
     <div class="k-split">
       <div class="k-split-img">
-        <img src="images/keramikimplantat.jpeg" alt="">
+        <img src="images/keramikimplantat.jpeg" alt="Einteiliges Keramikimplantat aus weißem Zirkonoxid mit Schraubgewinde">
       </div>
       <div class="k-split-text">
         <div class="kicker">Was ist Zirkonoxid?</div>
-        <h2>Hochleistungskeramik<br><span class="accent">metallfrei.</span></h2>
+        <h2>Hoch&shy;leistungs&shy;keramik<br><span class="accent">metallfrei.</span></h2>
         <p>Zirkoniumdioxid (kurz: Zirkonoxid) ist eine medizinische Hochleistungskeramik. In der modernen Zahnmedizin steht uns dieser Werkstoff als metallfreie Alternative zum klassischen Titan zur Verfügung, und das ist für uns die erste&nbsp;Wahl.</p><p>Zirkonoxid ist äußerst biokompatibel, immunologisch neutral und besitzt keine freien Elektronen an der Oberfläche, das Material reagiert chemisch kaum mit dem umliegenden&nbsp;Gewebe.</p><p>Knochen und Zahnfleisch wachsen direkt an die Keramik an. Weniger Plaque-Anlagerung bedeutet auch weniger Risiko für Zahnfleischentzündungen am&nbsp;Implantat.</p>
       </div>
     </div>
@@ -2431,7 +2441,7 @@
   <div class="container">
     <div class="k-split reverse">
       <div class="k-split-img">
-        <img src="images/keramik.png" alt="">
+        <img src="images/keramik.png" alt="Keramikimplantat von Swiss Dental Solutions mit vollkeramischer Krone und Clean-Implant-Siegel">
       </div>
       <div class="k-split-text">
         <div class="kicker">Unser Partner</div>

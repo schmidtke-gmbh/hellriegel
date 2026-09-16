@@ -19,7 +19,10 @@
 <meta property="og:title" content="Impressum · Hauke Hellriegel · Zahnarzt Essen">
 <meta property="og:description" content="Impressum der Zahnarztpraxis Hauke Hellriegel in Essen-Werden nach § 5 TMG.">
 <meta property="og:url" content="https://hellriegel-zahnmedizin.de/impressum.html">
-<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/hauke-portrait.jpg">
+<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hauke Hellriegel, Zahnarzt in Essen-Werden">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Impressum · Hauke Hellriegel · Zahnarzt Essen">
 <meta name="twitter:description" content="Impressum der Zahnarztpraxis Hauke Hellriegel in Essen-Werden nach § 5 TMG.">
@@ -41,7 +44,7 @@
   "description": "Zahnarztpraxis in Essen-Werden. Schwerpunkte: Keramikimplantate, ästhetische Zahnmedizin, ganzheitliche Behandlung.",
   "url": "https://hellriegel-zahnmedizin.de/",
   "logo": "https://hellriegel-zahnmedizin.de/images/logoquer.png",
-  "image": "https://hellriegel-zahnmedizin.de/images/Hellriegel_Visuals_60x60_3.png",
+  "image": "https://hellriegel-zahnmedizin.de/images/og-share.jpg",
   "telephone": "+49-201-493126",
   "email": "info@hellriegel-zahnmedizin.de",
   "priceRange": "€€€",
@@ -2092,11 +2095,12 @@
   }
 
   /* Überschriften: keine Brüche mitten im Wort, dafür kleinere Schrift auf schmalen Schirmen */
-  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto;}
+  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:manual;hyphens:manual;}
   @media (max-width:460px){
-    h1{font-size:clamp(20px,8vw,40px);}
-    h2{font-size:clamp(18px,6.8vw,28px);}
-    h3{font-size:clamp(15.5px,4.6vw,20px);}
+    /* !important, weil Seitenregeln wie .k-hero h1 spezifischer sind */
+    h1{font-size:clamp(20px,7.6vw,40px)!important;}
+    h2{font-size:clamp(18px,6.4vw,28px)!important;}
+    h3{font-size:clamp(15.5px,4.4vw,20px)!important;}
   }
   @media (max-width:1080px){
     /* .k-split.reverse ist spezifischer als .k-split und blieb sonst zweispaltig */
@@ -2111,6 +2115,12 @@
     #kosten .k-values-grid{grid-template-columns:minmax(0,1fr);}
   }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C5A64A">
 </head>
 <body>
 
@@ -2404,7 +2414,7 @@
 
     E-Mail: <a href="mailto:info@hellriegel-zahnmedizin.de" style="color:var(--c-gold-d);">info@hellriegel-zahnmedizin.de</a></p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Berufsbezeichnung &amp; berufsrechtliche Regelungen</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Berufs&shy;bezeichnung &amp; berufs&shy;rechtliche Regelungen</h2>
     <p>Berufsbezeichnung: <strong>Zahnarzt</strong> (verliehen in Deutschland)<br>
     Zuständige Kammer: <strong>Zahnärztekammer Nordrhein</strong>, Emanuel-Leutze-Straße 8, 40547 Düsseldorf<br>
     <a href="https://www.zaek-nr.de" target="_blank" rel="noopener" style="color:var(--c-gold-d);">www.zaek-nr.de</a></p>
@@ -2421,16 +2431,16 @@
     <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Umsatzsteuer-ID</h2>
     <p>Zahnärztliche Leistungen sind gemäß § 4 Nr. 14 UStG&nbsp;umsatzsteuerbefreit.</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Redaktionell verantwortlich</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Redaktionell verant&shy;wortlich</h2>
     <p>Hauke Hellriegel (Anschrift wie&nbsp;oben)</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">EU-Streitschlichtung</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">EU-Streit&shy;schlichtung</h2>
     <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" style="color:var(--c-gold-d);">https://ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie&nbsp;oben.</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
-    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle&nbsp;teilzunehmen.</p>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Verbraucher&shy;streit&shy;beilegung / Universal&shy;schlichtungs&shy;stelle</h2>
+    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucher&shy;schlichtungs&shy;stelle&nbsp;teilzunehmen.</p>
 
-    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Haftungsausschluss</h2>
+    <h2 style="font-size:22px;margin:36px 0 12px;color:var(--c-anthrazit);text-transform:uppercase;letter-spacing:.5px;">Haftungs&shy;ausschluss</h2>
     <p><strong>Haftung für Inhalte:</strong> Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit&nbsp;hinweisen.</p>
     <p><strong>Haftung für Links:</strong> Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter&nbsp;verantwortlich.</p>
     <p><strong>Urheberrecht:</strong> Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch&nbsp;gestattet.</p>

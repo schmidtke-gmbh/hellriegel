@@ -19,7 +19,10 @@
 <meta property="og:title" content="Therapien & Besonderheiten · Laser, Ozon, Infusionen · Hauke Hellriegel Essen">
 <meta property="og:description" content="Was uns besonders macht: Laser-Therapie, Ozon, Longevity-Infusionen, AHNF, Eigenblut-Therapie (A-PRF) und konsequente Parodontitis-Behandlung in Essen-Werden.">
 <meta property="og:url" content="https://hellriegel-zahnmedizin.de/therapien.html">
-<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/hauke-portrait.jpg">
+<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hauke Hellriegel, Zahnarzt in Essen-Werden">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Therapien & Besonderheiten · Laser, Ozon, Infusionen · Hauke Hellriegel Essen">
 <meta name="twitter:description" content="Was uns besonders macht: Laser-Therapie, Ozon, Longevity-Infusionen, AHNF, Eigenblut-Therapie (A-PRF) und konsequente Parodontitis-Behandlung in Essen-Werden.">
@@ -41,7 +44,7 @@
   "description": "Zahnarztpraxis in Essen-Werden. Schwerpunkte: Keramikimplantate, ästhetische Zahnmedizin, ganzheitliche Behandlung.",
   "url": "https://hellriegel-zahnmedizin.de/",
   "logo": "https://hellriegel-zahnmedizin.de/images/logoquer.png",
-  "image": "https://hellriegel-zahnmedizin.de/images/Hellriegel_Visuals_60x60_3.png",
+  "image": "https://hellriegel-zahnmedizin.de/images/og-share.jpg",
   "telephone": "+49-201-493126",
   "email": "info@hellriegel-zahnmedizin.de",
   "priceRange": "€€€",
@@ -2098,11 +2101,12 @@
   }
 
   /* Überschriften: keine Brüche mitten im Wort, dafür kleinere Schrift auf schmalen Schirmen */
-  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto;}
+  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:manual;hyphens:manual;}
   @media (max-width:460px){
-    h1{font-size:clamp(20px,8vw,40px);}
-    h2{font-size:clamp(18px,6.8vw,28px);}
-    h3{font-size:clamp(15.5px,4.6vw,20px);}
+    /* !important, weil Seitenregeln wie .k-hero h1 spezifischer sind */
+    h1{font-size:clamp(20px,7.6vw,40px)!important;}
+    h2{font-size:clamp(18px,6.4vw,28px)!important;}
+    h3{font-size:clamp(15.5px,4.4vw,20px)!important;}
   }
   @media (max-width:1080px){
     /* .k-split.reverse ist spezifischer als .k-split und blieb sonst zweispaltig */
@@ -2117,6 +2121,12 @@
     #kosten .k-values-grid{grid-template-columns:minmax(0,1fr);}
   }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C5A64A">
 </head>
 <body>
 
@@ -2441,7 +2451,7 @@
   <div class="container">
     <div class="k-values-head">
       <div class="kicker">Therapie 03 · Longevity-Infusionen</div>
-      <h2>Infusionen<br>für <span class="accent">Zellregeneration &amp; Heilung</span>.</h2>
+      <h2>Infusionen<br>für <span class="accent">Zell&shy;regeneration &amp; Heilung</span>.</h2>
     </div>
     <div class="k-values-grid">
       <div class="k-value-card">
@@ -2481,7 +2491,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Therapie 04 · AHNF &amp; Neuraltherapie</div>
-        <h2>Körper im Fluss:<br><span class="accent">AHNF &amp; Neuraltherapie</span>.</h2>
+        <h2>Körper im Fluss:<br><span class="accent">AHNF &amp; Neural&shy;therapie</span>.</h2>
         <p>Die <strong>Autonome Haltungskorrektur nach Norbert Fuhr (AHNF)</strong> arbeitet mit dem Fasziensystem, Triggerpunkten und Verspannungen im Bewegungsapparat. Resultat: bessere Durchblutung, verbesserter Lymphabfluss, aufgelockertes Gewebe, der gesamte „Fluss" im Menschen wird&nbsp;angeregt.</p>
         <p>Ergänzend setzen wir bei Bedarf <strong>Neuraltherapie</strong> ein, eine bewährte Methode der biologischen Medizin, die mit Procain Störfelder behandelt, die andernorts im Körper Beschwerden auslösen&nbsp;können.</p>
       </div>
@@ -2498,7 +2508,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Therapie 05 · Eigenblut (A-PRF / I-PRF)</div>
-        <h2>Wachstumsfaktoren<br>aus Ihrem <span class="accent">eigenen Blut</span>.</h2>
+        <h2>Wachstums&shy;faktoren<br>aus Ihrem <span class="accent">eigenen Blut</span>.</h2>
         <p><strong>A-PRF (festes Gerinsel) und I-PRF (flüssige Form)</strong> sind Wachstumsfaktoren-Konzentrate aus Ihrem eigenen Blut. Wir nutzen sie konsequent bei OPs, Knochenaufbauten und Implantationen, sie beschleunigen die Heilung und reduzieren&nbsp;Fremdmaterial. A-PRF und I-PRF gewinnen wir in fester und flüssiger Form aus Ihrem eigenen Blut. Zum Einsatz kommen sie in der Keramikimplantologie, der Parodontitis-Therapie, der Prophylaxe sowie im Gingiva-Management, also der Unterstützung des&nbsp;Zahnfleischs.</p>
         <p>Besonders spannend: Wir nutzen die flüssige Form (I-PRF), um <strong>Implantate, Knochenersatzmaterialien und Membranen zu „biologisieren"</strong>, die Materialien werden vor dem Einsetzen mit den Zellen des Patienten beladen. Drin sind unter anderem Thrombozyten, Wachstumsfaktoren, und ein kleiner Anteil an Stammzellen, die für die Regeneration&nbsp;mitarbeiten.</p>
       </div>
@@ -2517,7 +2527,7 @@
       <div class="k-value-card">
         <div class="v-num">Diagnostik</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M21 12c0-5-4-9-9-9s-9 4-9 9 4 9 9 9"/></svg></div>
-        <h3>Keimbestimmung</h3>
+        <h3>Keim&shy;bestimmung</h3>
         <p>Bevor wir behandeln, bestimmen wir die spezifischen Bakterien in Ihrer Mundflora, keine Schemata, sondern gezieltes&nbsp;Vorgehen. Ergänzend setzen wir auf weiterführende Diagnostik: die Keimbestimmung der Mundflora sowie Blut- und Mikronährstoffanalysen, denn eine Parodontitis kann mit Mikronährstoffdefiziten einhergehen. Vitamin D3, K2, Magnesium, Zink, RANTES und TNF-Alpha sind nur Beispiele für gezielte Blutwertbestimmungen als Basis für eine biologisch optimierte&nbsp;Behandlung.</p>
       </div>
       <div class="k-value-card">
@@ -2535,7 +2545,7 @@
       <div class="k-value-card">
         <div class="v-num">Regeneration</div>
         <div class="v-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-        <h3>Gesteuerte Gewebsregeneration</h3>
+        <h3>Gesteuerte Gewebs&shy;regeneration</h3>
         <p>Mit A-PRF (Eigenblut) in die Taschen. Wachstumsfaktoren regen das Gewebe zur eigenen Heilung an. Biologisch, ohne&nbsp;Fremdmaterial.</p>
       </div>
     </div>

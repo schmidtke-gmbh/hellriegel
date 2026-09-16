@@ -19,7 +19,10 @@
 <meta property="og:title" content="Ästhetische Zahnmedizin Essen · Schön und gesund · Hauke Hellriegel">
 <meta property="og:description" content="Ästhetische Zahnmedizin in Essen-Werden: Vollkeramik-Kronen, Inlays, selektive Veneers &amp; ästhetische Vorab-Simulation, substanzschonend, biokompatibel, ohne Kompromisse.">
 <meta property="og:url" content="https://hellriegel-zahnmedizin.de/aesthetik.html">
-<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/hauke-portrait.jpg">
+<meta property="og:image" content="https://hellriegel-zahnmedizin.de/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hauke Hellriegel, Zahnarzt in Essen-Werden">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ästhetische Zahnmedizin Essen · Schön und gesund · Hauke Hellriegel">
 <meta name="twitter:description" content="Ästhetische Zahnmedizin in Essen-Werden: Vollkeramik-Kronen, Inlays, selektive Veneers &amp; ästhetische Vorab-Simulation, substanzschonend, biokompatibel, ohne Kompromisse.">
@@ -41,7 +44,7 @@
   "description": "Zahnarztpraxis in Essen-Werden. Schwerpunkte: Keramikimplantate, ästhetische Zahnmedizin, ganzheitliche Behandlung.",
   "url": "https://hellriegel-zahnmedizin.de/",
   "logo": "https://hellriegel-zahnmedizin.de/images/logoquer.png",
-  "image": "https://hellriegel-zahnmedizin.de/images/Hellriegel_Visuals_60x60_3.png",
+  "image": "https://hellriegel-zahnmedizin.de/images/og-share.jpg",
   "telephone": "+49-201-493126",
   "email": "info@hellriegel-zahnmedizin.de",
   "priceRange": "€€€",
@@ -2098,11 +2101,12 @@
   }
 
   /* Überschriften: keine Brüche mitten im Wort, dafür kleinere Schrift auf schmalen Schirmen */
-  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:auto;hyphens:auto;}
+  h1,h2,h3{overflow-wrap:normal;word-break:normal;-webkit-hyphens:manual;hyphens:manual;}
   @media (max-width:460px){
-    h1{font-size:clamp(20px,8vw,40px);}
-    h2{font-size:clamp(18px,6.8vw,28px);}
-    h3{font-size:clamp(15.5px,4.6vw,20px);}
+    /* !important, weil Seitenregeln wie .k-hero h1 spezifischer sind */
+    h1{font-size:clamp(20px,7.6vw,40px)!important;}
+    h2{font-size:clamp(18px,6.4vw,28px)!important;}
+    h3{font-size:clamp(15.5px,4.4vw,20px)!important;}
   }
   @media (max-width:1080px){
     /* .k-split.reverse ist spezifischer als .k-split und blieb sonst zweispaltig */
@@ -2117,6 +2121,12 @@
     #kosten .k-values-grid{grid-template-columns:minmax(0,1fr);}
   }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#C5A64A">
 </head>
 <body>
 
@@ -2411,7 +2421,7 @@
       </div>
       <div class="k-split-text">
         <div class="kicker">Unser Ansatz</div>
-        <h2>Ästhetik ist Anspruch<br><span class="accent">und Verantwortung</span>.</h2>
+        <h2>Ästhetik ist Anspruch<br><span class="accent">und Verant&shy;wortung</span>.</h2>
         <p>Ästhetische Zahnmedizin ist heute ein riesiges Geschäft. Manchmal werden dabei <strong>gesunde Zahnsubstanz weggeschliffen</strong> und Materialien verwendet, die zwar gut aussehen, aber den Körper belasten können. Das ist nicht unser&nbsp;Weg.</p>
         <p>Bei uns bedeutet ästhetische Zahnmedizin: ein natürlich schönes Lächeln, das mit dem Gesicht harmoniert, erreicht mit <strong>geprüft verträglichen, metallfreien Materialien</strong> und so substanzschonend wie irgend&nbsp;möglich.</p>
         <p>Etwas pointierter gesagt: Silikonbrüste sehen vielleicht toll aus, aber sie sind nicht besonders gesund. In der Zahnmedizin ist es genauso. Wir wollen das eine ohne das andere zu&nbsp;opfern.</p>
@@ -2507,7 +2517,7 @@
       <div class="sp-step">
         <span class="sp-num">04</span>
         <div class="sp-content">
-          <h3>Substanzschonende Behandlung</h3>
+          <h3>Substanz&shy;schonende Behandlung</h3>
           <p>Wir schleifen so wenig wie möglich, arbeiten mit Lupenbrille und nutzen ausschließlich metallfreie&nbsp;Werkstoffe.</p>
         </div>
       </div>
