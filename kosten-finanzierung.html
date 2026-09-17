@@ -131,8 +131,8 @@
   .topbar .item-phone svg{width:15px;height:15px;}
   .topbar .item-phone:hover{color:var(--c-gold-l);}
   .site-header{position:sticky;top:0;z-index:100;background:rgba(229,231,235,.88);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid rgba(27,31,42,.06);}
-  .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 0;}
-  .nav-logo img{height:110px;width:auto;display:block;}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:12px 0;}
+  .nav-logo img{height:74px;width:auto;display:block;transition:height .25s ease;}
   /* ===== MEGA-MENU ===== */
   .nav-menu{display:flex;align-items:center;gap:6px;list-style:none;}
   .nav-menu > li{position:static;}
@@ -2085,11 +2085,11 @@
 
   /* Mobile-Feinschliff: Logo, Hero-Collage, Trust-Leiste */
   @media (max-width:1080px){
-    .nav-logo img{height:68px;}
+    .nav-logo img{height:76px;}
     .nav-btn-sm{padding:11px 15px;gap:8px;letter-spacing:1px;}
   }
   @media (max-width:420px){
-    .nav-logo img{height:60px;}
+    .nav-logo img{height:66px;}
     .nav-btn-sm{font-size:10px;padding:10px 12px;gap:6px;}
     .nav-btn-sm .arrow{display:none;}
   }
@@ -2128,6 +2128,22 @@
   }
   @media (max-width:680px){
     #kosten .k-values-grid{grid-template-columns:minmax(0,1fr);}
+  }
+
+  /* Kopfbereich schrumpft beim Scrollen, damit mehr Inhalt sichtbar bleibt */
+  .site-header{transition:box-shadow .25s ease;}
+  @media (min-width:1081px){
+    .site-header.kompakt .nav-wrap{padding-top:7px;padding-bottom:7px;}
+    .site-header.kompakt .nav-logo img{height:54px;}
+    .site-header.kompakt{box-shadow:0 4px 18px rgba(27,31,42,.07);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .nav-logo img{transition:none;}
+  }
+
+  @media (max-width:1080px){
+    /* etwas mehr Luft zum Bildschirmrand */
+    .site-header .nav-wrap{padding-left:26px;padding-right:26px;}
   }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -2825,6 +2841,20 @@
   Array.prototype.forEach.call(nav.querySelectorAll('.mnav-panel a, .mnav-foot a'),function(a){
     a.addEventListener('click',close);
   });
+})();
+</script>
+<script>
+/* Kopfbereich beim Scrollen verkleinern */
+(function(){
+  var hd = document.querySelector('.site-header');
+  if (!hd) return;
+  var aktiv = false;
+  function pruefen(){
+    var soll = window.scrollY > 60;
+    if (soll !== aktiv){ aktiv = soll; hd.classList.toggle('kompakt', soll); }
+  }
+  window.addEventListener('scroll', pruefen, {passive:true});
+  pruefen();
 })();
 </script>
 </body>
