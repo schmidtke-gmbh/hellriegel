@@ -1847,16 +1847,50 @@
     .site-header .nav-wrap{padding-left:26px;padding-right:26px;}
   }
 
-  /* Praxisvideo: Standbild zuerst, Player erst nach Klick */
-  .hero-team .video-rahmen{position:absolute;inset:0;z-index:4;background:#000;}
-  .hero-team .video-rahmen iframe{width:100%;height:100%;border:0;display:block;}
-  .hero-team.spielt img,
-  .hero-team.spielt .hero-team-tag,
-  .hero-team.spielt .hero-team-play{display:none;}
+  /* Praxisvideo im Popup. Der Player wird erst beim Klick geladen. */
   .hero-team-play:focus-visible{outline:3px solid var(--c-gold);outline-offset:3px;}
+  .vid-overlay{
+    position:fixed;inset:0;z-index:2000;
+    display:flex;align-items:center;justify-content:center;
+    padding:24px;
+    background:rgba(12,14,20,.92);
+    backdrop-filter:blur(6px);
+    opacity:0;visibility:hidden;
+    transition:opacity .28s ease,visibility .28s ease;
+  }
+  .vid-overlay.offen{opacity:1;visibility:visible;}
+  .vid-buehne{
+    position:relative;width:100%;max-width:1080px;
+    aspect-ratio:16/9;
+    border-radius:18px;overflow:hidden;
+    background:#000;
+    box-shadow:0 40px 90px rgba(0,0,0,.55);
+    transform:translateY(14px) scale(.985);
+    transition:transform .3s cubic-bezier(.2,.7,.2,1);
+  }
+  .vid-overlay.offen .vid-buehne{transform:none;}
+  .vid-buehne iframe{width:100%;height:100%;border:0;display:block;}
+  .vid-zu{
+    position:absolute;top:-54px;right:0;
+    width:44px;height:44px;border-radius:50%;
+    border:1.5px solid rgba(255,255,255,.55);
+    background:rgba(255,255,255,.16);
+    color:#fff;cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 16px rgba(0,0,0,.4);
+    transition:background .2s ease,border-color .2s ease;
+  }
+  .vid-zu:hover{background:rgba(255,255,255,.18);border-color:var(--c-gold);}
+  .vid-zu svg{width:18px;height:18px;}
+  body.vid-offen{overflow:hidden;}
   @media (max-width:680px){
     .hero-team-play{width:60px;height:60px;}
     .hero-team-play svg{width:20px;height:20px;}
+    .vid-overlay{padding:16px;}
+    .vid-zu{top:auto;bottom:-52px;right:50%;transform:translateX(50%);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .vid-overlay,.vid-buehne{transition:none;}
   }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -3273,27 +3307,71 @@
 })();
 </script>
 <script>
-/* Praxisvideo: Bunny-Player erst beim Klick laden */
+/* Praxisvideo im Popup. Der Bunny-Player wird erst beim Klick geladen
+   und beim Schließen wieder entfernt, damit der Ton sicher aufhört. */
 (function(){
   var karte = document.getElementById('hero-team');
   if (!karte) return;
   var knopf = karte.querySelector('.hero-team-play');
   if (!knopf) return;
-  knopf.addEventListener('click', function(){
-    var lib = karte.getAttribute('data-video-lib');
-    var id  = karte.getAttribute('data-video-id');
-    if (!lib || !id || karte.classList.contains('spielt')) return;
-    var rahmen = document.createElement('div');
-    rahmen.className = 'video-rahmen';
+  var lib = karte.getAttribute('data-video-lib');
+  var id  = karte.getAttribute('data-video-id');
+  if (!lib || !id) return;
+
+  var overlay, buehne, zuKnopf, vorher;
+
+  function bauen(){
+    overlay = document.createElement('div');
+    overlay.className = 'vid-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Praxisvideo');
+    buehne = document.createElement('div');
+    buehne.className = 'vid-buehne';
+    zuKnopf = document.createElement('button');
+    zuKnopf.type = 'button';
+    zuKnopf.className = 'vid-zu';
+    zuKnopf.setAttribute('aria-label', 'Video schließen');
+    zuKnopf.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>';
+    buehne.appendChild(zuKnopf);
+    overlay.appendChild(buehne);
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', function(e){ if (e.target === overlay) zu(); });
+    zuKnopf.addEventListener('click', zu);
+  }
+
+  function auf(){
+    if (!overlay) bauen();
     var frame = document.createElement('iframe');
     frame.src = 'https://iframe.mediadelivery.net/embed/' + lib + '/' + id +
                 '?autoplay=true&loop=false&muted=false&preload=true&responsive=true';
     frame.setAttribute('allow', 'accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;');
     frame.setAttribute('allowfullscreen', 'true');
     frame.setAttribute('title', 'Praxisvideo Hauke Hellriegel');
-    rahmen.appendChild(frame);
-    karte.appendChild(rahmen);
-    karte.classList.add('spielt');
+    buehne.appendChild(frame);
+    document.body.classList.add('vid-offen');
+    vorher = document.activeElement;
+    requestAnimationFrame(function(){ overlay.classList.add('offen'); });
+    zuKnopf.focus();
+  }
+
+  function zu(){
+    if (!overlay) return;
+    overlay.classList.remove('offen');
+    document.body.classList.remove('vid-offen');
+    var frame = buehne.querySelector('iframe');
+    if (frame) frame.remove();
+    if (vorher && vorher.focus) vorher.focus();
+  }
+
+  knopf.addEventListener('click', auf);
+  karte.style.cursor = 'pointer';
+  karte.addEventListener('click', function(e){
+    if (e.target.closest('.hero-team-play')) return;
+    auf();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay && overlay.classList.contains('offen')) zu();
   });
 })();
 </script>
