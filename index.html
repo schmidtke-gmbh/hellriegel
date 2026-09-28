@@ -1846,6 +1846,18 @@
     /* etwas mehr Luft zum Bildschirmrand */
     .site-header .nav-wrap{padding-left:26px;padding-right:26px;}
   }
+
+  /* Praxisvideo: Standbild zuerst, Player erst nach Klick */
+  .hero-team .video-rahmen{position:absolute;inset:0;z-index:4;background:#000;}
+  .hero-team .video-rahmen iframe{width:100%;height:100%;border:0;display:block;}
+  .hero-team.spielt img,
+  .hero-team.spielt .hero-team-tag,
+  .hero-team.spielt .hero-team-play{display:none;}
+  .hero-team-play:focus-visible{outline:3px solid var(--c-gold);outline-offset:3px;}
+  @media (max-width:680px){
+    .hero-team-play{width:60px;height:60px;}
+    .hero-team-play svg{width:20px;height:20px;}
+  }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -2163,9 +2175,12 @@
       </div>
       <div class="hero-visual">
         <!-- Team-/Praxis-Bild zentral -->
-        <div class="hero-team" id="hero-team">
+        <div class="hero-team" id="hero-team" data-video-lib="752909" data-video-id="f3841bab-0c22-4366-9854-2439c588e071">
           <img src="images/hero-hauke.jpg" alt="Hauke Hellriegel in seinem Behandlungszimmer in Essen-Werden">
           <span class="hero-team-tag"><span class="live-dot"></span>Praxis · Essen-Werden</span>
+          <button class="hero-team-play" type="button" aria-label="Praxisvideo abspielen">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
         </div>
         <!-- Zweites Bild: Behandlungsraum -->
         <div class="hero-second">
@@ -3255,6 +3270,31 @@
   }
   window.addEventListener('scroll', pruefen, {passive:true});
   pruefen();
+})();
+</script>
+<script>
+/* Praxisvideo: Bunny-Player erst beim Klick laden */
+(function(){
+  var karte = document.getElementById('hero-team');
+  if (!karte) return;
+  var knopf = karte.querySelector('.hero-team-play');
+  if (!knopf) return;
+  knopf.addEventListener('click', function(){
+    var lib = karte.getAttribute('data-video-lib');
+    var id  = karte.getAttribute('data-video-id');
+    if (!lib || !id || karte.classList.contains('spielt')) return;
+    var rahmen = document.createElement('div');
+    rahmen.className = 'video-rahmen';
+    var frame = document.createElement('iframe');
+    frame.src = 'https://iframe.mediadelivery.net/embed/' + lib + '/' + id +
+                '?autoplay=true&loop=false&muted=false&preload=true&responsive=true';
+    frame.setAttribute('allow', 'accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;');
+    frame.setAttribute('allowfullscreen', 'true');
+    frame.setAttribute('title', 'Praxisvideo Hauke Hellriegel');
+    rahmen.appendChild(frame);
+    karte.appendChild(rahmen);
+    karte.classList.add('spielt');
+  });
 })();
 </script>
 </body>
