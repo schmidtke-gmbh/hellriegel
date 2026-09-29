@@ -84,9 +84,19 @@ export function buildSubmissionHandler({
         redirect: 'error', signal: signalFactory(timeoutMs),
       });
       if (!response.ok) return jsonResponse(502, { ok: false, error: 'LeadTable forwarding failed' });
-      const result = await response.json();
-      if (result?.success !== true) return jsonResponse(502, { ok: false, error: 'LeadTable forwarding failed' });
-      return jsonResponse(200, { ok: true, leadUid: result.uid ?? null });
+      const responseBody = (await response.text()).trim();
+      let leadUid = null;
+      try {
+        const result = JSON.parse(responseBody);
+        if (result?.success !== true) return jsonResponse(502, { ok: false, error: 'LeadTable forwarding failed' });
+        leadUid = result.uid ?? null;
+      } catch {
+        if (!/^[a-f0-9]{24}$/i.test(responseBody)) {
+          return jsonResponse(502, { ok: false, error: 'LeadTable forwarding failed' });
+        }
+        leadUid = responseBody;
+      }
+      return jsonResponse(200, { ok: true, leadUid });
     } catch (error) {
       console.error('LeadTable forwarding failed', error?.name ?? 'Error');
       return jsonResponse(502, { ok: false, error: 'LeadTable forwarding failed' });

@@ -56,6 +56,13 @@ test('forwards payload to the allowlisted LeadTable endpoint', async () => {
   assert.equal(JSON.parse(calls[0].options.body).fields.name,'Max Mustermann');
 });
 
+test('accepts LeadTable plain-text UID success responses', async () => {
+  const handler=buildSubmissionHandler({endpoint:'https://api-v2.lead-table.com/webhooks/example',fetchImpl:async()=>new Response('0123456789abcdef01234567',{status:200,headers:{'content-type':'text/html'}})});
+  const response=await handler({body:JSON.stringify(base)});
+  assert.equal(response.statusCode,200);
+  assert.equal(JSON.parse(response.body).leadUid,'0123456789abcdef01234567');
+});
+
 test('ignores unrelated forms before checking webhook configuration', async () => {
   let fetched=false;
   const handler=buildSubmissionHandler({endpoint:'not a URL',fetchImpl:async()=>{fetched=true;throw new Error('must not fetch');}});
@@ -82,13 +89,17 @@ test('fails closed without leaking upstream details', async () => {
 
 test('handles non-JSON and network failures with sanitized responses', async () => {
   const cases=[
+    async()=>new Response('not valid uid!',{status:200}),
     async()=>new Response('not-json',{status:200}),
+    async()=>new Response('NotFound',{status:200}),
+    async()=>new Response('Unauthorized',{status:200}),
+    async()=>new Response('InternalServerError',{status:200}),
     async()=>{throw new Error('network secret max@example.com');},
   ];
   for (const fetchImpl of cases) {
     const handler=buildSubmissionHandler({endpoint:'https://api-v2.lead-table.com/webhooks/example',fetchImpl});
     const response=await handler({body:JSON.stringify(base)});
     assert.equal(response.statusCode,502);
-    assert.doesNotMatch(response.body,/not-json|network secret|max@example.com/);
+    assert.doesNotMatch(response.body,/not valid uid|not-json|NotFound|Unauthorized|InternalServerError|network secret|max@example.com/);
   }
 });
