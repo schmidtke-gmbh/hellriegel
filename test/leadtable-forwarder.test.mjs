@@ -56,6 +56,94 @@ test('forwards payload to the allowlisted LeadTable endpoint', async () => {
   assert.equal(JSON.parse(calls[0].options.body).fields.name,'Max Mustermann');
 });
 
+test('routes applications to the dedicated application campaign', async () => {
+  const calls=[];
+  const handler=buildSubmissionHandler({
+    endpoint:'https://api-v2.lead-table.com/webhooks/patienten',
+    applicationEndpoint:'https://api-v2.lead-table.com/webhooks/bewerbung',
+    fetchImpl:async(url,options)=>{calls.push({url,options});return new Response(JSON.stringify({success:true,uid:'lead-1'}),{status:200});},
+  });
+  const response=await handler({body:JSON.stringify({...base,form_name:'bewerbung',data:{...base.data,'form-name':'bewerbung'}})});
+  assert.equal(response.statusCode,200);
+  assert.equal(calls.length,1);
+  assert.equal(calls[0].url,'https://api-v2.lead-table.com/webhooks/bewerbung');
+  assert.equal(JSON.parse(calls[0].options.body).fields.formular,'bewerbung');
+});
+
+test('uploads Netlify application files to the created LeadTable lead', async () => {
+  const calls=[];
+  const handler=buildSubmissionHandler({
+    endpoint:'https://api-v2.lead-table.com/webhooks/patienten',
+    applicationEndpoint:'https://api-v2.lead-table.com/webhooks/bewerbung',
+    leadTableApiKey:'test-api-key',
+    leadTableApiEmail:'fabian@schmidtkeconsulting.de',
+    fetchImpl:async(url,options={})=>{
+      calls.push({url,options});
+      if(url==='https://api-v2.lead-table.com/webhooks/bewerbung') {
+        return new Response(JSON.stringify({success:true,uid:'0123456789abcdef01234567'}),{status:200});
+      }
+      if(url==='https://d33wubrfki0l68.cloudfront.net/example/lebenslauf.pdf') {
+        return new Response('pdf bytes',{status:200,headers:{'content-type':'application/pdf'}});
+      }
+      if(url==='https://app.lead-table.com/api/upload/0123456789abcdef01234567') {
+        return new Response(JSON.stringify({ok:true}),{status:200});
+      }
+      throw new Error(`unexpected URL: ${url}`);
+    },
+  });
+  const response=await handler({body:JSON.stringify({
+    ...base,
+    form_name:'bewerbung',
+    data:{
+      ...base.data,
+      'form-name':'bewerbung',
+      files:{filename:'lebenslauf.pdf',type:'file',size:9,url:'https://d33wubrfki0l68.cloudfront.net/example/lebenslauf.pdf'},
+    },
+  })});
+  assert.equal(response.statusCode,200);
+  assert.equal(calls.length,3);
+  assert.equal(calls[2].options.method,'POST');
+  assert.equal(calls[2].options.headers['x-api-key'],'test-api-key');
+  assert.equal(calls[2].options.headers.email,'fabian@schmidtkeconsulting.de');
+  const uploadedFile=calls[2].options.body.get('avatar');
+  assert.equal(uploadedFile.name,'lebenslauf.pdf');
+  assert.equal(await uploadedFile.text(),'pdf bytes');
+  assert.deepEqual(JSON.parse(response.body),{ok:true,leadUid:'0123456789abcdef01234567',attachmentsUploaded:1,attachmentErrors:0});
+});
+
+test('uploads the same Netlify file only once when it appears in both file collections', async () => {
+  const descriptor={filename:'lebenslauf.pdf',type:'file',size:9,url:'https://d33wubrfki0l68.cloudfront.net/example/lebenslauf.pdf'};
+  const calls=[];
+  const handler=buildSubmissionHandler({
+    applicationEndpoint:'https://api-v2.lead-table.com/webhooks/bewerbung',
+    leadTableApiKey:'test-api-key',
+    leadTableApiEmail:'fabian@schmidtkeconsulting.de',
+    fetchImpl:async(url,options={})=>{
+      calls.push({url,options});
+      if(url==='https://api-v2.lead-table.com/webhooks/bewerbung') return new Response(JSON.stringify({success:true,uid:'0123456789abcdef01234567'}));
+      if(url===descriptor.url) return new Response('pdf bytes',{headers:{'content-type':'application/pdf'}});
+      if(url==='https://app.lead-table.com/api/upload/0123456789abcdef01234567') return new Response('{}');
+      throw new Error(`unexpected URL: ${url}`);
+    },
+  });
+  const response=await handler({body:JSON.stringify({
+    payload:{...base,form_name:'bewerbung',files:{'files[]':descriptor},data:{...base.data,'form-name':'bewerbung',files:descriptor}},
+  })});
+  assert.equal(calls.length,3);
+  assert.equal(JSON.parse(response.body).attachmentsUploaded,1);
+});
+
+test('never falls back to the patient campaign when the application endpoint is missing', async () => {
+  let fetched=false;
+  const handler=buildSubmissionHandler({
+    endpoint:'https://api-v2.lead-table.com/webhooks/patienten',
+    fetchImpl:async()=>{fetched=true;return new Response('',{status:200});},
+  });
+  const response=await handler({body:JSON.stringify({...base,form_name:'bewerbung',data:{...base.data,'form-name':'bewerbung'}})});
+  assert.equal(response.statusCode,500);
+  assert.equal(fetched,false);
+});
+
 test('accepts LeadTable plain-text UID success responses', async () => {
   const handler=buildSubmissionHandler({endpoint:'https://api-v2.lead-table.com/webhooks/example',fetchImpl:async()=>new Response('0123456789abcdef01234567',{status:200,headers:{'content-type':'text/html'}})});
   const response=await handler({body:JSON.stringify(base)});
