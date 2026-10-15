@@ -2135,6 +2135,38 @@
     /* etwas mehr Luft zum Bildschirmrand */
     .site-header .nav-wrap{padding-left:26px;padding-right:26px;}
   }
+
+  /* ===== Cookie-Hinweis ===== */
+  .ck-box{
+    position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);
+    z-index:3000;width:min(calc(100% - 32px),720px);
+    background:#fff;border:1px solid var(--c-border);border-radius:18px;
+    box-shadow:0 24px 60px rgba(27,31,42,.22);
+    padding:24px 26px;
+    opacity:0;visibility:hidden;
+    transition:opacity .3s ease,transform .3s ease,visibility .3s ease;
+  }
+  .ck-box.sichtbar{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+  .ck-titel{font-size:15px;font-weight:700;color:var(--c-anthrazit);margin-bottom:8px;letter-spacing:-.1px;}
+  .ck-text{font-size:13.5px;line-height:1.65;color:var(--c-text);margin-bottom:18px;}
+  .ck-text a{color:var(--c-gold-d);text-decoration:underline;}
+  .ck-knoepfe{display:flex;gap:10px;flex-wrap:wrap;}
+  .ck-btn{
+    flex:1 1 180px;padding:13px 20px;border-radius:999px;cursor:pointer;
+    font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+    transition:background .2s ease,color .2s ease,transform .2s ease;
+  }
+  .ck-btn-gold{background:var(--c-gold);color:#fff;border:1.5px solid var(--c-gold);}
+  .ck-btn-gold:hover{background:var(--c-gold-d);border-color:var(--c-gold-d);transform:translateY(-1px);}
+  .ck-btn-linie{background:#fff;color:var(--c-anthrazit);border:1.5px solid var(--c-border);}
+  .ck-btn-linie:hover{border-color:var(--c-gold);transform:translateY(-1px);}
+  @media (max-width:680px){
+    .ck-box{left:12px;right:12px;bottom:12px;width:auto;transform:translateY(16px);padding:20px 18px;}
+    .ck-box.sichtbar{transform:translateY(0);}
+    .ck-knoepfe{flex-direction:column;}
+    .ck-btn{flex:1 1 auto;}
+  }
+  @media (prefers-reduced-motion:reduce){ .ck-box{transition:none;} }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -2785,6 +2817,101 @@
   }
   window.addEventListener('scroll', pruefen, {passive:true});
   pruefen();
+})();
+</script>
+<script>
+/* Cookie-Einwilligung und Meta-Pixel.
+   Der Pixel wird erst geladen, wenn jemand zugestimmt hat. Ohne Zustimmung
+   geht keine einzige Anfrage an Facebook raus. */
+(function(){
+  var SCHLUESSEL = 'hh-einwilligung';
+  var PIXEL = '1688834435833525';
+  var GA4 = 'G-MNT17TNKHM';
+
+  function gespeichert(){
+    try { return localStorage.getItem(SCHLUESSEL); } catch(e){ return null; }
+  }
+  function speichern(wert){
+    try { localStorage.setItem(SCHLUESSEL, wert); } catch(e){}
+  }
+
+  function ga4Laden(){
+    if (window.gtag) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA4, { anonymize_ip: true });
+  }
+
+  function messungLaden(){
+    pixelLaden();
+    ga4Laden();
+  }
+
+  function pixelLaden(){
+    if (window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL);
+    fbq('track', 'PageView');
+  }
+
+  var box;
+  function bauen(){
+    box = document.createElement('div');
+    box.className = 'ck-box';
+    box.setAttribute('role','dialog');
+    box.setAttribute('aria-label','Hinweis zu Cookies');
+    box.innerHTML =
+      '<div class="ck-titel">Wir verwenden Cookies</div>' +
+      '<p class="ck-text">Technisch notwendige Cookies brauchen wir, damit die Seite funktioniert. ' +
+      'Zusätzlich möchten wir messen, wie unsere Anzeigen wirken. Das passiert nur mit Ihrer Zustimmung. ' +
+      'Sie können diese jederzeit über den Punkt „Cookies“ im Fußbereich ändern. ' +
+      'Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>' +
+      '<div class="ck-knoepfe">' +
+        '<button type="button" class="ck-btn ck-btn-linie" data-wahl="notwendig">Nur notwendige</button>' +
+        '<button type="button" class="ck-btn ck-btn-gold" data-wahl="alle">Alle akzeptieren</button>' +
+      '</div>';
+    document.body.appendChild(box);
+    box.addEventListener('click', function(e){
+      var b = e.target.closest('[data-wahl]');
+      if (!b) return;
+      var wahl = b.getAttribute('data-wahl');
+      speichern(wahl);
+      zu();
+      if (wahl === 'alle') messungLaden();
+    });
+  }
+
+  function auf(){
+    if (!box) bauen();
+    requestAnimationFrame(function(){ box.classList.add('sichtbar'); });
+  }
+  function zu(){ if (box) box.classList.remove('sichtbar'); }
+
+  var wahl = gespeichert();
+  if (wahl === 'alle') {
+    messungLaden();
+  } else if (wahl !== 'notwendig') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', auf);
+    } else { auf(); }
+  }
+
+  /* Über den Fußbereich wieder aufrufbar, damit die Einwilligung widerrufbar bleibt */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href$="datenschutz.html#cookies"], a[href$="#cookie-einstellungen"]');
+    if (!a) return;
+    e.preventDefault();
+    auf();
+  });
 })();
 </script>
 </body>
