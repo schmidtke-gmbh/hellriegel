@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontaktformular · Telefon-Anfrage · Hauke Hellriegel</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="/assets/logo-hellriegel.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --c-anthrazit:#1B1F2A;
+    --c-text:#3a3a3d;
+    --c-muted:#8a8a8e;
+    --c-gold:#C5A64A;
+    --c-gold-d:#9a7e30;
+    --c-hellgrau:#F2F4F6;
+    --c-linie:#D9DCE1;
+    --c-button:#B8C6C5;
+    --c-button-hover:#9FB0AF;
+    --c-fehler:#C0392B;
+    --c-fehler-bg:#FDF1EF;
+    --c-ok:#2F7D5B;
+    --c-ok-bg:#EEF7F2;
+    --c-weiss:#FFFFFF;
+    --radius:8px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;overflow-x:clip}
+  body{
+    font-family:Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif;
+    color:var(--c-text);background:var(--c-weiss);
+    font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:28px 16px 64px}
+  .kopf{background:var(--c-hellgrau);border-radius:var(--radius);padding:14px 16px;text-align:center}
+  .kopf h1{margin:0;font-size:clamp(26px,6vw,40px);font-weight:700;color:var(--c-anthrazit);letter-spacing:-.01em}
+  .logo{display:block;margin:24px auto 18px;width:140px;height:auto}
+  .intro{text-align:center;margin:0 0 24px;font-size:17px;text-wrap:balance}
+
+  form{display:grid;gap:22px}
+  .reihe{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:520px){.reihe{grid-template-columns:1fr}}
+  .feld{display:grid;gap:8px}
+  label{font-weight:600;color:var(--c-anthrazit);font-size:15px}
+  label .opt{font-weight:500;color:var(--c-muted)}
+  input,textarea,select{
+    width:100%;font:inherit;color:var(--c-anthrazit);
+    background-color:var(--c-weiss);border:1.5px solid var(--c-linie);border-radius:var(--radius);
+    padding:14px 16px;min-height:54px;outline:none;transition:border-color .15s, box-shadow .15s;
+  }
+  textarea{min-height:110px;resize:vertical}
+  input::placeholder,textarea::placeholder{color:#b3b5b9}
+  input:focus,textarea:focus,select:focus{border-color:var(--c-gold);box-shadow:0 0 0 3px rgba(197,166,74,.18)}
+  select{
+    -webkit-appearance:none;appearance:none;cursor:pointer;padding-right:44px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231B1F2A' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 18px center;
+  }
+  select:invalid{color:#b3b5b9}
+  select option{color:var(--c-anthrazit)}
+  .tel{position:relative}
+  .tel .flagge{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:18px;border-radius:2px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr 1fr;pointer-events:none}
+  .tel .flagge i:nth-child(1){background:#000}
+  .tel .flagge i:nth-child(2){background:#DD0000}
+  .tel .flagge i:nth-child(3){background:#FFCE00}
+  .tel input{padding-left:58px}
+
+  .feld.hat-fehler input,.feld.hat-fehler textarea,.feld.hat-fehler select{border-color:var(--c-fehler);background-color:var(--c-fehler-bg)}
+  .fehlertext{display:none;color:var(--c-fehler);font-size:13px;font-weight:500}
+  .feld.hat-fehler .fehlertext{display:block}
+
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+  button{
+    font:inherit;font-weight:700;font-size:17px;border:0;border-radius:var(--radius);cursor:pointer;
+    background-color:var(--c-button);color:var(--c-weiss);padding:18px 20px;min-height:60px;
+    box-shadow:0 10px 30px rgba(27,31,42,.10);transition:background-color .15s, transform .1s;
+  }
+  button:hover{background-color:var(--c-button-hover)}
+  button:active{transform:translateY(1px)}
+  button[disabled]{opacity:.7;cursor:progress}
+
+  .meldung{display:none;border-radius:var(--radius);padding:14px 16px;font-size:15px}
+  .meldung.fehler{display:block;background:var(--c-fehler-bg);color:var(--c-fehler);border:1px solid rgba(192,57,43,.25)}
+
+  .erfolg{display:none;text-align:center;background:var(--c-ok-bg);border:1px solid rgba(47,125,91,.25);border-radius:var(--radius);padding:28px 20px}
+  .erfolg h2{margin:0 0 6px;color:var(--c-ok);font-size:22px}
+  .erfolg p{margin:0 0 20px}
+  .erfolg button{background-color:var(--c-anthrazit);box-shadow:none}
+  .erfolg button:hover{background-color:#000}
+  body.gesendet form{display:none}
+  body.gesendet .erfolg{display:block}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="kopf"><h1>Kontaktformular</h1></div>
+  <img class="logo" src="/assets/logo-hellriegel.png" width="153" height="127" alt="Hauke Hellriegel · Biologische Zahnmedizin">
+  <p class="intro">Trage hier bitte alle wichtigen Patienteninfos ein.</p>
+
+  <form id="telefon-form" novalidate>
+    <div class="reihe">
+      <div class="feld">
+        <label for="vorname">Vorname</label>
+        <input id="vorname" name="vorname" type="text" placeholder="z. B. Alex" autocomplete="off" required>
+        <span class="fehlertext">Bitte den Vornamen eintragen.</span>
+      </div>
+      <div class="feld">
+        <label for="nachname">Nachname</label>
+        <input id="nachname" name="nachname" type="text" placeholder="z. B. Weber" autocomplete="off" required>
+        <span class="fehlertext">Bitte den Nachnamen eintragen.</span>
+      </div>
+    </div>
+
+    <div class="feld">
+      <label for="interesse">Interesse an</label>
+      <textarea id="interesse" name="interesse" placeholder="Hier der Text" required></textarea>
+      <span class="fehlertext">Bitte kurz eintragen, worum es geht.</span>
+    </div>
+
+    <div class="feld">
+      <label for="termindatum">Termindatum (Wenn möglich)</label>
+      <input id="termindatum" name="termindatum" type="datetime-local">
+    </div>
+
+    <div class="feld">
+      <label for="aufmerksam">Wie ist die Person auf uns aufmerksam geworden (wichtig)</label>
+      <select id="aufmerksam" name="aufmerksam" required>
+        <option value="" disabled selected hidden>Wählen Sie eine Option aus</option>
+        <option>Google-Suche</option>
+        <option>Google-Anzeige</option>
+        <option>Facebook / Instagram</option>
+        <option>YouTube</option>
+        <option>Website</option>
+        <option>Empfehlung</option>
+        <option>ChatGPT oder eine andere KI</option>
+        <option>Bestandspatient</option>
+        <option>Sonstiges</option>
+      </select>
+      <span class="fehlertext">Bitte eine Option auswählen.</span>
+    </div>
+
+    <div class="feld">
+      <label for="email">E-Mail <span class="opt">(falls vorhanden)</span></label>
+      <input id="email" name="email" type="email" placeholder="beispiel@gmail.com" autocomplete="off">
+      <span class="fehlertext">Diese E-Mail-Adresse sieht nicht vollständig aus.</span>
+    </div>
+
+    <div class="feld">
+      <label for="telefon">Telefon</label>
+      <div class="tel">
+        <span class="flagge" aria-hidden="true"><i></i><i></i><i></i></span>
+        <input id="telefon" name="telefon" type="tel" inputmode="tel" placeholder="Geben Sie die Telefonnummer ein" autocomplete="off" required>
+      </div>
+      <span class="fehlertext">Bitte eine gültige Telefonnummer eintragen.</span>
+    </div>
+
+    <div class="hp" aria-hidden="true">
+      <label for="firma">Firma</label>
+      <input id="firma" name="firma" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="meldung" id="meldung" role="alert"></div>
+
+    <button type="submit" id="absenden"><span>Angaben absenden</span></button>
+  </form>
+
+  <div class="erfolg" id="erfolg" role="status">
+    <h2>Gespeichert</h2>
+    <p><span id="erfolg-name">Der Patient</span> ist jetzt im Kunden-Hub.</p>
+    <button type="button" id="neu"><span>Nächsten Patienten eintragen</span></button>
+  </div>
+</main>
+
+<script>
+(function(){
+  var form = document.getElementById('telefon-form');
+  var btn = document.getElementById('absenden');
+  var meldung = document.getElementById('meldung');
+
+  function feldVon(el){ return el.closest('.feld'); }
+  function telefonOk(v){ return v.replace(/[^\d]/g,'').length >= 6; }
+  function emailOk(v){ return v === '' || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+  function pruefe(el){
+    var v = (el.value || '').trim();
+    var ok = true;
+    if (el.required && !v) ok = false;
+    if (el.id === 'telefon' && v && !telefonOk(v)) ok = false;
+    if (el.id === 'email' && !emailOk(v)) ok = false;
+    var f = feldVon(el);
+    if (f) f.classList.toggle('hat-fehler', !ok);
+    return ok;
+  }
+
+  // Fehlermarkierung live zuruecknehmen
+  form.querySelectorAll('input, textarea, select').forEach(function(el){
+    ['input','change'].forEach(function(ev){
+      el.addEventListener(ev, function(){
+        if (feldVon(el) && feldVon(el).classList.contains('hat-fehler')) pruefe(el);
+      });
+    });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    meldung.className = 'meldung'; meldung.textContent = '';
+
+    var felder = ['vorname','nachname','interesse','aufmerksam','email','telefon'].map(function(id){ return document.getElementById(id); });
+    var alleOk = felder.map(pruefe).every(Boolean);
+    if (!alleOk){
+      var erstes = form.querySelector('.hat-fehler input, .hat-fehler textarea, .hat-fehler select');
+      if (erstes) erstes.focus();
+      return;
+    }
+
+    var daten = {
+      vorname: form.vorname.value.trim(),
+      nachname: form.nachname.value.trim(),
+      interesse: form.interesse.value.trim(),
+      termindatum: form.termindatum.value,
+      aufmerksam: form.aufmerksam.value,
+      email: form.email.value.trim(),
+      telefon: form.telefon.value.trim(),
+      firma: form.firma.value
+    };
+
+    btn.disabled = true;
+    btn.firstElementChild.textContent = 'Wird gesendet …';
+
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(daten)
+    })
+    .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
+    .then(function(res){
+      if (!res.ok) throw new Error(res.j && res.j.error ? res.j.error : 'Unbekannter Fehler');
+      document.getElementById('erfolg-name').textContent = daten.vorname + ' ' + daten.nachname;
+      document.body.classList.add('gesendet');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+    .catch(function(err){
+      meldung.className = 'meldung fehler';
+      meldung.textContent = 'Das hat nicht geklappt: ' + err.message + '. Bitte noch einmal versuchen. Die Angaben sind noch im Formular.';
+    })
+    .finally(function(){
+      btn.disabled = false;
+      btn.firstElementChild.textContent = 'Angaben absenden';
+    });
+  });
+
+  document.getElementById('neu').addEventListener('click', function(){
+    form.reset();
+    form.querySelectorAll('.hat-fehler').forEach(function(f){ f.classList.remove('hat-fehler'); });
+    document.body.classList.remove('gesendet');
+    document.getElementById('vorname').focus();
+  });
+})();
+</script>
+</body>
+</html>
