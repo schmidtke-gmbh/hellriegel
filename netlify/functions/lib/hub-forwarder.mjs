@@ -15,6 +15,7 @@ const FORM_LABELS = {
 const RESERVED = new Set([
   'form-name', 'bot-field', 'vorname', 'nachname', 'name', 'email', 'telefon', 'phone',
   'consent', 'files', 'files[]', 'quelle', 'kampagne',
+  'hh_js', 'hh_zeit', // technische Felder des Bewerbungsfilters
 ]);
 
 function isPlainObject(value) {

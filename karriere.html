@@ -2587,9 +2587,14 @@
         </div>
       </div>
 
-      <form class="k-form" name="bewerbung" method="POST" action="danke.html" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <form class="k-form" name="bewerbung" method="POST" action="danke.html" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="bewerbung">
         <p style="display:none !important;" aria-hidden="true"><label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <!-- Technische Felder für den Bewerbungsfilter (netlify/functions/lib/bewerbung-filter.mjs).
+             Das Skript unter dem Formular füllt sie beim Absenden. Sie müssen fest im Markup
+             stehen, weil Netlify nur Felder aus dem statischen HTML übernimmt. -->
+        <input type="hidden" name="hh_js" value="">
+        <input type="hidden" name="hh_zeit" value="">
         <div class="k-form-head">
           <span class="k-form-num">01 · Bewerbung</span>
           <h3>Erzähl uns kurz von dir.</h3>
@@ -2610,7 +2615,8 @@
           </div>
           <div class="k-field">
             <label for="f-tel">Telefon</label>
-            <input type="tel" id="f-tel" name="telefon" autocomplete="tel" placeholder="Optional · für schnellen Rückruf">
+            <input type="tel" id="f-tel" name="telefon" autocomplete="tel" placeholder="Optional · für schnellen Rückruf" aria-describedby="f-tel-hinweis">
+            <p id="f-tel-hinweis" role="alert" hidden style="margin-top:8px;font-size:12.5px;line-height:1.5;color:#b3261e;">Bitte gib eine deutsche Telefonnummer an. Bewerbungen aus dem Ausland können wir leider nicht berücksichtigen.</p>
           </div>
           <div class="k-field full">
             <label for="f-stelle">Auf welche Stelle bewirbst du dich? <span class="req">*</span></label>
@@ -2671,6 +2677,44 @@
     </div>
   </div>
 </section>
+
+<script>
+/* Bewerbungsformular: ausländische Telefonnummern abfangen und dem Filter auf dem Server
+   zeigen, dass die Bewerbung aus einem Browser kommt (hh_js) und wie lange das Ausfüllen
+   gedauert hat (hh_zeit). Die Regeln stehen in netlify/functions/lib/bewerbung-filter.mjs. */
+(function(){
+  var form = document.querySelector('form[name="bewerbung"]');
+  if (!form) return;
+  var tel = document.getElementById('f-tel');
+  var hinweis = document.getElementById('f-tel-hinweis');
+  var beginn = 0;
+
+  /* FILTER:telefonAusland */
+  function telefonAusland(wert) {
+    var t = String(wert == null ? '' : wert).trim().replace(/[\s\-\/().]/g, '');
+    if (t.indexOf('+') === 0) return t.indexOf('+49') !== 0;
+    if (t.indexOf('00') === 0) return t.indexOf('0049') !== 0;
+    return false;
+  }
+  /* /FILTER */
+
+  function pruefen() {
+    var ausland = telefonAusland(tel.value);
+    hinweis.hidden = !ausland;
+    tel.setCustomValidity(ausland ? 'Bitte gib eine deutsche Telefonnummer an.' : '');
+    return !ausland;
+  }
+
+  form.addEventListener('focusin', function(){ if (!beginn) beginn = Date.now(); });
+  tel.addEventListener('blur', pruefen);
+  tel.addEventListener('input', function(){ if (!hinweis.hidden) pruefen(); });
+  form.addEventListener('submit', function(e){
+    form.elements.hh_js.value = '1';
+    form.elements.hh_zeit.value = String(Math.round((Date.now() - (beginn || Date.now())) / 1000));
+    if (!pruefen()) { e.preventDefault(); tel.focus(); }
+  });
+})();
+</script>
 
 <!-- FOOTER · weiß mit Gold-Linien -->
 <footer class="footer">

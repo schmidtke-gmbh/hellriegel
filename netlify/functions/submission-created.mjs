@@ -1,6 +1,7 @@
 import { buildSubmissionHandler } from './lib/leadtable-forwarder.mjs';
 import { buildHubForwarder } from './lib/hub-forwarder.mjs';
 import { buildDispatcher } from './lib/dispatcher.mjs';
+import { pruefeBewerbung } from './lib/bewerbung-filter.mjs';
 
 // LeadTable (läuft weiter, solange die LEADTABLE_*-Variablen gesetzt sind)
 const leadTableHandler = buildSubmissionHandler({
@@ -28,4 +29,7 @@ export const handler = buildDispatcher({
     application: process.env.LEADTABLE_APPLICATION_WEBHOOK_URL,
   },
   hubForward,
+  // Bewerbungen aus dem Ausland oder von Programmen nicht weiterleiten.
+  // Notschalter ohne neue Veröffentlichung: BEWERBUNG_FILTER=aus in Netlify setzen.
+  bewerbungFilter: process.env.BEWERBUNG_FILTER === 'aus' ? null : pruefeBewerbung,
 });

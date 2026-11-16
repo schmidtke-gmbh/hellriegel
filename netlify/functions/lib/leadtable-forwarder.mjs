@@ -80,6 +80,7 @@ export function buildLeadTablePayload(submission) {
   const reservedFields = new Set([
     'form-name', 'bot-field', 'name', 'email', 'phone', 'telefon', 'formular',
     'eingang', 'netlify_submission_id', 'quelle', 'vorname', 'nachname',
+    'hh_js', 'hh_zeit', // technische Felder des Bewerbungsfilters
   ]);
   const fields = {
     name: [data.vorname, data.nachname].filter(Boolean).map(String).join(' ').trim(),

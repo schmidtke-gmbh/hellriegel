@@ -9,12 +9,22 @@ function jsonResponse(statusCode, body) {
   return { statusCode, headers: { 'content-type': 'application/json; charset=utf-8' }, body: JSON.stringify(body) };
 }
 
-export function buildDispatcher({ leadTableHandler, leadTableEndpoints = {}, hubForward }) {
+export function buildDispatcher({ leadTableHandler, leadTableEndpoints = {}, hubForward, bewerbungFilter }) {
   return async function handler(event) {
     let submission;
     try { submission = parseSubmission(event?.body ?? '{}'); }
     catch { return jsonResponse(400, { ok: false, error: 'Invalid submission payload' }); }
     if (!submission) return jsonResponse(200, { ok: true, ignored: true });
+
+    // Aussortierte Bewerbungen gehen an kein Ziel. Sie bleiben in Netlify unter
+    // Forms erhalten. Ins Protokoll kommen nur Kennung und Gründe, keine Personendaten.
+    if (bewerbungFilter && submission.formName === 'bewerbung') {
+      const urteil = bewerbungFilter(submission.data);
+      if (urteil.gefiltert) {
+        console.warn('Bewerbung nicht weitergeleitet', JSON.stringify({ id: submission.id, gruende: urteil.gruende }));
+        return jsonResponse(200, { ok: true, filtered: true, gruende: urteil.gruende });
+      }
+    }
 
     const leadTableActive = submission.formName === 'bewerbung'
       ? Boolean(leadTableEndpoints.application)
