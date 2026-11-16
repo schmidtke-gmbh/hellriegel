@@ -546,7 +546,7 @@ p { text-wrap: pretty; }
    AM RECHNER (ab 1040 px)
    ===================================================================== */
 @media (min-width: 1040px) {
-  :root { --kopf: 102px; }
+  :root { --kopf: 108px; }
   .section { padding: 96px 0; }
   .section-head { margin-bottom: 46px; }
   h2 { font-size: 40px; }
@@ -560,10 +560,14 @@ p { text-wrap: pretty; }
   .topbar__item svg { width: 16px; height: 16px; color: var(--gold-l); flex: none; }
   .topbar__tel { font-size: 16px; font-weight: 700; color: var(--weiss); }
 
-  .header { position: sticky; top: 0; background: rgba(229, 231, 235, .95); -webkit-backdrop-filter: saturate(180%) blur(14px); backdrop-filter: saturate(180%) blur(14px); }
-  .header__inner { justify-content: space-between; padding-top: 10px; padding-bottom: 10px; gap: 20px; }
+  /* Deckend, ohne Weichzeichner: Der halb durchsichtige Kopf hat geflackert, sobald sich
+     darunter etwas bewegt hat. */
+  .header { position: sticky; top: 0; background: var(--stein); box-shadow: 0 6px 18px rgba(27, 31, 42, .06); }
+  .header__inner { justify-content: space-between; padding-top: 8px; padding-bottom: 8px; gap: 20px; }
   .header--mitte .header__inner { justify-content: center; }
-  .header__logo img { height: 80px; }
+  /* Die Logodatei hat oben und vor allem unten viel leeren Rand (das Zeichen füllt nur
+     42 % der Höhe). Deshalb groß setzen und den Leerraum mit negativen Rändern wegnehmen. */
+  .header__logo img { height: 172px; margin: -18px 0 -64px; }
   .header .btn { display: inline-flex; width: auto; min-height: 52px; padding: 10px 24px; font-size: 15px; box-shadow: none; }
 
   .hh { display: block; position: absolute; pointer-events: none; z-index: 0; color: var(--gold-d); opacity: .1; right: -5%; top: -16%; width: 760px; }
