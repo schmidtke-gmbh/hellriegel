@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erstgespräch anfragen | Hauke Hellriegel · Essen</title>
+  <meta name="description" content="In zwei kurzen Schritten zu Ihrem Rückruf: kostenfreies telefonisches Erstgespräch mit dem Praxisteam von Hauke Hellriegel in Essen-Werden.">
+  <link rel="canonical" href="https://hellriegel-zahnmedizin.de/zahnimplantate/termin">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1B1F2A">
+  <meta name="color-scheme" content="light">
+  <meta name="format-detection" content="telephone=no">
+  <!-- Bewegung nur, wenn der Besucher sie nicht abgestellt hat (siehe index.html). -->
+  <script>
+  (function (d) {
+    try {
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      d.classList.add('anim');
+      setTimeout(function () { if (!window.hhAnimBereit) d.classList.remove('anim'); }, 3500);
+    } catch (e) {}
+  })(document.documentElement);
+  </script>
+  <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css?v=20261116f">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body class="funnel-page">
+<a class="skip-link" href="#main">Zum Formular springen</a>
+
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="ic-haken" viewBox="0 0 24 24"><polyline fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="20 6 9 17 4 12"/></symbol>
+    <symbol id="ic-pfeil" viewBox="0 0 30 14"><line x1="0" y1="7" x2="29" y2="7"/><polyline points="22 1 29 7 22 13"/></symbol>
+  </defs>
+</svg>
+
+<header class="header header--mitte">
+  <div class="container header__inner">
+    <a class="header__logo" href="index.html" aria-label="Zurück zur Übersicht">
+      <img src="assets/img/logo.webp" alt="Hauke Hellriegel · Biologische Zahnmedizin Essen" width="420" height="238">
+    </a>
+  </div>
+</header>
+
+<main class="funnel-main" id="main">
+  <div class="container">
+    <div class="funnel-kopf" id="funnelKopf">
+      <h1>Erstgespräch <span class="accent">anfragen</span></h1>
+      <p>Kostenfrei und unverbindlich. Wir rufen Sie an, ca.&nbsp;15&nbsp;Minuten.</p>
+    </div>
+
+    <!-- Alle Felder stehen fest im Markup: Netlify Forms liest nur statisches HTML.
+         Der Formularname "erstgespraech" und die Feldnamen sind dieselben wie auf
+         hellriegel-zahnmedizin.de, damit die Weiterleitung an LeadTable und Hub passt.
+         Das Thema steht hier fest (Keramikimplantate), deshalb fragen wir es nicht ab. -->
+    <form class="karte-form" id="wizForm" name="erstgespraech" method="POST" action="danke.html" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="erstgespraech">
+      <p style="display:none !important" aria-hidden="true"><label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <input type="hidden" name="herkunft" value="Landingpage Keramikimplantate">
+      <input type="hidden" name="anliegen" value="Keramikimplantate">
+      <input type="hidden" name="utm_source" value="">
+      <input type="hidden" name="utm_medium" value="">
+      <input type="hidden" name="utm_campaign" value="">
+      <input type="hidden" name="utm_content" value="">
+      <input type="hidden" name="utm_term" value="">
+
+      <div class="fortschritt" id="wizProgress">
+        <div class="fortschritt__text"><span id="wizSchritt">Schritt 1 von 2</span><span>dauert etwa 1&nbsp;Minute</span></div>
+        <div class="fortschritt__spur"><div class="fortschritt__balken" id="wizBar"></div></div>
+      </div>
+
+      <!-- Schritt 1 -->
+      <div class="wiz-panel active" data-panel="0" data-pflicht="dringlichkeit">
+        <h2>Wie dringend ist es?</h2>
+        <p class="wiz-lead">Tippen Sie an, was am besten passt.</p>
+        <div class="wiz-radio-grid" role="radiogroup" aria-label="Wie dringend ist es?">
+          <label class="wiz-radio"><input type="radio" name="dringlichkeit" value="Akut"><span class="rlabel"><strong>Akut · Beschwerden</strong><em>Schmerzen oder Probleme</em></span></label>
+          <label class="wiz-radio"><input type="radio" name="dringlichkeit" value="1-4 Wochen"><span class="rlabel"><strong>In 1–4 Wochen</strong><em>Ich möchte zeitnah starten</em></span></label>
+          <label class="wiz-radio"><input type="radio" name="dringlichkeit" value="1-3 Monate"><span class="rlabel"><strong>In 1–3 Monaten</strong><em>Ich plane in Ruhe</em></span></label>
+          <label class="wiz-radio"><input type="radio" name="dringlichkeit" value="Unverbindlich"><span class="rlabel"><strong>Unverbindlich</strong><em>Erst einmal informieren</em></span></label>
+        </div>
+        <p class="feld-fehler" role="alert">Bitte tippen Sie eine Antwort an.</p>
+      </div>
+
+      <!-- Schritt 2 -->
+      <div class="wiz-panel" data-panel="1">
+        <h2>Wie erreichen wir Sie?</h2>
+        <p class="wiz-lead">Ihre Angaben bleiben vertraulich.</p>
+        <div class="wiz-grid">
+          <div class="wiz-field"><label for="feld-vorname">Vorname</label><input id="feld-vorname" type="text" name="vorname" required autocomplete="given-name" autocapitalize="words"><p class="feld-fehler" role="alert">Bitte geben Sie Ihren Vornamen an.</p></div>
+          <div class="wiz-field"><label for="feld-nachname">Nachname</label><input id="feld-nachname" type="text" name="nachname" required autocomplete="family-name" autocapitalize="words"><p class="feld-fehler" role="alert">Bitte geben Sie Ihren Nachnamen an.</p></div>
+          <div class="wiz-field"><label for="feld-telefon">Telefonnummer</label><input id="feld-telefon" type="tel" name="telefon" required autocomplete="tel" inputmode="tel"><p class="feld-fehler" role="alert">Bitte geben Sie eine Telefonnummer an, unter der wir Sie erreichen.</p></div>
+          <div class="wiz-field"><label for="feld-email">E-Mail-Adresse</label><input id="feld-email" type="email" name="email" required autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false"><p class="feld-fehler" role="alert">Bitte prüfen Sie Ihre E-Mail-Adresse.</p></div>
+          <div class="wiz-field full"><label for="feld-rueckruf">Wann erreichen wir Sie am besten?</label>
+            <select id="feld-rueckruf" name="rueckruf">
+              <option value="">Egal, ich bin flexibel</option>
+              <option>Vormittags (08 – 12 Uhr)</option>
+              <option>Mittags (12 – 15 Uhr)</option>
+              <option>Nachmittags (15 – 18 Uhr)</option>
+              <option>Nur schriftlich per E-Mail</option>
+            </select>
+          </div>
+        </div>
+        <details class="mehr">
+          <summary><span>Nachricht hinzufügen <em>(freiwillig)</em></span></summary>
+          <div class="wiz-field">
+            <label class="sr-only" for="feld-ziel">Ihre Nachricht an uns</label>
+            <textarea id="feld-ziel" name="ziel" rows="4" placeholder="Zum Beispiel: Mir fehlt ein Backenzahn."></textarea>
+          </div>
+        </details>
+        <div class="wiz-consent-wrap">
+          <label class="wiz-consent">
+            <input type="checkbox" name="consent" required>
+            <span>Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. Details in der <a href="https://hellriegel-zahnmedizin.de/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>. Die Einwilligung kann jederzeit widerrufen werden.</span>
+          </label>
+          <p class="feld-fehler" role="alert">Bitte setzen Sie hier den Haken, damit wir Sie anrufen dürfen.</p>
+        </div>
+      </div>
+
+      <div class="wiz-nav" id="wizNav">
+        <button type="button" class="wiz-back" id="wizBack" disabled>← Zurück</button>
+        <button type="button" class="btn" id="wizNext">Weiter <span class="arrow"><svg aria-hidden="true"><use href="#ic-pfeil"/></svg></span></button>
+        <button type="submit" class="btn" id="wizSubmit" style="display:none">Anfrage absenden</button>
+      </div>
+      <p class="wiz-error" id="wizError" role="alert">Das Senden hat nicht geklappt. Bitte versuchen Sie es noch einmal. Klappt es weiterhin nicht, schreiben Sie uns: <a href="mailto:info@hellriegel-zahnmedizin.de">info@hellriegel-zahnmedizin.de</a></p>
+    </form>
+
+    <!-- Kalenderschritt. Steht bewusst AUSSERHALB des Formulars, sonst würde er den
+         Versand mit auslösen. Er erscheint nur, wenn in assets/js/funnel.js eine
+         Kalender-Adresse eingetragen ist. Bis dahin endet der Ablauf mit der Bestätigung. -->
+    <div class="kalender" id="kalender" aria-live="polite">
+      <div class="alert-book" role="alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        <div><b id="kalSatz">Bitte wählen Sie jetzt Ihren Telefontermin.</b>Ohne festen Termin können wir Sie <strong>nicht</strong> zurückrufen. Wir rufen Sie zur gewählten Zeit an<span id="kalTel"></span>.</div>
+      </div>
+      <div class="kalender-wrap" id="kalenderWrap"></div>
+      <div class="kalender-alt"><b>Kein passender Termin dabei?</b>Dann schreiben Sie uns: <a href="mailto:info@hellriegel-zahnmedizin.de">info@hellriegel-zahnmedizin.de</a></div>
+    </div>
+
+    <!-- Bestätigung -->
+    <div class="wiz-success" id="wizSuccess" aria-live="polite">
+      <div class="wiz-check"><svg aria-hidden="true"><use href="#ic-haken"/></svg></div>
+      <h2 id="successTitel">Danke, wir melden uns!</h2>
+      <p id="successText">Ihre Anfrage ist bei uns angekommen. Jemand aus unserem Team ruft Sie innerhalb von 24 bis 48&nbsp;Stunden an.</p>
+      <a class="btn" href="index.html">Zurück zur Übersicht</a>
+    </div>
+
+    <div class="unter-form" id="unterForm">
+      <div class="ablauf-kurz" role="note">
+        <strong id="danachTitel">So geht es danach weiter:</strong>
+        <ol id="danachInfo">
+          <li><b>Wir rufen Sie an</b>, innerhalb von 24 bis 48 Stunden (kostenfrei, ca.&nbsp;15&nbsp;Minuten).</li>
+          <li>Sie füllen unseren <b>Gesundheitsfragebogen</b> aus und unterschreiben an den drei markierten Stellen. Den Link schicken wir Ihnen.</li>
+          <li><b>Beratung bei Hauke Hellriegel</b> in der Praxis (ca.&nbsp;60&nbsp;Minuten, Privatleistung).</li>
+        </ol>
+      </div>
+      <a class="zurueck-link" id="zurueckLink" href="index.html">← Zurück zur Übersicht</a>
+    </div>
+  </div>
+</main>
+
+<footer class="funnel-foot">
+  <div class="container">
+    <p>Praxis Hauke Hellriegel · Heckstraße 31 · 45239 Essen</p>
+    <div class="footer__recht">
+      <a href="https://hellriegel-zahnmedizin.de/impressum.html" target="_blank" rel="noopener">Impressum</a>
+      <a href="https://hellriegel-zahnmedizin.de/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
+      <button type="button" data-cookie-einstellungen>Cookies</button>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=20261116f" defer></script>
+<script src="assets/js/funnel.js?v=20261116f" defer></script>
+</body>
+</html>

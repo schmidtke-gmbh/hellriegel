@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danke für Ihre Anfrage | Hauke Hellriegel · Essen</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1B1F2A">
+  <meta name="color-scheme" content="light">
+  <meta name="format-detection" content="telephone=no">
+  <!-- Bewegung nur, wenn der Besucher sie nicht abgestellt hat (siehe index.html). -->
+  <script>
+  (function (d) {
+    try {
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      d.classList.add('anim');
+      setTimeout(function () { if (!window.hhAnimBereit) d.classList.remove('anim'); }, 3500);
+    } catch (e) {}
+  })(document.documentElement);
+  </script>
+  <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css?v=20261116f">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+</head>
+<body class="funnel-page">
+<!-- Rückfall: Diese Seite erscheint nur, wenn das Formular ohne JavaScript abgeschickt wird.
+     Im Normalfall bleibt man auf termin.html und sieht dort die Bestätigung. -->
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="ic-haken" viewBox="0 0 24 24"><polyline fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="20 6 9 17 4 12"/></symbol>
+  </defs>
+</svg>
+<header class="header header--mitte">
+  <div class="container header__inner">
+    <a class="header__logo" href="index.html" aria-label="Zurück zur Übersicht"><img src="assets/img/logo.webp" alt="Hauke Hellriegel · Biologische Zahnmedizin Essen" width="420" height="238"></a>
+  </div>
+</header>
+<main class="funnel-main" id="main">
+  <div class="container">
+    <div class="wiz-success show">
+      <div class="wiz-check"><svg aria-hidden="true"><use href="#ic-haken"/></svg></div>
+      <h1>Danke, wir melden uns!</h1>
+      <p>Ihre Anfrage ist bei uns angekommen. Jemand aus unserem Team ruft Sie innerhalb von 24 bis 48&nbsp;Stunden an.</p>
+      <a class="btn" href="index.html">Zurück zur Übersicht</a>
+    </div>
+    <div class="unter-form">
+      <div class="ablauf-kurz" role="note">
+        <strong>So geht es danach weiter:</strong>
+        <ol>
+          <li><b>Wir rufen Sie an</b>, innerhalb von 24 bis 48 Stunden (kostenfrei, ca.&nbsp;15&nbsp;Minuten).</li>
+          <li>Sie füllen unseren <b>Gesundheitsfragebogen</b> aus und unterschreiben an den drei markierten Stellen. Den Link schicken wir Ihnen.</li>
+          <li><b>Beratung bei Hauke Hellriegel</b> in der Praxis (ca.&nbsp;60&nbsp;Minuten, Privatleistung).</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="funnel-foot">
+  <div class="container">
+    <p>Praxis Hauke Hellriegel · Heckstraße 31 · 45239 Essen</p>
+    <div class="footer__recht">
+      <a href="https://hellriegel-zahnmedizin.de/impressum.html" target="_blank" rel="noopener">Impressum</a>
+      <a href="https://hellriegel-zahnmedizin.de/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+<script>window.hhAnimBereit = true;</script>
+</body>
+</html>
